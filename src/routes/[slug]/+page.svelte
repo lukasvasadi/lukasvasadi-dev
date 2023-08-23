@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils';
+	import { formatDate } from '$lib/utils'
 
-	export let data;
+	export let data
 </script>
 
 <!-- SEO -->
