@@ -104,7 +104,7 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<meta name="viewport" content="width=device-width" />\n		<link rel="icon" href="/vasadi-icon-square.png" />\n		' + head + `
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<meta name="viewport" content="width=device-width" />\n		<meta property="og:image" content="/images/nvidia-gpu.jpg" />\n		<link rel="icon" href="/vasadi-icon-square.png" />\n		' + head + `
 		<script type="module">
 			const theme = localStorage.getItem('color-scheme')
 
@@ -176,7 +176,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "5zkn2x"
+  version_hash: "nulxfe"
 };
 function get_hooks() {
   return {};
