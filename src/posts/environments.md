@@ -1,5 +1,5 @@
 ---
-title: Environments
+title: Building a developer environment
 description: Configure a development environment for high productivity.
 date: '2023-8-31'
 categories:
