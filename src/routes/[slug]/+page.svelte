@@ -34,6 +34,7 @@
 <style>
 	article {
 		/* max-inline-size: var(--size-content-3); */
+		max-inline-size: 90vw;
 		margin-inline: auto;
 	}
 
@@ -47,13 +48,27 @@
 	}
 
 	.tags {
-		display: flex;
-		gap: var(--size-3);
+		display: grid;
+		grid-auto-rows: auto;
+		grid-template-columns: 1fr 1fr;
+		/* gap: var(--size-3); */
+		gap: 1rem;
 		margin-top: var(--size-7);
 	}
 
 	.tags > * {
 		padding: var(--size-2) var(--size-3);
 		border-radius: var(--radius-round);
+	}
+
+	@media (min-width: 600px) {
+		article {
+			max-inline-size: 700px;
+		}
+
+		.tags {
+			display: flex;
+			flex-direction: row;
+		}
 	}
 </style>

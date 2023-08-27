@@ -29,7 +29,9 @@
 	}
 
 	.post {
-		max-inline-size: var(--size-content-3);
+		/* max-inline-size: var(--size-content-3); */
+		inline-size: 100%;
+		margin-inline: auto;
 	}
 
 	.post:not(:last-child) {
@@ -49,4 +51,10 @@
 	.description {
 		margin-top: var(--size-3);
 	}
+
+	/* @media (min-width: 960px) {
+		.post {
+			inline-size: 700px;
+		}
+	} */
 </style>

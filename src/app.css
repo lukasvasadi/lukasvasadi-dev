@@ -16,6 +16,7 @@ html {
 	--surface-4-dark: var(--gray-9);
 	--background-dark: var(--gradient-8);
 	--border-dark: var(--gray-9);
+	--inline-code-background-dark: #333;
 
 	/* light */
 	--brand-light: var(--orange-10);
@@ -27,6 +28,7 @@ html {
 	--surface-4-light: var(--gray-3);
 	--background-light: none;
 	--border-light: var(--gray-4);
+	--inline-code-background-light: #eee;
 }
 
 :root {
@@ -41,6 +43,7 @@ html {
 	--surface-4: var(--surface-4-dark);
 	--background: var(--background-dark);
 	--border: var(--border-dark);
+	--inline-code-background: var(--inline-code-background-dark);
 }
 
 @media (prefers-color-scheme: light) {
@@ -56,6 +59,7 @@ html {
 		--surface-4: var(--surface-4-light);
 		--background: var(--background-light);
 		--border: var(--border-light);
+		--inline-code-background: var(--inline-code-background-light);
 	}
 }
 
@@ -71,6 +75,7 @@ html {
 	--surface-4: var(--surface-4-dark);
 	--background: var(--background-dark);
 	--border: var(--border-dark);
+	--inline-code-background: var(--inline-code-background-dark);
 }
 
 [color-scheme='light'] {
@@ -85,6 +90,7 @@ html {
 	--surface-4: var(--surface-4-light);
 	--background: var(--background-light);
 	--border: var(--border-light);
+	--inline-code-background: var(--inline-code-background-light);
 }
 
 html,
@@ -100,8 +106,9 @@ html {
 }
 
 body {
-	width: 100%;
+	width: 100vw;
 	padding: 1rem;
+	font-size: 18px;
 }
 
 img {
@@ -118,11 +125,11 @@ li {
 	padding-inline-start: 0;
 }
 
-code {
-	background: #333;
+p code {
+	background: var(--inline-code-background);
 }
 
-.surface-1 {
+/* .surface-1 {
 	background-color: var(--surface-1);
 	color: var(--text-2);
 }
@@ -140,7 +147,7 @@ code {
 .surface-4 {
 	background-color: var(--surface-4);
 	color: var(--text-1);
-}
+} */
 
 .prose :is(h2, h3, h4, h5, h6) {
 	margin-top: var(--size-8);
@@ -149,6 +156,10 @@ code {
 
 .prose p:not(:is(h2, h3, h4, h5, h6) + p) {
 	margin-top: var(--size-7);
+}
+
+.prose p {
+	max-inline-size: 100%;
 }
 
 .prose :is(ul, ol) {
@@ -163,11 +174,22 @@ code {
 .prose :is(ul, ol) li {
 	margin-block: var(--size-2);
 	padding-inline-start: var(--size-2);
+	max-inline-size: 90%;
 }
 
 .prose pre {
 	max-inline-size: 100%;
 	padding: 1rem;
+	margin-top: 1rem;
 	border-radius: 8px;
 	tab-size: 2;
+	overflow-x: auto;
+}
+
+.prose pre:hover {
+	cursor: text;
+}
+
+.prose pre {
+	word-break: break-word;
 }

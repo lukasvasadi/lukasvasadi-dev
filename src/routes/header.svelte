@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as config from '$lib/config'
+	import Toggle from './toggle.svelte'
 </script>
 
 <nav>
@@ -9,9 +10,12 @@
 	</a>
 
 	<!-- Navigation -->
-	<ul class="links">
+	<!-- <ul class="links">
 		<li>
 			<a href="/about">About</a>
+		</li>
+		<li>
+			<a href="/">Blog</a>
 		</li>
 		<li>
 			<a href="/contact">Contact</a>
@@ -19,15 +23,25 @@
 		<li>
 			<a href="/rss.xml" target="_blank">RSS</a>
 		</li>
-	</ul>
+	</ul> -->
 
 	<!-- Theme -->
-	<button>Toggle</button>
+	<!-- <button>Toggle</button> -->
+	<Toggle />
 </nav>
 
 <style>
 	nav {
 		padding-block: var(--size-7);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.title {
+		font-family: 'Fira Code';
+		font-size: 22px;
 	}
 
 	.links {
@@ -41,7 +55,6 @@
 
 	@media (min-width: 768px) {
 		nav {
-			display: flex;
 			justify-content: space-between;
 		}
 
