@@ -11,7 +11,7 @@ categories:
 published: true
 ---
 
-![](/images/nvidia-gpu.jpg)
+![NVIDIA graphics cards](/images/nvidia-gpu.jpg)
 
 ## Contents
 

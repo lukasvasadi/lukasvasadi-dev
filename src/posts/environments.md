@@ -10,7 +10,7 @@ categories:
 published: true
 ---
 
-![](/images/macbook-code.jpg)
+![Macbook code editor](/images/macbook-code.jpg)
 
 ## Contents
 
