@@ -1,0 +1,51 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/environments",
+			"dest": "/environments/"
+		},
+		{
+			"src": "/environments/",
+			"status": 308,
+			"headers": {
+				"Location": "/environments"
+			}
+		},
+		{
+			"src": "/git",
+			"dest": "/git/"
+		},
+		{
+			"src": "/git/",
+			"status": 308,
+			"headers": {
+				"Location": "/git"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/.*",
+			"dest": "/fn"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"environments.html": {
+			"path": "environments"
+		},
+		"git.html": {
+			"path": "git"
+		}
+	}
+}

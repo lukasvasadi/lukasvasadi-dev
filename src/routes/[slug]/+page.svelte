@@ -61,6 +61,12 @@
 		border-radius: var(--radius-round);
 	}
 
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 50px;
+		}
+	}
+
 	@media (min-width: 600px) {
 		article {
 			max-inline-size: 700px;

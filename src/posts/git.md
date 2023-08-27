@@ -13,7 +13,7 @@ published: true
 
 ## Contents
 
--   [Introduction](#introduction)
+<!-- -   [Introduction](#introduction) -->
 
 ## Introduction
 

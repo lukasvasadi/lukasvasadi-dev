@@ -5,7 +5,6 @@ date: '2023-8-31'
 categories:
     - Python
     - Node
-    - Git
     - Chocolatey
     - Homebrew
 published: true
@@ -14,8 +13,10 @@ published: true
 ## Contents
 
 -   [Introduction](#introduction)
+-   [Windows](#windows)
+    <!-- -   [Chocolatey](#chocolatey) -->
 
-## Introduction
+## <a id="introduction"></a>Introduction
 
 This tutorial shows how to install popular developer tools, with an emphasis on Python, using system package managers. It also explains how to create and manage virtual environments for Python.
 
@@ -29,9 +30,9 @@ If not specified, the _package installer for Python_ (`pip`) will place all exte
 
 Virtual environments sidestep these issues by creating sandboxed directories that store all packages for individual projects. These directories also contain symlinks to the relevant Python binaries so that the project can be run with a specific Python version. By activating a virtual environment, you tell the system to point to this directory whenever running the Python executable.
 
-## Windows
+## <a id="windows"></a>Windows
 
-### Chocolatey
+### <a id="chocolatey"></a>Chocolatey
 
 Chocolatey is a community-driven general package manager for Windows. With one command, this tool eliminates the need for installation wizards.
 

@@ -52,9 +52,9 @@
 		margin-top: var(--size-3);
 	}
 
-	/* @media (min-width: 960px) {
+	@media (min-width: 960px) {
 		.post {
-			inline-size: 700px;
+			max-inline-size: 600px;
 		}
-	} */
+	}
 </style>
