@@ -11,6 +11,8 @@ categories:
 published: true
 ---
 
+![](/images/nvidia-gpu.jpg)
+
 ## Contents
 
 <!-- -   [Introduction](#introduction) -->
