@@ -194,3 +194,7 @@ p code {
 .prose pre {
 	word-break: break-word;
 }
+
+.prose blockquote {
+	margin-top: 2rem;
+}
