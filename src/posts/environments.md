@@ -1,7 +1,7 @@
 ---
 title: Building a developer environment
 description: Create a clean development environment for high productivity.
-date: '2023-8-31'
+date: '2022-9-20'
 image: /images/macbook-code.jpg
 categories:
     - Python
@@ -22,7 +22,7 @@ published: true
 
 ## <a id="introduction">Introduction</a>
 
-This tutorial shows how to install popular developer tools, such as Python, Node.js, and the compiler toolchain for C/C++, using system package managers. It also explains how to create and manage virtual environments for Python.
+This tutorial covers the installation process for several popular developer tools, such as Python, Node.js, and the compiler toolchain for C/C++, using system package managers. It also explains how to create and manage virtual environments for Python.
 
 ### What is a virtual environment?
 
@@ -308,6 +308,50 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 ```
 
+Save and close both documents, then refresh the environment and check the `python` and `pip` executables:
+
+```zsh
+source ~/.zshrc
+which python && which pip
+```
+
+Now you can run Python!
+
+#### Virtual Environments
+
+Pyenv also provides an easy way to create and manage virtual environments. To create a new environment named "env":
+
+```zsh
+# assuming you navigated inside the project directory
+pyenv local env
+```
+
+To deactivate the environment:
+
+```zsh
+source deactivate
+```
+
+### Node.js
+
+As mentioned above, Node.js is a popular JavaScript runtime that can be easily managed with nvm.
+
+#### NVM
+
+To install nvm:
+
+```zsh
+brew install nvm
+```
+
+Confirm installation:
+
+```zsh
+command -v nvm
+```
+
+If nothing returns, you may need to add the following lines to `~/.zshrc`:
+
 ```zsh
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -315,4 +359,145 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 ```
 
+Refresh the environment:
+
+```zsh
+source ~/.zshrc
+```
+
+Install the latest stable version of Node:
+
+```zsh
+nvm install stable
+```
+
+Confirm Node installation:
+
+```zsh
+node --version
+```
+
+### Git
+
+Git is a toolchain used for version control of code repositories. To install git:
+
+```zsh
+brew install git
+```
+
 ## <a id="linux">Linux</a>
+
+> **_NOTE:_** This tutorial only covers Debian flavors of Linux, e.g., Ubuntu, Pop_OS!.
+
+Before installing any software, it is good practice to update, and possibly upgrade, the existing system packages:
+
+```zsh
+sudo apt update && sudo apt upgrade -y
+```
+
+### Python
+
+#### Pyenv
+
+To install `pyenv`, first install its dependencies:
+
+```zsh
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+```
+
+Then, execute the `pyenv` installer:
+
+```zsh
+curl https://pyenv.run | bash
+```
+
+Before running Python, we need to add the `.pyenv` root directory to the system `$PATH` and initialize the utility on shell startup. To do so, open the shell environment files with the default text editor:
+
+```zsh
+open -e ~/.zshrc
+```
+
+Append the following lines:
+
+```zsh
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+```
+
+```zsh
+source ~/.zshrc
+```
+
+Confirm `pyenv` installation:
+
+```zsh
+pyenv --version
+```
+
+To see a list of all Python versions available for installation:
+
+```zsh
+pyenv install --list
+# restrict list output to a major Python version
+pyenv install --list | grep "3.11"
+```
+
+Install Python:
+
+```zsh
+# 3.11.3 as an example
+pyenv install 3.11.3
+```
+
+Set the global Python version:
+
+```zsh
+pyenv global 3.11.3
+```
+
+Confirm that `python` and `pip` point to the correct executables:
+
+```zsh
+which python && which pip
+```
+
+Now, you can use Python!
+
+### Node.js
+
+#### NVM
+
+To install nvm, run the automated script:
+
+```zsh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+Refresh the environment and confirm installation:
+
+```zsh
+source ~/.zshrc
+nvm --version
+```
+
+Install the latest stable release of Node.js:
+
+```zsh
+nvm install stable
+```
+
+Confirm successful Node installation:
+
+```zsh
+node --version
+```
+
+### Git
+
+Git is a toolchain used for version control of code repositories. To install git:
+
+```zsh
+sudo apt install git
+```

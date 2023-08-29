@@ -1,58 +1,63 @@
 ---
 title: Managing code repositories with git
 description: Configure a development environment for high productivity.
-date: '2023-8-31'
+date: '2022-10-25'
 image: /images/nvidia-gpu.jpg
 categories:
-    - Python
-    - Node
     - Git
-    - Chocolatey
-    - Homebrew
+    - GitHub
 published: true
 ---
 
-![NVIDIA graphics cards](/images/nvidia-gpu.jpg)
-
 ## Contents
 
-<!-- -   [Introduction](#introduction) -->
+-   [Introduction](#introduction)
 
-## Introduction
+## <a id="introduction">Introduction</a>
 
-This tutorial shows how to install popular developer tools, with an emphasis on Python, using system package managers. It also explains how to create and manage virtual environments for Python.
+This guide assumes that git has been installed on the local machine. For simplicity, it is also assumed that the user has Git Bash—especially for Windows—or a standard bash/zsh console with access to the git command line tools, along with a GitHub account.
 
-### What is a virtual environment?
+## <a id="authentication">Authentication</a>
 
-If not specified, the _package installer for Python_ (`pip`) will place all external modules inside the `site-packages/` directory of the base Python installation. This can become problematic for the following reasons:
+GitHub, the repository cloud storage owned by Microsoft, now requires developers to authenticate their machines with SSH keys for added security. The official [online tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) covers all steps to generate an SSH key and add it to a GitHub account. These steps have been consolidated below for convenience.
 
-1. **System pollution:** Linux and macOS have preinstalled Python versions that each OS uses for internal tasks. Changing the versions of any system-relevant packages may have unintended effects on OS behavior. Updating the OS could also overwrite some of the package installations.
+### Generating an SSH key
 
-2. **Dependency conflicts:** Different projects may require different versions of the same package. If all packages are centralized, then certain projects may break unexpectedly.
+> **_NOTE:_** For Windows users, the following commands require a bash-like shell program, such as Git Bash, which is a separate terminal program installed alongside the Git toolchain. You can find this program in the search menu.
 
-Virtual environments sidestep these issues by creating sandboxed directories that store all packages for individual projects. These directories also contain symlinks to the relevant Python binaries so that the project can be run with a specific Python version. By activating a virtual environment, you tell the system to point to this directory whenever running the Python executable.
+First, create an SSH key with the email address tied to the GitHub account:
 
-## Windows
-
-### Chocolatey
-
-Chocolatey is a community-driven general package manager for Windows. With one command, this tool eliminates the need for installation wizards.
-
-The developers of Chocolatey created a script to automate the installation process. As stated above, to run a script downloaded from the internet, we need to change the security permissions in PowerShell. (This will also be needed later to install the full developer toolchain. See the PowerShell tutorial for more information on security policies.) In an administrative shell, execute the following commands:
-
-```ps1
-Set-ExecutionPolicy RemoteSigned
+```bash
+# replace email address
+ssh-keygen -t ed25519 -C "account@example.com"
 ```
 
-Also...
+When prompted for a filename, press enter to accept the default. Choose a security passphrase at the next prompt or, alternatively, press enter to proceed without a passphrase.
 
-```ps1
-[System.Net.ServicePointManager]::SecurityProtocol = \
-[System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+> **_NOTE:_** If you choose a security passphrase, it will be required for every future commit.
+
+Start the background SSH agent:
+
+```bash
+eval "$(ssh-agent -s)"
 ```
 
-More code...
+Add the SSH private key to the agent:
 
-```ps1
-Set-ExecutionPolicy RemoteSigned
+```bash
+ssh-add ~/.ssh/id_ed25519
 ```
+
+Copy the SSH public key to the clipboard:
+
+```bash
+clip < ~/.ssh/id_ed25519.pub
+```
+
+If you are not using Git Bash, and the `clip` utility is not installed in your toolchain, then you will probably receive the error `command not found: clip`. In this case, you may simply print the contents of `~/.ssh/id_ed25519.pub` to the console and copy the text key manually:
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+This key must be added to the authorized SSH key list in the GitHub account settings. More detailed instructions for listing authorized keys can be found at the [online tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
