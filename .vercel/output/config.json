@@ -2,14 +2,14 @@
 	"version": 3,
 	"routes": [
 		{
-			"src": "/environments",
-			"dest": "/environments/"
+			"src": "/cuda-gpu",
+			"dest": "/cuda-gpu/"
 		},
 		{
-			"src": "/environments/",
+			"src": "/cuda-gpu/",
 			"status": 308,
 			"headers": {
-				"Location": "/environments"
+				"Location": "/cuda-gpu"
 			}
 		},
 		{
@@ -21,6 +21,17 @@
 			"status": 308,
 			"headers": {
 				"Location": "/git"
+			}
+		},
+		{
+			"src": "/environments",
+			"dest": "/environments/"
+		},
+		{
+			"src": "/environments/",
+			"status": 308,
+			"headers": {
+				"Location": "/environments"
 			}
 		},
 		{
@@ -41,11 +52,14 @@
 		"index.html": {
 			"path": ""
 		},
-		"environments.html": {
-			"path": "environments"
+		"cuda-gpu.html": {
+			"path": "cuda-gpu"
 		},
 		"git.html": {
 			"path": "git"
+		},
+		"environments.html": {
+			"path": "environments"
 		}
 	}
 }

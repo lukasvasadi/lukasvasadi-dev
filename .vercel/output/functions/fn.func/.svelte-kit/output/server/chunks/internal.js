@@ -104,17 +104,17 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<meta name="viewport" content="width=device-width" />\n		<link rel="icon" href="/vasadi-icon-square.png" />\n		' + head + `
-		<script type="module">
-			const theme = localStorage.getItem('color-scheme')
-
-			theme
-				? document.documentElement.setAttribute('color-scheme', theme)
-				: localStorage.setItem('color-scheme', 'dark')
-		<\/script>
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">` + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\r\n<html lang="en">\r\n	<head>\r\n		<meta charset="utf-8" />\r\n		<meta name="viewport" content="width=device-width" />\r\n		<link rel="icon" href="/vasadi-icon-square.png" />\r\n		' + head + `\r
+		<script type="module">\r
+			const theme = localStorage.getItem('color-scheme')\r
+\r
+			theme\r
+				? document.documentElement.setAttribute('color-scheme', theme)\r
+				: localStorage.setItem('color-scheme', 'dark')\r
+		<\/script>\r
+	</head>\r
+	<body data-sveltekit-preload-data="hover">\r
+		<div style="display: contents">` + body + "</div>\r\n	</body>\r\n</html>\r\n",
     error: ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -176,7 +176,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "xd4kwj"
+  version_hash: "1ljn6vo"
 };
 function get_hooks() {
   return {};
