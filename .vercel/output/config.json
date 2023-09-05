@@ -2,17 +2,6 @@
 	"version": 3,
 	"routes": [
 		{
-			"src": "/cuda-gpu",
-			"dest": "/cuda-gpu/"
-		},
-		{
-			"src": "/cuda-gpu/",
-			"status": 308,
-			"headers": {
-				"Location": "/cuda-gpu"
-			}
-		},
-		{
 			"src": "/git",
 			"dest": "/git/"
 		},
@@ -51,9 +40,6 @@
 	"overrides": {
 		"index.html": {
 			"path": ""
-		},
-		"cuda-gpu.html": {
-			"path": "cuda-gpu"
 		},
 		"git.html": {
 			"path": "git"
