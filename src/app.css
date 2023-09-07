@@ -1,6 +1,7 @@
 @import '@fontsource/manrope';
 @import '@fontsource/jetbrains-mono';
 @import '@fontsource/fira-code';
+@import url('themes/prism-one-dark.css');
 
 html {
 	/* font */
