@@ -16,6 +16,7 @@ published: true
 -   [Repositories](#repositories)
 -   [Commits](#commits)
 -   [Branches](#branches)
+-   [Submodules](#submodules)
 
 ## <a id="introduction">Introduction</a>
 
@@ -312,7 +313,7 @@ git merge --abort
 
 Otherwise, you will have to manually edit the source code to determine which set of changes should persist. Then, you will have to create a new commit to formally complete the merge process.
 
-## Submodules
+## <a id="submodules">Submodules
 
 [Submodules](https://www.git-scm.com/book/en/v2/Git-Tools-Submodules) are one way to incorporate code from other projects that exist as git repositories. This is especially useful if the other repository contains library source code used across several projects. To add another repository as a submodule:
 
@@ -353,5 +354,5 @@ git submodule update --remote
 Occassionally, older repositories may contain git submodules with https authentication. In some cases, it may be necessary to convert existing submodules from https to ssh:
 
 ```bash
-perl -i -p -e 's|https://(.*?)/|git@\1:|g' .gitmodules
+perl -i -p -e 's|https://(.*?)/|git@\\1:|g' .gitmodules
 ```

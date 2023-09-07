@@ -44,9 +44,9 @@
 		font-size: 22px;
 	}
 
-	.links {
+	/* .links {
 		margin-block: var(--size-7);
-	}
+	} */
 
 	a {
 		color: inherit;
@@ -58,10 +58,10 @@
 			justify-content: space-between;
 		}
 
-		.links {
+		/* .links {
 			display: flex;
 			gap: var(--size-7);
 			margin-block: 0;
-		}
+		} */
 	}
 </style>

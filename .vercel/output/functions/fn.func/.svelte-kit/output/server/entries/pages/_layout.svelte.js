@@ -119,12 +119,12 @@ const Toggle = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const header_svelte_svelte_type_style_lang = "";
 const css$2 = {
-  code: "nav.svelte-1heylgh{padding-block:var(--size-7);display:flex;flex-direction:row;align-items:center;justify-content:space-between}.title.svelte-1heylgh{font-family:'Fira Code';font-size:22px}a.svelte-1heylgh{color:inherit;text-decoration:none}@media(min-width: 768px){nav.svelte-1heylgh{justify-content:space-between}}",
+  code: "nav.svelte-bs11bt{padding-block:var(--size-7);display:flex;flex-direction:row;align-items:center;justify-content:space-between}.title.svelte-bs11bt{font-family:'Fira Code';font-size:22px}a.svelte-bs11bt{color:inherit;text-decoration:none}@media(min-width: 768px){nav.svelte-bs11bt{justify-content:space-between}}",
   map: null
 };
 const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$2);
-  return `<nav class="svelte-1heylgh"> <a href="/" class="title svelte-1heylgh"><b>${escape(title)}</b></a>     ${validate_component(Toggle, "Toggle").$$render($$result, {}, {}, {})} </nav>`;
+  return `<nav class="svelte-bs11bt"> <a href="/" class="title svelte-bs11bt"><b>${escape(title)}</b></a>     ${validate_component(Toggle, "Toggle").$$render($$result, {}, {}, {})} </nav>`;
 });
 const transition_svelte_svelte_type_style_lang = "";
 const css$1 = {
