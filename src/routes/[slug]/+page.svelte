@@ -70,7 +70,7 @@
 
 	@media (min-width: 600px) {
 		article {
-			max-inline-size: 700px;
+			max-inline-size: 800px;
 		}
 
 		.tags {
