@@ -1,6 +1,6 @@
 ---
 title: Building a developer environment
-description: Create a clean development environment for high productivity.
+description: Create a clean development environment for high productivity
 date: '2022-9-20'
 image: /images/macbook-code.jpg
 categories:
