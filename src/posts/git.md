@@ -215,3 +215,143 @@ git stash
 ### Creating branches
 
 The first branch created when initializing a repository is the `main` branch. This branch serves as the project root and, though not always recommended for collaborative work, may be renamed. Developers create separate daughter branches, where specific features are developed and tested, to prevent breaking changes from entering the project root.
+
+To see a list of local branches on a repository:
+
+```bash
+git branch
+```
+
+To see a list of local and remote branches:
+
+```bash
+# use fetch to update the repository based on remote changes
+git fetch
+git branch -a
+```
+
+To create a new branch on an existing project:
+
+```bash
+git branch branchname
+```
+
+To switch between branches:
+
+```bash
+git checkout branchname
+```
+
+To immediately switch to a new branch:
+
+```bash
+git checkout -b branchname
+```
+
+To push changes to a new remote branch upstream:
+
+```bash
+git push --set-upstream origin branchname
+```
+
+### Deleting branches
+
+When "trimming" branches, it is often desired to remove both the local and remote instances.
+
+```bash
+# delete remote branch where remote name is origin
+git push -d origin branchname
+# delete local branch instance
+git branch -d branchname
+# force local branch deletion
+git branch -D
+```
+
+In the above command set, the first command deletes the remote branch, which shares the same name as the local branch. The `-d` option is an alias for `--delete`. Similarly, the `-D` option is an alias for `--delete --force`, which will delete the local branch regardless of its merge status—unmerged branches throw an error when the user attempts deletion.
+
+After trimming branches, the local list of remote branches may need to be updated manually to reflect the changes.
+
+```bash
+# update local records
+git remote update origin --prune
+# check that the branch list reflects recent changes
+git branch -a
+```
+
+### Renaming branches
+
+To rename a branch, first update the name of the local branch, then push the "new" renamed branch and delete the old version.
+
+```bash
+# navigate to branch
+git checkout old-branchname
+# rename local branch
+git branch -m new-branchname
+# push branch to remote origin
+git push origin -u new-branchname
+# delete old remote branch
+git push origin -d old-branchname
+```
+
+### Merging branches
+
+Merging is generally reserved for a feature that has matured to the point where it is ready to be added to another branch. As an example, to merge the changes in branch `dev` to `main`:
+
+```bash
+# switch to main branch
+git checkout main
+# merge changes from dev branch
+git merge dev
+```
+
+Sometimes, conflicts arise when merging two branches, i.e., both branches have diverged and contain conflicting code blocks. In this case, one option is to simply undo the merge and reevaluate:
+
+```bash
+git merge --abort
+```
+
+Otherwise, you will have to manually edit the source code to determine which set of changes should persist. Then, you will have to create a new commit to formally complete the merge process.
+
+## Submodules
+
+[Submodules](https://www.git-scm.com/book/en/v2/Git-Tools-Submodules) are one way to incorporate code from other projects that exist as git repositories. This is especially useful if the other repository contains library source code used across several projects. To add another repository as a submodule:
+
+```bash
+# inside project directory
+git submodule add ssh://github.com/account/reponame
+```
+
+This command will add the submodule repository directory to the current project, as well as some hidden configuration files that help git distinguish the submodule from other subdirectories with source code. When working outside the submodule directory, its contents will not be tracked.
+
+To clone a project with existing submodules:
+
+```bash
+git clone ssh://github.com/account/reponame
+cd reponame
+git submodule init
+git submodule update
+```
+
+As a shorthand to replace the above command set:
+
+```bash
+git clone --recurse-submodules ssh://github.com/account/reponame
+```
+
+If the project was cloned without the `--recurse-submodules` parameter, the `git submodule init` and `git submodule update` steps can be combined as `git submodule update --init`. Alternatively, to initialize, fetch, and checkout any nested submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
+Lastly, to update existing submodules with changes:
+
+```bash
+git submodule update --remote
+```
+
+Occassionally, older repositories may contain git submodules with https authentication. In some cases, it may be necessary to convert existing submodules from https to ssh:
+
+```bash
+perl -i -p -e 's|https://(.*?)/|git@\1:|g' .gitmodules
+```
