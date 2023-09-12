@@ -2,7 +2,7 @@
 title: Managing code repositories with git
 description: Learn to version codebases for easy collaboration
 date: '2022-10-25'
-image: /images/macbook-code.jpg
+image: /images/git.jpg
 categories:
     - Git
     - GitHub

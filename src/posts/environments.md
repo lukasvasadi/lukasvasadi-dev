@@ -2,7 +2,7 @@
 title: Building a developer environment
 description: Create a clean development environment for high productivity
 date: '2022-9-20'
-image: /images/macbook-code.jpg
+image: /images/npm-keyboard.jpg
 categories:
     - Python
     - Node
@@ -11,7 +11,7 @@ categories:
 published: true
 ---
 
-![Macbook code editor](/images/macbook-code.jpg)
+![MacBook with npm sticker and mechanical keyboard](/images/npm-keyboard.jpg)
 
 ## Contents
 
