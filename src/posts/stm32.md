@@ -1,5 +1,5 @@
 ---
-title: Programming STM32 microcontrollers
+title: Programming STM32 MCUs
 description: Configure a development environment with CLion and learn basic MCU functions
 date: '2023-8-31'
 image: /images/stm32.jpg
