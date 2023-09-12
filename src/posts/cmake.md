@@ -229,14 +229,8 @@ make
 ./adder
 ```
 
-<!-- Assuming that the build process has been completed at least once, the project can be updated:
+Optionally, you can choose to only target the library during the build routine, which may help you pinpoint build errors:
 
 ```bash
-cmake --build ~/HelloCMake/build
+cmake --build . --target basicmath
 ```
-
-If you only want to build the library:
-
-```bash
-cmake --build ~/HelloCMake/build --target adder
-``` -->
