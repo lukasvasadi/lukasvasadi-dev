@@ -13,6 +13,17 @@
 			}
 		},
 		{
+			"src": "/stm32",
+			"dest": "/stm32/"
+		},
+		{
+			"src": "/stm32/",
+			"status": 308,
+			"headers": {
+				"Location": "/stm32"
+			}
+		},
+		{
 			"src": "/git",
 			"dest": "/git/"
 		},
@@ -54,6 +65,9 @@
 		},
 		"cmake.html": {
 			"path": "cmake"
+		},
+		"stm32.html": {
+			"path": "stm32"
 		},
 		"git.html": {
 			"path": "git"
