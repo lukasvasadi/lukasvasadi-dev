@@ -7,7 +7,7 @@ categories:
     - NVIDIA
     - CUDA
     - Numba
-published: true
+published: false
 ---
 
 ![NVIDIA graphics cards](/images/nvidia-gpu.jpg)

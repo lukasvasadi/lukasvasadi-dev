@@ -8,7 +8,7 @@ categories:
     - Microcontrollers
     - Interrupts
     - Serial communication
-published: true
+published: false
 ---
 
 ![STM32 Nucleo board](/images/stm32.jpg)
@@ -16,6 +16,7 @@ published: true
 ## Contents
 
 -   [Introduction](#introduction)
+-   [Setup](#setup)
 -   [Interrupts](#interrupts)
 
 ## <a id="introduction">Introduction</a>
@@ -47,7 +48,7 @@ A guide to configuring CLion for STM32 can be found at [STM32CubeMX projects](ht
 -   **GNU ARM toolchain** Cross-platform toolchain for compiling C/C++ source
 -   **OpenOCD** Open-source debugger software for microcontrollers
 
-## <a id="Interrupts">Interrupts</a>
+## <a id="interrupts">Interrupts</a>
 
 ```c
 /*
