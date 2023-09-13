@@ -26,7 +26,7 @@ published: true
 
 ## <a id="introduction">Introduction</a>
 
-This tutorial covers the installation process for several popular developer tools, such as Python, Node.js, and the compiler toolchain for C/C++, using system package managers, i.e., Chocolatey for Windows, Homebrew for macOS, and the Advanced Package Tool (APT) for Debian flavors of Linux. It also covers how to create and manage virtual environments for Python.
+This tutorial covers the installation process for Python and Node.js using system package managers, i.e., Chocolatey for Windows, Homebrew for macOS, and the Advanced Package Tool (APT) for Debian flavors of Linux. It also covers how to create and manage virtual environments for Python.
 
 ### What is a virtual environment?
 
@@ -128,7 +128,7 @@ Confirm that python and pip point to the correct executables:
 (Get-Command python).Source ; (Get-Command pip).Source
 ```
 
-You should see two paths returned that resemble `C:\Users\user\.pyenv\shims\python` and `C:\Users\user\.pyenv\shims\pip`. If not, you may have to recheck your environment variables.
+You should see two paths returned that contain `\.pyenv\shims\python` and `\.pyenv\shims\pip`. If not, you may have to recheck your environment variables.
 
 Now, you can run Python:
 
@@ -142,15 +142,15 @@ Unfortunately, pyenv-win does not include the normal pyenv utility for managing 
 
 ```ps1
 # env can have any name
-python -m venv C:\path\to\env
+python -m venv C:\\path\\to\\env
 ```
 
-This will reference the Python version set by pyenv `global` or `local` and create a new directory that contains the Python executable and any site packages installed via `pip`. Note that once created, the virtual environment directory cannot be moved to another location. Many developers choose to store their environments in a dedicated sub-directory of their project folder.
+This will reference the Python version set by pyenv `global` or `local` and create a new directory that contains the Python executable and any site packages installed via `pip`. Note that once created, the virtual environment directory cannot be moved to another location. Many developers choose to store their environments in a dedicated subdirectory of their project folder.
 
 To activate the environment:
 
 ```ps1
-C:\path\to\env\Scripts\Activate.ps1
+C:\\path\\to\\env\\Scripts\\Activate.ps1
 ```
 
 To deactivate:
