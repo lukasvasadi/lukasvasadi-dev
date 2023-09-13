@@ -1,11 +1,12 @@
 <script>
     import { Info } from 'lucide-svelte'
 
+    export let type = 'info'
 	export let msg = ''
 </script>
 
 
-<p class="tag"><span><Info fill="#5d3af7" size=2rem /></span>{@html msg}</p>
+<p class="tag {type}"><span><Info fill="#5d3af7" size=2rem /></span>{@html msg}</p>
 
 <style>
     p {
