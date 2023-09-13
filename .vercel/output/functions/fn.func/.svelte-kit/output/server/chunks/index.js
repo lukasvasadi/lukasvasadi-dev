@@ -1,4 +1,4 @@
-import { n as noop, i as safe_not_equal } from "./ssr.js";
+import { n as noop, b as safe_not_equal } from "./ssr.js";
 const BROWSER = false;
 const DEV = false;
 const subscriber_queue = [];
