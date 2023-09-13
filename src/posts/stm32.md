@@ -11,6 +11,10 @@ categories:
 published: true
 ---
 
+<script>
+    import Tag from "../components/tag.svelte"
+</script>
+
 ![STM32 Nucleo board](/images/stm32.jpg)
 
 ## Contents
@@ -33,7 +37,7 @@ Over the years, especially with the introduction of Arduino, MCU development has
 
 However, while greater abstraction has certainly made STM32 development approachable, this platform still demands a greater level of understanding, both of the hardware and firmware, than Arduino. Specifically, STM32 development frequently involves configuring low-level pinout functions, clocks, and timers, as well as explicit reading and writing of registers. This can be a daunting task for inexperienced engineers and hobbyists, but with dedication and a little effort, the reward can be extraordinary.
 
-> **_NOTE:_** Even though the STM32 platform requires a deeper understanding of hardware development, I have found that programming more advanced features, such as interrupts, is easier than Arduino.
+<Tag msg='Even though the STM32 platform requires a deeper understanding of hardware development, I have found that programming more advanced features, such as interrupts, is easier than Arduino.' />
 
 ## <a id="setup">Setup</a>
 

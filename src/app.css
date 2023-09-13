@@ -131,6 +131,10 @@ p code {
 	background: var(--inline-code-background);
 }
 
+.tag code {
+	background: var(--inline-code-background-dark);
+}
+
 /* .surface-1 {
 	background-color: var(--surface-1);
 	color: var(--text-2);

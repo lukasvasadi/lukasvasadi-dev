@@ -10,6 +10,10 @@ categories:
 published: false
 ---
 
+<script>
+    import Tag from "../components/tag.svelte"
+</script>
+
 ![NVIDIA graphics cards](/images/nvidia-gpu.jpg)
 
 ## Contents
@@ -46,4 +50,4 @@ def hypot(x, y):
     return x * math.sqrt(1+t*t)
 ```
 
-> **_NOTE:_** Depending on the GPU, the performance of calculations with `float32` and `float64` data types can be significantly different. If the calculation does not require 64-bit precision, NVIDIA recommends using `float32`. (Most modern operating systems default the value of floating point numbers to 64-bit!)
+<Tag msg='Depending on the GPU, the performance of calculations with <code>float32</code> and <code>float64</code> data types can be significantly different. If the calculation does not require 64-bit precision, NVIDIA recommends using <code>float32</code>. (Most modern operating systems default the value of floating point numbers to 64-bit!)' />
