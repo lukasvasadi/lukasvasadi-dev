@@ -8,3 +8,8 @@ export type Post = {
 	categories: Categories[]
 	published: boolean
 }
+
+export type CommandList = {
+	command: string
+	description: string
+}
