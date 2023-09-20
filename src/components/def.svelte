@@ -15,7 +15,12 @@
 	dl {
 		display: grid;
 		grid-template-columns: max-content auto;
-		column-gap: 1rem;
-		row-gap: 0.5rem;
+		column-gap: 2rem;
+		row-gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	dl dt {
+		margin-top: 0;
 	}
 </style>
