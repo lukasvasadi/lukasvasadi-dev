@@ -1,0 +1,79 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "/cmake",
+			"dest": "/cmake/"
+		},
+		{
+			"src": "/cmake/",
+			"status": 308,
+			"headers": {
+				"Location": "/cmake"
+			}
+		},
+		{
+			"src": "/stm32",
+			"dest": "/stm32/"
+		},
+		{
+			"src": "/stm32/",
+			"status": 308,
+			"headers": {
+				"Location": "/stm32"
+			}
+		},
+		{
+			"src": "/git",
+			"dest": "/git/"
+		},
+		{
+			"src": "/git/",
+			"status": 308,
+			"headers": {
+				"Location": "/git"
+			}
+		},
+		{
+			"src": "/environments",
+			"dest": "/environments/"
+		},
+		{
+			"src": "/environments/",
+			"status": 308,
+			"headers": {
+				"Location": "/environments"
+			}
+		},
+		{
+			"src": "/_app/immutable/.+",
+			"headers": {
+				"cache-control": "public, immutable, max-age=31536000"
+			}
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/.*",
+			"dest": "/fn"
+		}
+	],
+	"overrides": {
+		"index.html": {
+			"path": ""
+		},
+		"cmake.html": {
+			"path": "cmake"
+		},
+		"stm32.html": {
+			"path": "stm32"
+		},
+		"git.html": {
+			"path": "git"
+		},
+		"environments.html": {
+			"path": "environments"
+		}
+	}
+}
