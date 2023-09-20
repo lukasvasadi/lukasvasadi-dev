@@ -18,7 +18,7 @@ html {
 	--surface-4-dark: var(--gray-9);
 	--background-dark: var(--gradient-8);
 	--border-dark: var(--gray-9);
-	--inline-code-background-dark: #333;
+	--inline-code-background-dark: rgb(40, 44, 52);
 
 	/* light */
 	--brand-light: var(--orange-10);
@@ -127,8 +127,9 @@ li {
 	padding-inline-start: 0;
 }
 
-p code {
+code {
 	background: var(--inline-code-background);
+	padding: 0.1rem 0.4rem;
 }
 
 .tag code {
@@ -166,6 +167,7 @@ p code {
 
 .prose p {
 	max-inline-size: 100%;
+	line-height: 1.6em;
 }
 
 .prose :is(ul, ol) {
@@ -198,8 +200,4 @@ p code {
 
 .prose pre {
 	word-break: break-word;
-}
-
-.prose blockquote {
-	margin-top: 2rem;
 }

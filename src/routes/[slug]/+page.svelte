@@ -2,6 +2,10 @@
 	import { formatDate } from '$lib/utils'
 
 	export let data
+
+	let image: string
+	if (data.meta.image) image = data.meta.image
+	else image = '/images/macbook-code.jpg'
 </script>
 
 <!-- SEO -->
@@ -9,7 +13,7 @@
 	<title>{data.meta.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
-	<meta property="og:image" content={data.meta.image} />
+	<meta property="og:image" content={image} />
 </svelte:head>
 
 <article>
