@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<title>{config.title}</title>
+	<meta property="og:image" content={'/images/macbook-lifestyle.jpg'} />
 </svelte:head>
 
 <!-- Posts -->
