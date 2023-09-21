@@ -6,14 +6,17 @@ import shiki from 'shiki'
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
-	extensions: ['.md']
-	// highlight: {
-	// 	highlighter: async (code, lang = 'text') => {
-	// 		const highlighter = await shiki.getHighlighter({ theme: 'poimandres' })
-	// 		const html = escapeSvelte(highlighter.codeToHtml(code, { lang }))
-	// 		return `{@html \`${html}\` }`
-	// 	}
-	// }
+	extensions: ['.svelte.md', '.md', '.svx'],
+	highlight: {
+		highlighter: async (code, lang = 'text') => {
+			const highlighter = await shiki.getHighlighter({
+				theme: 'one-dark-pro',
+				lang: ['ps1', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'python', 'js']
+			})
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }))
+			return `{@html \`${html}\` }`
+		}
+	}
 }
 
 /** @type {import('@sveltejs/kit').Config} */
