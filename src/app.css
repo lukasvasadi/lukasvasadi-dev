@@ -112,6 +112,11 @@ body {
 	font-size: 18px;
 }
 
+strong {
+	font-weight: 700;
+	font-variation-settings: 'wdth' 75, 'wght' 700;
+}
+
 img {
 	border-radius: var(--radius-3);
 }
