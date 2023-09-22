@@ -24,7 +24,29 @@ published: true
 
 ## <a id="introduction">Introduction</a>
 
-This guide assumes that git has been installed on the local machine. For simplicity, it is also assumed that the user has Git Bash—especially for Windows—or a standard bash/zsh console with access to the git command line tools, along with a GitHub account.
+Git is a command line tool created by Linux Torvalds—the creator of Linux—for managing code repositories, specifically versioning and collaboration. It allows developers to track changes to source code, rollback to previous commits, and isolate feature development in sandboxed branches. Modern codebase remote storage platforms, e.g., GitHub, use Git to enable international collaboration.
+
+### Prerequisites
+
+Install Git on the local machine with one of the follow platform-specific commands:
+
+#### Windows
+
+```ps1
+choco install git
+```
+
+#### macOS
+
+```zsh
+brew install git
+```
+
+#### Linux
+
+```bash
+sudo apt install git
+```
 
 ## <a id="authentication">Authentication</a>
 

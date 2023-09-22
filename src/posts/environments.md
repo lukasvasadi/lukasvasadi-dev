@@ -1,5 +1,5 @@
 ---
-title: Building a developer environment
+title: Building a developer environment for Python and Node.JS
 description: Create a clean development environment for high productivity
 date: '2022-9-20'
 image: /images/npm-keyboard.jpg
@@ -28,7 +28,11 @@ published: true
 
 This tutorial covers the installation process for Python and Node.js using system package managers, i.e., Chocolatey for Windows, Homebrew for macOS, and the Advanced Package Tool (APT) for Debian flavors of Linux. It also covers how to create and manage virtual environments for Python.
 
-### What is a virtual environment?
+### What is Python?
+
+[Python](https://www.python.org/) is an open-source, high-level, dynamically-typed, general-purpose programming language that is particularly suited for data science and machine learning. However, because of its human-readable syntax, Python has become one of the most popular programming languages in the world, frequently used in back-end web development, networking, automation, and even embedded systems. In September 2023, [Mojo](https://www.modular.com/mojo) was released as a "superset" of Python that uses a "just-in-time" (JIT) compiler to optimize Python source code for parallelization in the CPU and GPU, giving Python more dominance in artificial intelligence.
+
+### What is a Python virtual environment?
 
 If not specified, the package installer for Python (`pip`) will place all external modules inside the `site-packages/` directory of the base Python installation. This can become problematic for the following reasons:
 
@@ -37,6 +41,10 @@ If not specified, the package installer for Python (`pip`) will place all extern
 2. **Dependency conflicts:** Different projects may require different versions of the same package. If all packages are centralized, then certain projects may break unexpectedly.
 
 Virtual environments sidestep these issues by creating sandboxed directories that store all packages for individual projects. These directories also contain aliases (Unix) or shortcuts (Windows) to the relevant Python binaries so that the project can be run with a specific Python version. By activating a virtual environment, you tell the system to point to this directory whenever running the Python executable.
+
+### What is Node.js?
+
+[Node.js](https://nodejs.org/en) is an open-source JavaScript runtime (server environment) that allows developers to create full stack web, desktop, and mobile apps with one language. (Prior to Node.js, JavaScript could only be run in the browser.) It uses the V8 JavaScript engine—developed by Google for its Chrome browser—to function as a scripting language similar to Python. One of its most popular use cases is as the back-end of the Electron framework, which packages web applications into standalone desktop apps, e.g., Visual Studio Code, Slack, WhatsApp.
 
 ## <a id="windows">Windows</a>
 
@@ -209,14 +217,6 @@ Confirm Node.js activation:
 node --version
 ```
 
-### Git
-
-Git is a toolchain used for version control of code repositories. To install git:
-
-```ps1
-choco install git
-```
-
 ## <a id="macos">macOS</a>
 
 ### Homebrew
@@ -379,14 +379,6 @@ Confirm Node installation:
 node --version
 ```
 
-### Git
-
-Git is a toolchain used for version control of code repositories. To install git:
-
-```zsh
-brew install git
-```
-
 ## <a id="linux">Linux</a>
 
 <Tag msg='This tutorial only covers Debian flavors of Linux, e.g., Ubuntu, Pop_OS!.' />
@@ -494,12 +486,4 @@ Confirm successful Node installation:
 
 ```zsh
 node --version
-```
-
-### Git
-
-Git is a toolchain used for version control of code repositories. To install git:
-
-```zsh
-sudo apt install git
 ```
