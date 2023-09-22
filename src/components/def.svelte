@@ -6,8 +6,8 @@
 
 <dl>
 	{#each array as item}
-		<dt><code>{item.command}</code></dt>
-		<dd>{item.description}</dd>
+		<dt><code>{item.cmd}</code></dt>
+		<dd>{item.desc}</dd>
 	{/each}
 </dl>
 
@@ -17,7 +17,7 @@
 		grid-template-columns: max-content auto;
 		column-gap: 2rem;
 		row-gap: 1rem;
-		margin-top: 2rem;
+		margin-top: 1rem;
 	}
 
 	dl dt {

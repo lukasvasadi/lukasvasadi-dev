@@ -10,6 +10,6 @@ export type Post = {
 }
 
 export type CommandList = {
-	command: string
-	description: string
+	cmd: string
+	desc: string
 }
