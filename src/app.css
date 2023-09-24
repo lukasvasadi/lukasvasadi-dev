@@ -132,7 +132,8 @@ li {
 }
 
 p code,
-dl code {
+dl code,
+li code {
 	background: var(--inline-code-background);
 	padding: 0.1rem 0.4rem;
 }
