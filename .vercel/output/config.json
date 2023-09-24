@@ -46,6 +46,17 @@
 			}
 		},
 		{
+			"src": "/linux",
+			"dest": "/linux/"
+		},
+		{
+			"src": "/linux/",
+			"status": 308,
+			"headers": {
+				"Location": "/linux"
+			}
+		},
+		{
 			"src": "/_app/immutable/.+",
 			"headers": {
 				"cache-control": "public, immutable, max-age=31536000"
@@ -74,6 +85,9 @@
 		},
 		"environments.html": {
 			"path": "environments"
+		},
+		"linux.html": {
+			"path": "linux"
 		}
 	}
 }
