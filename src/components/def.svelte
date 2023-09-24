@@ -7,7 +7,7 @@
 <dl>
 	{#each array as item}
 		<dt><code>{item.cmd}</code></dt>
-		<dd>{item.desc}</dd>
+		<dd>{@html item.desc}</dd>
 	{/each}
 </dl>
 
