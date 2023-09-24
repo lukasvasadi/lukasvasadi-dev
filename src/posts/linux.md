@@ -5,7 +5,7 @@ date: '2021-10-20'
 image: /images/macbook-code.jpg
 categories:
     - Linux
-published: false
+published: true
 ---
 
 ![Linux Debian command line](/images/linux-debian.jpg)
@@ -14,16 +14,16 @@ published: false
     import Def from "../components/def.svelte"
 
     const basicCommands = [
-        {command: "cat", description: "Type out a file (or combine files)"},
-        {command: "head", description: "Show first few lines of file"},
-        {command: "tail", description: "show last few lines of file"},
-        {command: "less", description: "View contents of larger files with scroll-back"},
-        {command: "man", description: "View documentation"},
-        {command: "sudo", description: "Grant admin privileges"},
-        {command: "|", description: "Pipe data between programs"},
-        {command: "ssh", description: "Secure shell remote machine"},
-        {command: "pwd", description: "Print working directory"},
-        {command: "cd", description: "Change directory"},
+        {cmd: "cat", desc: "Type out a file (or combine files)"},
+        {cmd: "head", desc: "Show first few lines of file"},
+        {cmd: "tail", desc: "show last few lines of file"},
+        {cmd: "less", desc: "View contents of larger files with scroll-back"},
+        {cmd: "man", desc: "View documentation"},
+        {cmd: "sudo", desc: "Grant admin privileges"},
+        {cmd: "|", desc: "Pipe data between programs"},
+        {cmd: "ssh", desc: "Secure shell remote machine"},
+        {cmd: "pwd", desc: "Print working directory"},
+        {cmd: "cd", desc: "Change directory"},
     ]
 
     const wildCards = [
@@ -49,6 +49,55 @@ published: false
         {cmd: "w", desc: "Ignore whitespace"},
         {cmd: "q", desc: "State whether files are different without providing context"},
     ]
+
+    const viCommands = [
+        {cmd: "vi file", desc: "Open file in editor"},
+        {cmd: "vi -r file", desc: "Open file in recovery mode after system crash"},
+        {cmd: ":r file2", desc: "Read in a second file and insert at current position"},
+        {cmd: ":w", desc: "Write to file"},
+        {cmd: ":w file", desc: "Write out to a new file"},
+        {cmd: ":w! file2", desc: "Overwrite file2"},
+        {cmd: ":wq", desc: "Write to file and exit"},
+        {cmd: ":q", desc: "Quit"},
+        {cmd: ":q!", desc: "Quit even with unsaved modifications"},
+    ]
+
+    const emacsCommands = [
+        {cmd: "emacs file", desc: "Open file in editor"},
+        {cmd: "CTRL+x i", desc: "Insert at current position in file"},
+        {cmd: "CTRL+x s", desc: "Save all files"},
+        {cmd: "CTRL+x CTRL+w", desc: "Write to file and rename"},
+        {cmd: "CTRL+x CTRL+s", desc: "Save current file"},
+        {cmd: "CTRL+x CTRL+c", desc: "Exit after prompted to save any modified files"},
+    ]
+
+    const envVariables = [
+        {cmd: "$HOME", desc: "Points to user home directory"},
+        {cmd: "$PATH", desc: "Points to ordered list of paths (separated by <code>:</code>) that is scanned to find programs/scripts"},
+        {cmd: "$SHELL", desc: "Points to default command shell (usually)"},
+    ]
+
+    const consoleShortcuts = [
+        {cmd: "CTRL+L", desc: "Clear terminal window"},
+        {cmd: "CTRL+D", desc: "Exit current shell"},
+        {cmd: "CTRL+Z", desc: "Suspend current process in background"},
+        {cmd: "CTRL+C", desc: "Kill current process"},
+        {cmd: "CTRL+H", desc: "Backspace"},
+        {cmd: "CTRL+A", desc: "Go to beginning of line"},
+        {cmd: "CTRL+W", desc: "Delete word before cursor"},
+        {cmd: "CTRL+U", desc: "Delete line up to cursor position"},
+        {cmd: "CTRL+E", desc: "Go to end of line"},
+        {cmd: "Tab", desc: "Autocomplete"},
+    ]
+
+    const networkingTools = [
+        {cmd: "ethtool", desc: "Queries network interfaces"},
+        {cmd: "netstat", desc: "Displays all active network connections and routing tables"},
+        {cmd: "nmap", desc: "Scans open ports—critical for security analysis"},
+        {cmd: "tcpdump", desc: "Dumps network traffic"},
+        {cmd: "mtr", desc: "Displays same information as <code>ping</code> and <code>traceroute</code> in continuous output"},
+        {cmd: "dig", desc: "Tests DNS workings"},
+    ]
 </script>
 
 ## Contents
@@ -67,11 +116,12 @@ published: false
 -   [User environment](#user-environment)
 -   [Manipulating text](#manipulating-text)
 -   [Network operations](#networking-operations)
--   [Credits](#credits)
 
 ## <a id="introduction">Introduction</a>
 
 Linux was created by Linus Torvalds in 1991 as a free alternative to Unix. Though similar, Linux is technically a Unix clone, not a direct descendant like macOS. For this reason, many of the same commands can be used interchangably on Mac and Linux systems.
+
+All material was based on [Introduction to Linux](https://www.edx.org/course/introduction-to-linux), a course from the Linux Foundation hosted on edX. This course covers each topic with greater detail and also includes tutorials on bash shell scripting.
 
 ## <a id="basic-utilities">Basic utilities</a>
 
@@ -462,10 +512,396 @@ gunzip foo
 
 ## <a id="text-editors">Text editors</a>
 
-## <a id="user-environment">User environment</a>
+There are several ways to create and edit text files from the command line:
+
+```bash
+# write several lines to a text file
+echo line one > filename
+# note that >> appends output to file
+echo line two >> filename
+echo line three >> filename
+# alternatively use cat with redirection
+cat << EOF> file
+```
+
+For more flexible text editing, Linux distros offer several terminal-based and graphical editors, including **nano**, **gedit**, **vi**, and **emacs**. The nano and gedit editors can be invoked with the `nano` and `gedit` commands, respectively.
+
+In most modern GNOME distros, vi is accessible with **vim**, which stands for **V**i **IM**proved. Though vi has a steep learning curve for new users, it is significantly more powerful than nano and gedit. Invoking `vimtutor` from the command line will launch a vim tutorial.
+
+Vi has three different modes:
+
+1. **command:** Default mode where each key is an editor command
+2. **insert:** Insert text into file (invoked with `i`)
+3. **line:** Each key is an external command invoked with `:`
+
+Some of the most useful commands for vi include:
+
+<Def array={viCommands} />
+
+When using vi, an external command shell can be opened with `sh`. Otherwise, commands may be executed inside the editor prompt with `!`:
+
+```vim
+# find word count of current document (%)
+:! wc %
+```
+
+The emacs editor is a popular alternative to vi that executes commands using the CTRL and ALT/ESC keys, instead of special characters. (For a full tutorial, start emacs and type CTRL+h followed by the letter t.) Some of the most common command key combinations include:
+
+<Def array={emacsCommands} />
 
 ## <a id="manipulating-text">Manipulating text</a>
 
+The `cat` utility is used to concatenate files as well as print file contents to the terminal:
+
+```bash
+# print file contents
+cat filename
+# concatenate multiple files and display the output
+cat file1 file2
+# combine multiple files in a new file
+cat file1 file2 > file3
+# append contents of one file to another
+cat file1 > file2
+# write subsequent lines typed into console to file until CTRL+D
+cat > filename
+# append file with subsequent lines until CTRL+D
+cat >> filename
+# print file contents in reverse order
+tac filename
+# combine two files in reverse order and save the output
+tac file1 file2 > file
+```
+
+These same operations can be accomplished with `echo`, which is a utility that simply prints (echoes) strings in the terminal:
+
+```bash
+# print string to terminal
+echo string
+# save string to file
+echo string > filename
+# append string to existing file
+echo string >> filename
+# print the contents of an environment variable
+cat $variable
+```
+
+System administrators often work with large files, especially in industrial settings. In these cases, opening such a file in a graphical text editor would require the machine to load the entire data into memory, leading to poor performance. Alternatively, the `less` command may be used to load pages at a time into the terminal window.
+
+```bash
+# view one page of a file in the console
+less filename
+cat filename | less
+```
+
+As mentioned previously, the `head` and `tail` utilities can be used to print a set number of lines from a file:
+
+```bash
+# view the first five lines of a file
+head -n 5 filename
+head -5 filename
+# view the last 15 lines of a file
+tail -n 15 filename
+tail -15 filename
+# continually monitor new output in a growing file
+tail -f filename
+```
+
+Compressed files have special versions of these utilties that first work to decompress the data and then perform the desired operation.
+
+```bash
+# view contents of compressed file
+zcat comp-file.txt.gz
+# view one page of compressed file
+zless comp-file.txt.gz
+# search within compressed file
+zgrep -i less comp-file.gz
+# compare two compressed files
+zdiff comp-file1.gz comp-file2.gz
+```
+
+The **stream editor** tool (`sed`) is a lightweight text processing tool that moves data from an input stream to a working stream for processing and then finally to an output stream. With the 4 `-e` option, `sed` can perform multiple file operations from one line.
+
+```bash
+# substitute every occurrence of string in file
+sed -i s/string/substitution/g file
+# save output to a new file
+sed -i s/string/substitution/g file1 > file2
+```
+
+The `awk` utility, which is an acronym for the last names of its authors at Bell Labs, can extract and print specific contents of a file. Commands in `awk` must be surrounded with single-quotes (`'`).
+
+```bash
+# print out entire file
+awk '{print $0}' file
+# print first field (column) of every line
+awk -F: '{print $1}' file
+# print first and third field of every line
+awk -F: '{print $1 $3}' file
+```
+
+Other useful Linux file manipulation utilities include `sort`, `uniq`, `paste`, `join`, and `split`:
+
+```bash
+# print lines in file alphanumerically
+sort file
+# reverse the order
+sort -r file
+# remove duplicate entries from multiple files
+sort file1 file2 | uniq > file3
+# alternatively use the -u option
+sort -u file1 file2 > file3
+# combine corresponding lines from multiple files
+paste file1 file2
+# specify : as the delimiter
+paste -d: file1 file2
+# join data from different files based on a common field
+join file1 file2
+# split a large file into 1000-line segments
+split largefile
+```
+
+The `grep` utility searches files for specific patterns, which may include **regular expressions**.
+
+```bash
+# print all lines from a file that contain specific pattern
+grep [pattern] file
+# print all lines that do not match pattern
+grep -v [pattern] file
+```
+
+The `strings` utility, which extracts printable character strings from files, is often used alongside `grep` to locate human-readable information in binary files.
+
+```bash
+# search for specific string in binary file
+strings binaryfile | grep searchstring
+```
+
+The `tr` utility translates sets of characters into other characters.
+
+```bash
+# convert lowercase to uppercase
+cat file | tr a-z A-Z
+# translate white space to tabs
+echo "Testing 1 2 3" | tr [:space:] '\t'
+# delete specified characters
+echo "Tigers and toucans" | tr -d 't'
+```
+
+The `tee` command splits the `stdout` stream to print results to the terminal and save output to a new file.
+
+```bash
+# display output for user and save to file
+ls -l | tee filename
+```
+
+The `wc` (word count) utility simply outputs the number of lines (`-l`), characters/bytes (`-c`), or words (`-w`) from a file.
+
+```bash
+# output the number of lines in file
+wc -l file
+```
+
+For columnated files, the `cut` utility can extract specific columns of data based on a designated delimeter, where the default is tab.
+
+```bash
+# print data from the third column of a file with the ',' delimeter
+cat file | cut -d',' -f3
+```
+
+## <a id="user-environment">User environment</a>
+
+As Linux is a multi-user system, administratos may be interested in knowing the current active users:
+
+```bash
+# find current user
+whoami
+# find all active users
+who
+# find more detailed information
+who -a
+```
+
+Each user will have local startup files to customize the user environment. These files supercede system settings such as changing the default text editor and path to executables. At login, Linux first evaluates `/etc/profile` and then searches for user-specific startup files in a particular order. Whichever startup file first discovered becomes the basis for the user environment.
+
+Though startup files are only evaluated once at login, Linux will read and evaluate the `~/rc` file each time a command line shell initiates or spawns a program. For this reason, many users often only concern themselves with the `~/rc` file.
+
+The `~/rc` file is also where **aliases** are defined. Aliases are fully custom or modified commands that are accessible through every shell instance. Invoking `alias` will print all existing aliases to the console.
+
+All users belonging to a system are assigned a unique integer user ID (**UID**) as well as one or more group IDs (**GID**) to denote group membership. Groups are simply collections of Linux users that share the same permissions.
+
+```bash
+# find user and group ids of current user
+id
+# find user and group ids of different user
+id johndoe
+```
+
+Linux administrators can manage user accounts directly from the command line:
+
+```bash
+# create new user account
+sudo useradd johndoe
+# create account with home directory and default shell
+sudo useradd -m -c "John Doe" -s /bin jdoe
+# start prompt to add account password
+sudo passwd jdoe
+# remove user account
+sudo userdel jdoe
+# remove user account as well as associated home directory
+sudo userdel -r jdoe
+```
+
+Groups may be managed similarly:
+
+```bash
+# create new group
+sudo groupadd newgroup
+# remove group
+sudo groupdel newgroup
+# find groups associated with user
+groups johndoe
+# associate new group with user with append (-a)
+sudo usermod -a -G newgroup johndoe
+# change gid
+sudo groupmod -g newid
+# change group name
+sudo groupmod -n newname
+```
+
+Users can gain root privileges by either switching to the root user—not recommended for security reasons—or executing individual shell commands with root privileges:
+
+```bash
+# switch shell to root user
+su
+# execute one command with root privileges
+sudo command
+```
+
+**Environment variables** are character strings that contain important configuration information for the command shell and various other applications. Various amounts of this information can be viewed with the `set`, `env`, or `export`.
+
+```bash
+# show value of variable
+echo $SHELL
+export new variable
+export VARIABLE=value
+# commit value for permanent access
+nano ~/rc
+export VARIABLE=value
+# reset shell
+source ~/rc
+```
+
+Some important variables include:
+
+<Def array={envVariables} />
+
+Previous shell commands can be cycled with the ↑ and ↓ keys or viewed as a list with the `history` command (command history stored in `~/_history`). Alternatively, the most recent command can be called with `!!` or a specific command in history may be searched with `CTRL+R` followed by character hints.
+
+```bash
+# print command history
+history
+    1  echo $HOME
+    2  echo $PATH
+    3  pwd
+    4  ls -la
+    5  history
+# call command 1
+!1
+# call command beginning with "p"
+!p
+```
+
+The following keyboard shortcuts may help speed up tasks in the console:
+
+<Def array={consoleShortcuts} />
+
+Every file in Unix-based operating systems has an owner and is associated with certain groups, all of whom have varying degrees of permissions and read/write access. These permissions can be changed manually:
+
+```bash
+# change file ownership
+chown user filename
+# change group ownership
+chgrp group filename
+# change permission modes
+chmod permissions filename
+```
+
+The chmod command can change the read (`r`), write (`w`), and execute (`x`) permissions of the user/owner (`u`), group (`g`), and others (`o`). These characters may be used explicitly as arguments or replaced with a numbering system where read, write, and execute permissions are represented as `4`, `2`, and `1`, respectively. The summation of these numbers represents a combination of the various permissions.
+
+```bash
+# grant user and group rw permissions, and others read permission
+chmod u=rw,g=rw,o=r filename
+# add owner execute permission and remove group write permission
+chmod u+x,g-w filename
+# give owner rwx permissions, group rx permissions, and others r permission
+chmod 754 filename
+```
+
 ## <a id="networking-operations">Networking operations</a>
 
-## <a id="credits">Credits</a>
+A network is a grouping of computers that share information and resources across communication channels. Each device connected to the network must have at least one unique identifier known as the **IP** (Internet Protocol) address, which is used to route packets information through the network. In addition to the actual data content, these packets contain headers that inform each subsequent machine of its sender, destination, and sequence in the data stream.
+
+Currently, there are two IP address standards, **IPv4** and **IPv6**, which assign 32-bit and 128-bit addresses, respectively. Though IPv6 is the newer standard, its adoption has been slow because migrating a collection of machines often requires significant effort. Furthermore, **NAT** (Network Address Translation) and similar protocols allow users to share a common IP address across locally networked computers. Internally, it appears as though each machine has a unique address, but externally the local network is presented a node with one unique address.
+
+IPv4 (32-bit) addresses are subdivided into four octets (8-bit segments or bytes). These address are categorized into one of several classes, where class A, B, and C have octets that are either designated as **Net ID** or **Host ID**. This allows for various numbers of unique networks or host machines, which often depends on the needs of the organization.
+
+IP addresses can either be assigned manually (static address) or dynamically through the Dynamic Host Configuration Protocol (**DHCP**). Dynamically-assigned addresses may change every time the machine is rebooted, or even more frequently in some cases.
+
+**Name Resolution** converts IP addresses into the corresponding human-readable hostnames. The hostname of the local machine can be found with the `hostname` command, which may even be used to change the system hostname given admin privileges. There is also a special hostname called **localhost**, which refers to the current machine and always has the address `127.0.0.1`.
+
+**Network configuration files** are essential for establishing functional interfaces. For Ubuntu-based systems, these files are stored located `/etc/network`. Note that each machine can have one or more operational network interfaces, which may be manually activated or deactivated.
+
+Within a network, packets of data are passed between various nodes via a series of routers, which potentially span multiple networks. Servers store the routing tables that contain the addresses of each node on the network.
+
+```bash
+# view IP address
+ip addr show
+# keep it brief
+ip --brief addr show
+# view routing information
+ip route show
+# add static route
+ip route add
+# delete static route
+ip route del
+# check status of remote host
+ping hostname
+```
+
+For troubleshooting errors and delays, administrators can inspect the routing path of data packets—and thereby isolate connection issues between hops—with the `traceroute` utility.
+
+```bash
+# view route of information packet to host
+traceroute hostname
+# alternatively...
+traceroute address
+```
+
+Other common networking tools include:
+
+<Def array={networkingTools} />
+
+Downloading files from a network, such as an internet webpage, can be accomplished with `wget`. This tool supports large file downloads, recursive downloads, password-sensitive downloads, and large-file downloads.
+
+```bash
+# download webpage
+wget url
+```
+
+A similar tool, `curl`, allows administrators to view webpage contents in the terminal or save the information to a document.
+
+```bash
+# read webpage contents
+curl url
+# store contents to file
+curl -o file.html url
+```
+
+The File Transfer Protocol (**FTP**) is one of the oldest standards for transferring data files between networked machines. These transfers may be conducted through a browser or graphical/command line client, such as `ftp`, `sftp`. However, FTP is considered obsolete by many system administrators as the protocol, which dates back to the 1970's, has inherent security flaws, e.g., user passwords are transmitted across the network without encryption. A more common modern tool is the Secure Shell (`SSH`) protocol, which allows administrators to share data between networked machines and execute commands on a remote system.
+
+```bash
+# execute command on remote system
+ssh remotesystem command
+# securely transfer files via SSH
+scp localfile user@remotesystem:/home/user/
+```
