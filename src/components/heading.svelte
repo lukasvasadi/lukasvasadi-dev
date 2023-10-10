@@ -1,8 +1,7 @@
 <script>
-	export let str = ""
+	export let str = ''
 </script>
 
 <h2>
-    <a id={str.replace(/\s+/g, '-').toLowerCase()}>{str}</a>
+	<a id={str.replace(/\s+/g, '-').toLowerCase()}>{str}</a>
 </h2>
-
