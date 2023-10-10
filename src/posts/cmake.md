@@ -1,7 +1,7 @@
 ---
 title: Building C/C++ projects with CMake
 description: Leverage CMake to automate the source code build process
-date: '2023-09-30'
+date: '2023-08-15'
 image: /images/macbook-code.jpg
 categories:
     - CMake

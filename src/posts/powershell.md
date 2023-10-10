@@ -6,7 +6,7 @@ image: /images/windows-surface-laptop.jpg
 categories:
     - PowerShell
     - Windows
-published: true
+published: false
 ---
 
 ![Windows surface laptop](/images/windows-surface-laptop.jpg)

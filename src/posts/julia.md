@@ -5,7 +5,7 @@ date: '2023-10-10'
 image: https://upload.wikimedia.org/wikipedia/commons/d/db/Julia1.1.1.jpg
 categories:
     - JuliaLang
-published: true
+published: false
 ---
 
 ![Julia REPL](https://upload.wikimedia.org/wikipedia/commons/d/db/Julia1.1.1.jpg)

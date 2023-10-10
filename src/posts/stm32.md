@@ -19,8 +19,8 @@ published: true
 
     const eq = "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}"
 
-    const eq1 = "f_T=\\frac{f_{CLK}}{(PSC+1)(ARR+1)}"
-    const eq2 = "f_O=\\frac{f_t}{n}"
+    const eq1 = "f_t=\\frac{f_{clk}}{(PSC+1)(ARR+1)}"
+    const eq2 = "f_o=\\frac{f_t}{n}"
 </script>
 
 ![STM32 Nucleo board](/images/stm32.jpg)
@@ -29,12 +29,15 @@ published: true
 
 -   [Introduction](#introduction)
 -   [Setup](#setup)
+-   [Blink](#blink)
 -   [Interrupts](#interrupts)
 -   [DAC waveform generator](#dac-waveform-generator)
 
 <Heading str="Introduction" />
 
 This guide details environment setup for programming [STM32](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) microcontrollers (MCUs). It also covers general low-level functionality, such as configuring IO-based interrupts. The ST website provides a listing of various MCUs for special use cases, e.g., "High Performance," "Ultra Low Power." However, if you are unsure about the specific project requirements, simply choose an option from the "Mainstream MCUs."
+
+<Tag msg='All tutorials in this guide refer to the STM32 <a href="https://www.st.com/en/evaluation-tools/nucleo-g431rb.html">Nucleo-G431RB</a> development board.' />
 
 ### Why use STM32?
 
@@ -53,41 +56,68 @@ However, while greater abstraction has certainly made STM32 development approach
 This setup is suitable for Windows, Linux, and macOS. The main requirements are as follows:
 
 -   **STM32CubeMX** Graphical tool for configuring STM32 microcontrollers
--   **ST-LINK** Software utility for flashing STM32 chips over USB
 -   **GNU ARM toolchain** Cross-platform toolchain for compiling C/C++ source
 -   **OpenOCD** Open-source debugger software for microcontrollers
+<!-- -   **ST-LINK** Software utility for flashing STM32 chips over USB -->
+-   **CLion** JetBrains IDE for C/C++ development (optional)
 
 ### STM32CubeMX
 
-[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) is a graphical tool that guides the user through a standard project setup procedure. First, the user selects the chipset or board, e.g., the Nucleo-G431KB, and presses "Start Project" in the upper right-hand corner.
+[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) is a graphical tool that guides the user through standard project setup. Download and run the platform-specific installer from the product web page, but note that macOS may require additional permissions. If you have trouble, refer to the `Readme.html` document that ships with the software.
 
-![STM32CubeMX IDE window](/images/stm32cubemx_board_selector.png)
+To configure a project, first select the chipset or board, e.g., the Nucleo-G431RB, and press "Start Project" in the upper right-hand corner, where you will be directed to a graphical representation of the MCU pinout.
 
-Next, the user is directed to a graphical representation of the MCU pinout, where green highlighting indicates that the pin has an assigned function, e.g., USART, GPIO. When a function is assigned, the user can modify its behavior through various options in the left-hand pane. For example, the USART2 pins have a global interrupt that can be enabled to allow the program to interrupt the main thread and read serial input as needed.
+![STM32CubeMX IDE window](/images/stm32cubemx_board_selector_g431rb.png)
 
-![STM32CubeMX IDE window](/images/stm32cubemx_pin_config.png)
+In MCU pinout, green highlighting indicates that the pin has an assigned function, e.g., USART, GPIO. When a function is assigned, the user can modify its behavior through various options in the left-hand pane. As shown below, by default, pin PA5 is connected to the onboard green LED (LD2).
+
+![STM32CubeMX IDE window](/images/stm32cubemx_board_selector_g431rb_pin_config.png)
 
 ### GNU Arm embedded toolchain
 
-On Windows machines, the GNU embedded toolchain for Arm microcontrollers can be installed via the executable from [armDeveloper](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Alternatively, install via Chocolatey:
+#### Windows
+
+The GNU embedded toolchain for Arm microcontrollers can be installed via the executable from [armDeveloper](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads). Alternatively, install via Chocolatey:
 
 ```ps1
 choco install gcc-arm-embedded
 ```
 
-Linux users (Debian distros) can install the toolchain directly with the Advanced Package Tool, along with the GNU debugger:
+#### Linux
 
 ```bash
 sudo apt install gcc-arm-none-eabi gdb-multiarch
 ```
 
-And macOS developers can install via Homebrew:
+#### macOS
 
 ```zsh
 brew install --cask gcc-arm-embedded
 ```
 
-### ST-LINK utility
+### OpenOCD
+
+The Open On-Chip Debugger (OpenOCD) is an open-source software package for programming and debugging specific embedded hardware systems. It may be used to configure JetBrains CLion (see below) for STM32 development.
+
+#### Windows
+
+```ps1
+choco install openocd
+```
+
+#### Linux
+
+```bash
+sudo apt install openocd
+```
+
+#### macOS
+
+```zsh
+brew install openocd
+```
+
+<!-- ### ST-LINK utility
 
 ST-LINK is a software interface for programming STM32 microcontrollers. It allows developers to read and write programs and flash the microcontroller with a full-featured GUI or CLI.
 
@@ -103,13 +133,32 @@ For macOS:
 
 ```zsh
 brew install stlink
-```
+``` -->
 
 ### JetBrains CLion IDE
 
 ST provides an Eclipse-based IDE ([STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)) for its microcontrollers and development boards. This IDE integrates with the STM32CubeMX graphical tool for initializing MCU pin configurations. Although the ST-supported IDE has many platform-specific features, I prefer JetBrains CLion for its stronger C/C++ language support and cleaner UI. In addition, the JetBrains developers created seemless integration with STM32CubeMX. You can download the software with a free 30-day trial from [jetbrains.com/clion](https://www.jetbrains.com/clion/).
 
 A complete guide to configuring CLion for STM32 can be found at [STM32CubeMX projects](https://www.jetbrains.com/help/clion/embedded-development.html). Once you have installed the compiler toolchain and dependencies, and configured the IDE, you are ready to begin development!
+
+<Heading str="Blink" />
+
+With the default pin configuration, we have access to the onboard green LED (LD2) via GPIO PA5. To blink the LED, we need to modify the `Core/Src/main.c` file, specifically calling the pin toggle function in the infinite loop:
+
+```c
+/* Infinite loop */
+/* USER CODE BEGIN WHILE */
+while (1) {
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+    HAL_Delay(2000);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+}
+/* USER CODE END 3 */
+```
+
+In the above code sample, the "HAL" function prefix is an acronym for "Hardware Abstraction Layer," which is a large ST library of convenience functions for controlling peripherals.
 
 <Heading str="Interrupts" />
 
