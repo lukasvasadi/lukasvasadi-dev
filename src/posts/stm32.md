@@ -7,12 +7,20 @@ categories:
     - STM32
     - Microcontrollers
     - Interrupts
-    - Serial communication
+    - Serial
+    - DAC
 published: true
 ---
 
 <script>
     import Tag from "../components/tag.svelte"
+    import Heading from "../components/heading.svelte"
+    import Expression from "../components/expression.svelte"
+
+    const eq = "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}"
+
+    const eq1 = "f_T=\\frac{f_{CLK}}{(PSC+1)(ARR+1)}"
+    const eq2 = "f_O=\\frac{f_t}{n}"
 </script>
 
 ![STM32 Nucleo board](/images/stm32.jpg)
@@ -22,8 +30,9 @@ published: true
 -   [Introduction](#introduction)
 -   [Setup](#setup)
 -   [Interrupts](#interrupts)
+-   [DAC waveform generator](#dac-waveform-generator)
 
-## <a id="introduction">Introduction</a>
+<Heading str="Introduction" />
 
 This guide details environment setup for programming [STM32](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) microcontrollers (MCUs). It also covers general low-level functionality, such as configuring IO-based interrupts. The ST website provides a listing of various MCUs for special use cases, e.g., "High Performance," "Ultra Low Power." However, if you are unsure about the specific project requirements, simply choose an option from the "Mainstream MCUs."
 
@@ -39,7 +48,7 @@ However, while greater abstraction has certainly made STM32 development approach
 
 <Tag msg='Even though the STM32 platform requires a deeper understanding of hardware development, I have found that programming more advanced features, such as interrupts, is easier than Arduino.' />
 
-## <a id="setup">Setup</a>
+<Heading str="Setup" />
 
 This setup is suitable for Windows, Linux, and macOS. The main requirements are as follows:
 
@@ -50,7 +59,7 @@ This setup is suitable for Windows, Linux, and macOS. The main requirements are 
 
 ### STM32CubeMX
 
-STM32CubeMX is a graphical tool that guides the user through a standard project setup procedure. First, the user selects the chipset or board, e.g., the Nucleo-G431KB, and presses "Start Project" in the upper right-hand corner.
+[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) is a graphical tool that guides the user through a standard project setup procedure. First, the user selects the chipset or board, e.g., the Nucleo-G431KB, and presses "Start Project" in the upper right-hand corner.
 
 ![STM32CubeMX IDE window](/images/stm32cubemx_board_selector.png)
 
@@ -102,7 +111,7 @@ ST provides an Eclipse-based IDE ([STM32CubeIDE](https://www.st.com/en/developme
 
 A complete guide to configuring CLion for STM32 can be found at [STM32CubeMX projects](https://www.jetbrains.com/help/clion/embedded-development.html). Once you have installed the compiler toolchain and dependencies, and configured the IDE, you are ready to begin development!
 
-## <a id="interrupts">Interrupts</a>
+<Heading str="Interrupts" />
 
 The example below shows the source code for interrupting the main thread based on incoming serial data. This data is then used to determine the toggle state of two GPIO pins.
 
@@ -144,3 +153,46 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     }
 }
 ```
+
+<Heading str="DAC Waveform Generator" />
+
+In this section, we will configure the microcontroller digital-to-analog converter (DAC) peripheral to output an analog waveform based on a lookup table stored in direct memory access (DMA). Reading the voltage level from DMA to the DAC output register (DOC) completely sidesteps the CPU, preventing MCU throttling and improving speed.
+
+The lookup table contains an array of unsigned integers corresponding to the voltage levels at each point in a waveform cycle (0, 2π). The length of the array corresponds to the signal resolution. The waveform frequency will depend on the MCU timer signal, which drives the transfer of data points from DMA to DOC. The DMA must be configured to operate in "circular mode" to produce a continuous output signal.
+
+In this example, we will generate the data points in the CPU at startup; however, you may also generate the lookup table beforehand and add the data directly.
+
+### Calculating the lookup table
+
+Below is a source code snippet that can be integrated into the MCU startup routine. It calculates an output voltage level, <Expression expr="V" mode="inline" />, based on the number of samples, <Expression expr="N" mode="inline" />, and DAC resolution, <Expression expr="R" mode="inline" />.
+
+```c
+#include <stdint.h>
+#include <math.h>
+#include <stdio.h>
+
+int main()
+{
+    const uint8_t N = 128;  // Number of sample points
+    const uint8_t R = 12; // DAC resolution
+
+    float step = (2 * M_PI) / (N - 1);
+
+    float T[n];
+    float V[n];
+
+    for (uint8_t i = 0; i < N; i++)
+    {
+        T[i] = i * step;
+        V[i] = (sin(T[i]) + 1) * (pow(2, R) - 1);
+        printf("%.6f\n", round(V[i]));
+    }
+
+    return 0;
+}
+```
+
+### Calculating frequency
+
+<Expression expr={eq1}/>
+<Expression expr={eq2}/>

@@ -1,5 +1,5 @@
 ---
-title: Managing Python and Node.JS installations
+title: Building Python and Node.JS environments
 description: Create a clean development environment for high productivity
 date: '2022-9-20'
 image: /images/npm-keyboard.jpg
