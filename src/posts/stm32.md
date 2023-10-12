@@ -2,7 +2,7 @@
 title: Programming STM32 MCUs
 description: Configure a development environment with CLion and learn basic MCU functions
 date: '2023-8-31'
-image: /images/stm32.jpg
+image: /images/stm32/low-res/stm32.jpg
 categories:
     - STM32
     - Microcontrollers
@@ -23,21 +23,21 @@ published: true
     const eq2 = "f_o=\\frac{f_t}{n}"
 </script>
 
-![STM32 Nucleo board](/images/stm32.jpg)
+![STM32 Nucleo board](/images/stm32/low-res/stm32.jpg)
 
 ## Contents
 
 -   [Introduction](#introduction)
 -   [Setup](#setup)
 -   [Blink](#blink)
--   [Interrupts](#interrupts)
--   [DAC waveform generator](#dac-waveform-generator)
+-   [Serial communication with interrupts](#serial-communication-with-interrupts)
+-   [Analog waveform generator](#analog-waveform-generator)
 
 <Heading str="Introduction" />
 
-This guide details environment setup for programming [STM32](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) microcontrollers (MCUs). It also covers general low-level functionality, such as configuring IO-based interrupts. The ST website provides a listing of various MCUs for special use cases, e.g., "High Performance," "Ultra Low Power." However, if you are unsure about the specific project requirements, simply choose an option from the "Mainstream MCUs."
+This guide details environment setup for programming [STM32](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) microcontrollers (MCUs) and reviews general low-level functionality, such as configuring GPIO pins, peripherals, and interrupts. The ST website provides a listing of MCUs based on use case, e.g., "High Performance," "Ultra Low Power." However, if unsure about the specific project requirements, simply choose an option from the "Mainstream MCUs."
 
-<Tag msg='All tutorials in this guide refer to the STM32 <a href="https://www.st.com/en/evaluation-tools/nucleo-g431rb.html">Nucleo-G431RB</a> development board.' />
+<Tag msg='All tutorials in this guide refer to the STM32 <a href="https://www.st.com/en/evaluation-tools/nucleo-g431rb.html">Nucleo-G431RB</a> development board. We will also use the JetBrains CLion IDE instead of the STM32CubeIDE for all development. Source code for the tutorials may be found at <a href="https://github.com/lukasvasadi/stm32-tutorial-source">github.com/lukasvasadi/stm32-tutorial-source</a>.' />
 
 ### Why use STM32?
 
@@ -67,11 +67,13 @@ This setup is suitable for Windows, Linux, and macOS. The main requirements are 
 
 To configure a project, first select the chipset or board, e.g., the Nucleo-G431RB, and press "Start Project" in the upper right-hand corner, where you will be directed to a graphical representation of the MCU pinout.
 
-![STM32CubeMX IDE window](/images/stm32cubemx_board_selector_g431rb.png)
+![STM32CubeMX board selector window](/images/stm32/low-res/stm32cubemx_board_selector.png)
 
 In MCU pinout, green highlighting indicates that the pin has an assigned function, e.g., USART, GPIO. When a function is assigned, the user can modify its behavior through various options in the left-hand pane. As shown below, by default, pin PA5 is connected to the onboard green LED (LD2).
 
-![STM32CubeMX IDE window](/images/stm32cubemx_board_selector_g431rb_pin_config.png)
+![STM32CubeMX pin configuration window](/images/stm32/low-res/stm32cubemx_pinout_config.png)
+
+![STM32CubeMX project manager window](/images/stm32/low-res/stm32cubemx_project_manager.png)
 
 ### GNU Arm embedded toolchain
 
@@ -160,7 +162,13 @@ while (1) {
 
 In the above code sample, the "HAL" function prefix is an acronym for "Hardware Abstraction Layer," which is a large ST library of convenience functions for controlling peripherals.
 
-<Heading str="Interrupts" />
+<Heading str="Serial communication with interrupts" />
+
+In this section, we will configure the Nucleo-G431RB for serial communication with interrupts. In the infinite loop, the MCU will continue running the blink routine from the example above, but upon receiving serial input, the processor will stop execution on the main thread and run a dedicated event handler function.
+
+To begin, we have to contigure the pinout for **USART1**, which stands for "Universal Synchronous Asynchronous Receiver Transmitter."
+
+![STM32CubeMX serial interrupt configuration](/images/stm32/low-res/stm32cubemx_serial_interrupt_config.png)
 
 The example below shows the source code for interrupting the main thread based on incoming serial data. This data is then used to determine the toggle state of two GPIO pins.
 
@@ -203,7 +211,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 }
 ```
 
-<Heading str="DAC Waveform Generator" />
+<Heading str="Analog waveform generator" />
 
 In this section, we will configure the microcontroller digital-to-analog converter (DAC) peripheral to output an analog waveform based on a lookup table stored in direct memory access (DMA). Reading the voltage level from DMA to the DAC output register (DOC) completely sidesteps the CPU, preventing MCU throttling and improving speed.
 
@@ -225,7 +233,7 @@ int main()
     const uint8_t N = 128;  // Number of sample points
     const uint8_t R = 12; // DAC resolution
 
-    float step = (2 * M_PI) / (N - 1);
+    const float step = (2 * M_PI) / (N - 1);
 
     float T[n];
     float V[n];

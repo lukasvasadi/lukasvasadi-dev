@@ -13,6 +13,7 @@ published: true
 
 <script>
   import Tag from '../components/tag.svelte'
+  import Heading from "../components/heading.svelte"
 </script>
 
 ![MacBook with npm sticker and mechanical keyboard](/images/npm-keyboard.jpg)
@@ -24,7 +25,7 @@ published: true
 -   [macOS](#macos)
 -   [Linux](#linux)
 
-## <a id="introduction">Introduction</a>
+<Heading str="Introduction" />
 
 This tutorial covers the installation process for Python and Node.js using system package managers, i.e., Chocolatey for Windows, Homebrew for macOS, and the Advanced Package Tool (APT) for Debian flavors of Linux. It also covers how to create and manage virtual environments for Python.
 
@@ -46,7 +47,7 @@ Virtual environments sidestep these issues by creating sandboxed directories tha
 
 [Node.js](https://nodejs.org/en) is an open-source JavaScript runtime (server environment) that allows developers to create full stack web, desktop, and mobile apps with one language. (Prior to Node.js, JavaScript could only be run in the browser.) It uses the V8 JavaScript engine—developed by Google for its Chrome browser—to function as a scripting language similar to Python. One of its most popular use cases is as the back-end of the Electron framework, which packages web applications into standalone desktop apps, e.g., Visual Studio Code, Slack, WhatsApp.
 
-## <a id="windows">Windows</a>
+<Heading str="Windows" />
 
 <Tag msg='The following commands require PowerShell, which has more advanced functionality than the command prompt. Further, to run installation scripts in Windows, you must use a shell with administrator privileges. Search for "PowerShell" in the Windows search box, right-click the application, and select "Run as administrator."' />
 
@@ -217,7 +218,7 @@ Confirm Node.js activation:
 node --version
 ```
 
-## <a id="macos">macOS</a>
+<Heading str="macOS" />
 
 ### Homebrew
 
@@ -379,7 +380,7 @@ Confirm Node installation:
 node --version
 ```
 
-## <a id="linux">Linux</a>
+<Heading str="Linux" />
 
 <Tag msg='This tutorial only covers Debian flavors of Linux, e.g., Ubuntu, Pop_OS!.' />
 

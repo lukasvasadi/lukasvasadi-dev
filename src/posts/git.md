@@ -13,6 +13,8 @@ published: true
     import Tag from "../components/tag.svelte"
 </script>
 
+![Git commits graphical view](/images/git.jpg)
+
 ## Contents
 
 -   [Introduction](#introduction)
