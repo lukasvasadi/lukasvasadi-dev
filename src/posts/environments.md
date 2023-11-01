@@ -263,7 +263,22 @@ brew install pyenv
 brew install pyenv-virtualenv
 ```
 
-Refresh the environment:
+After installation, we need to add the `.pyenv` root directory to the system `$PATH` and initialize the utility on startup. To do so, open the shell environment file (`.zshrc`) with the default text editor:
+
+```zsh
+open -e ~/.zshrc
+```
+
+Append the following lines:
+
+```zsh
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+```
+
+Save and close the text file, then refresh the environment:
 
 ```zsh
 source ~/.zshrc
@@ -294,28 +309,6 @@ Set the global Python version, which will become the default Python for your she
 
 ```zsh
 pyenv global 3.11.3
-```
-
-Before running Python, we need to add the `.pyenv` root directory to the system `$PATH` and initialize the utility on shell startup. To do so, open the shell environment files with the default text editor:
-
-```zsh
-open -e ~/.zshrc
-```
-
-Append the following lines:
-
-```zsh
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-```
-
-Save and close both documents, then refresh the environment and check the `python` and `pip` executables:
-
-```zsh
-source ~/.zshrc
-which python && which pip
 ```
 
 Now you can run Python!
