@@ -8,18 +8,26 @@ categories:
 published: true
 ---
 
+<script>
+    import Tag from "../components/tag.svelte"
+    import Heading from "../components/heading.svelte"
+</script>
+
 ## Contents
 
 -   [Introduction](#introduction)
 -   [Installation](#installation)
 -   [Basics](#basics)
 -   [Libraries](#libraries)
+-   [Variables](#variables)
+-   [Options](#options)
+-   [Command line options](#command-line-options)
 
-## <a id="introduction">Introduction</a>
+<Heading str="Introduction" />
 
 CMake is an open-source, cross-platform automation tool for generating C/C++ Makefiles, which can then be used to build the source. It has become the _de facto_ build system for the developer community as well as major companies, such as Qt and ST Microelectronics.
 
-## <a id="installation">Installation
+<Heading str="Installation" />
 
 See below for platform-specific commands to install the CMake toolchain. The rest of the tutorial will use Unix-style commands, but these should be directly transferable to Windows systems. Note that each platform also requires a dedicated compiler for C/C++ applications.
 
@@ -41,7 +49,7 @@ brew install cmake llvm
 sudo apt install make cmake gcc g++ gdb
 ```
 
-## <a id="basics">Basics
+<Heading str="Basics" />
 
 CMake relies on a top-level file called `CMakeLists.txt`, which should be created in the same directory as the source. (It is good practice to separate source code and build files.) To demonstrate a CMake project, we can create a `HelloCMake` directory with a `build` subdirectory:
 
@@ -125,7 +133,7 @@ Now we can run the application from anywhere in the file system:
 hello
 ```
 
-## <a id="libraries">Libraries
+<Heading str="Libraries" />
 
 Most projects use libraries for reusable source code. Often, these libraries should be placed in a dedicated subdirectory, such as is shown below with the library named `basicmath`:
 
@@ -233,4 +241,138 @@ Optionally, you can choose to only target the library during the build routine, 
 
 ```bash
 cmake --build . --target basicmath
+```
+
+<Heading str="Variables" />
+
+In CMake, variables can be defined in the top-level `CMakeLists.txt` file and accessed in all subdirectories. By convention, variable names are written in all caps. To create a variable, use the `set` function to define its name and value, separated by a space:
+
+```cmake
+set(LIBRARY_NAME BasicMath)
+```
+
+If we add this line to the top-level CMake file, then we can reference the variable name for our library in `adder/lib/basicmath/src/CMakeLists.txt`:
+
+```cmake
+# adder/CMakeLists.txt
+cmake_minimum_required(VERSION 3.27.4)
+
+project(adder VERSION 1.0.0 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(LIBRARY_NAME BasicMath)
+
+add_subdirectory(lib)
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+target_link_libraries(adder PUBLIC BasicMath)
+```
+
+```cmake
+# adder/lib/basicmath/src/CMakeLists.txt
+add_library(${LIBRARY_NAME} STATIC adder.cpp)
+target_include_directories(${LIBRARY_NAME} PUBLIC "../include")
+```
+
+There are also common CMake variables, such as `PROJECT_NAME` and `CMAKE_CXX_STANDARD`, that have already been defined. Some other common configuration variables include:
+
+```cmake
+set(CMAKE_CXX_STANDARD_REQUIRED ON)  # Force compiler to implement stated standard
+set(CMAKE_CXX_EXTENSIONS        OFF) # Prevent non-standard language extensions
+```
+
+<Heading str="Options" />
+
+CMake options are similar to variables, but only hold ON/OFF (True/False) values. Options defined in the CMake file can be used with conditional statements to control function execution, e.g., whether or not to compile the executable:
+
+```cmake
+# adder/CMakeLists.txt
+cmake_minimum_required(VERSION 3.27.4)
+
+project(adder VERSION 1.0.0 LANGUAGES C CXX)
+
+set(CMAKE_CXX_STANDARD          17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS        OFF)
+set(LIBRARY_NAME                BasicMath)
+
+# include text hint
+option(COMPILE_EXECUTABLE "Choose whether to compile executable" OFF)
+
+add_subdirectory(lib)
+
+if (COMPILE_EXECUTABLE)
+    add_executable(${PROJECT_NAME} main.cpp)
+else()
+    # notify user in console during cmake configuration step
+    message("Skipping executable compilation")
+endif()
+
+target_link_libraries(adder PUBLIC BasicMath)
+```
+
+Now, the option variable `COMPILE_EXECUTABLE` can be toggled in the console during the CMake configuration step:
+
+```zsh
+cd build
+cmake .. -DCOMPILE_EXECUTABLE=ON
+```
+
+<Tag tagtype='warning' msg='Make sure not to include any space between the command line parameter (-D) and the option variable name.' />
+
+<Heading str="Command line options" />
+
+<Tag tagtype='info' msg='You may wish to remove the build directory before subsequent project configurations to guarantee that new changes take effect.' />
+
+To recreate the build directory in Unix systems:
+
+```zsh
+rm -rf build
+mkdir build
+```
+
+In Windows:
+
+```ps1
+Remove-Item -Recurse -Force build
+New-Item -Path . -Name "build" -ItemType "directory"
+```
+
+Optionally, you can automate these steps in a Makefile:
+
+```make
+# adder/Makefile
+prepare:
+    rm -rf build
+    mkdir build
+```
+
+To execute these commands:
+
+```zsh
+make prepare
+```
+
+### Generators
+
+CMake generators are the build systems used under the hood. For Unix systems, which include Linux (GCC) and macOS (Clang), the default generator is Makefiles, while for Windows (MSVC) the default is Microsoft Visual Studio Solution. The project generator can be configured with the `-G` parameter:
+
+Unix systems:
+```zsh
+cmake -S .. -B . -G "Unix Makefiles"
+```
+
+Windows:
+```ps1
+cmake -S .. -B . -G "Visual Studio 16 2019" # specify MSVC version
+```
+
+### Build types
+
+CMake offers a few different build types, the two most common being `Debug` to `Release`. In `Release` mode, the compiler performs extra operations to optimize the build. To specify the build type:
+
+```zsh
+# inside build directory
+cmake .. -DCMAKE_BUILD_TYPE=Release
 ```
