@@ -2,6 +2,28 @@
 	"version": 3,
 	"routes": [
 		{
+			"src": "/environments",
+			"dest": "/environments/"
+		},
+		{
+			"src": "/environments/",
+			"status": 308,
+			"headers": {
+				"Location": "/environments"
+			}
+		},
+		{
+			"src": "/rp2040",
+			"dest": "/rp2040/"
+		},
+		{
+			"src": "/rp2040/",
+			"status": 308,
+			"headers": {
+				"Location": "/rp2040"
+			}
+		},
+		{
 			"src": "/stm32",
 			"dest": "/stm32/"
 		},
@@ -35,17 +57,6 @@
 			}
 		},
 		{
-			"src": "/environments",
-			"dest": "/environments/"
-		},
-		{
-			"src": "/environments/",
-			"status": 308,
-			"headers": {
-				"Location": "/environments"
-			}
-		},
-		{
 			"src": "/linux",
 			"dest": "/linux/"
 		},
@@ -74,6 +85,12 @@
 		"index.html": {
 			"path": ""
 		},
+		"environments.html": {
+			"path": "environments"
+		},
+		"rp2040.html": {
+			"path": "rp2040"
+		},
 		"stm32.html": {
 			"path": "stm32"
 		},
@@ -82,9 +99,6 @@
 		},
 		"git.html": {
 			"path": "git"
-		},
-		"environments.html": {
-			"path": "environments"
 		},
 		"linux.html": {
 			"path": "linux"
