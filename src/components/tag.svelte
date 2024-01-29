@@ -10,7 +10,7 @@
 		{#if tagtype == 'info'}
 			<Info fill="#5d3af7" size="34px" />
 		{:else}
-			<AlertCircle fill="#d6c13a" size="34px" />
+			<AlertCircle fill="#ceb301" size="34px" />
 		{/if}
 	</span>{@html msg}
 </p>
@@ -36,7 +36,7 @@
 	}
 
 	.warning {
-		background: #d6c13a;
+		background: #ceb301;
 		color: var(--text-1-light);
 	}
 </style>
