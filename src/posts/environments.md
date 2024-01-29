@@ -1,7 +1,7 @@
 ---
-title: Building Python and Node.JS environments
+title: Building Python and Node environments
 description: Create a clean development environment for high productivity
-date: '2022-9-20'
+date: '2024-1-20'
 image: /images/npm-keyboard.jpg
 categories:
     - Python
