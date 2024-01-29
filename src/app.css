@@ -109,7 +109,7 @@ html {
 body {
 	max-width: 100vw;
 	padding: 1rem;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 strong {
@@ -136,6 +136,7 @@ dl code,
 li code {
 	background: var(--inline-code-background);
 	padding: 0.1rem 0.4rem;
+	font-size: 16px;
 }
 
 .tag code {
@@ -205,13 +206,15 @@ li code {
 }
 
 .prose pre {
+	font-size: 16px;
 	word-break: break-word;
 }
 
 .prose pre[data-code-title]::before {
 	color: rgb(255 255 255 1);
 	background: rgb(39 39 42);
-	font-size: 0.8125rem;
+	/* font-size: 0.8125rem; */
+	font-size: 16px;
 	font-weight: 600;
 	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
