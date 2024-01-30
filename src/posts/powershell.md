@@ -6,7 +6,7 @@ image: /images/windows-surface-laptop.jpg
 categories:
     - PowerShell
     - Windows
-published: false
+published: true
 ---
 
 <script>
