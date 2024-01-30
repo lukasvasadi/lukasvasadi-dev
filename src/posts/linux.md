@@ -105,7 +105,7 @@ published: true
 
 -   [Introduction](#introduction)
 -   [Basic utilities](#basic-utilities)
--   [Pipeline](#Pipeline)
+-   [Pipeline](#pipeline)
 -   [Navigating the filesystem](#navigating-the-filesystem)
 -   [Working with files](#working-with-files)
 -   [Searching for files](#searching-for-files)

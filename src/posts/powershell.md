@@ -6,7 +6,7 @@ image: /images/windows-surface-laptop.jpg
 categories:
     - PowerShell
     - Windows
-published: true
+published: false
 ---
 
 <script>
@@ -118,7 +118,7 @@ In contrast to Unix-like systems, where all shell interactions are based on text
 Get-Process | Where Handles -gt 900
 ```
 
- This one line of code replaces several lines that would be needed to achieve the same result with Bash.
+This one line of code replaces several lines that would be needed to achieve the same result with Bash.
 
 Every object has associated properties and methods, which describe features of the object class as well as actionable functions, respectively. The `Get-Member` utility, with shorthand `gm`, prints all properties and methods of an object along with its class definition. 
 
@@ -192,7 +192,7 @@ Invoke-Command -ComputerName image-processing {Get-EventLog -LogName system}
 Invoke-Command -ComputerName comp1,comp2,comp3 {Restart-Computer} 
 ```
 
- Note that every PowerShell command entered into the console uses `Invoke-Command` behind the scences, with the local computer accepted as the default machine. All data returned from the remote system(s) are deserialized object representations, meaning that the objects contain all relevant information for the administrator, but have no methods other than `ToString`.
+Note that every PowerShell command entered into the console uses `Invoke-Command` behind the scences, with the local computer accepted as the default machine. All data returned from the remote system(s) are deserialized object representations, meaning that the objects contain all relevant information for the administrator, but have no methods other than `ToString`.
 
 If not connected to the local network, PowerShell remoting may be facilitated in a browser over https web access. To set up this feature, first install `WindowsPowerShellWebAccess` on the remote machine and then configure user/group privileges. 
 
@@ -207,7 +207,7 @@ Install-PswaWebApplication -UseTestCertificate
 Add-PswaAuthorizationRule -ComputerGroupName group -UserName users -ConfigurationName rights
 ```
 
- After completing these steps, the administrator can open a browser and navigate to the web address—the default being https://pwa/pwsa—and access a PowerShell instance connected to the remote machine.
+After completing these steps, the administrator can open a browser and navigate to the web address—the default being https://pwa/pwsa—and access a PowerShell instance connected to the remote machine.
 
 Individual commands can be executed on a remote machine without starting a PowerShell session: 
 
