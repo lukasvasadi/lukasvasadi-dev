@@ -57,6 +57,17 @@
 			}
 		},
 		{
+			"src": "/powershell",
+			"dest": "/powershell/"
+		},
+		{
+			"src": "/powershell/",
+			"status": 308,
+			"headers": {
+				"Location": "/powershell"
+			}
+		},
+		{
 			"src": "/linux",
 			"dest": "/linux/"
 		},
@@ -99,6 +110,9 @@
 		},
 		"git.html": {
 			"path": "git"
+		},
+		"powershell.html": {
+			"path": "powershell"
 		},
 		"linux.html": {
 			"path": "linux"
