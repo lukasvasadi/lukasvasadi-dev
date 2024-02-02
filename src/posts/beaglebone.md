@@ -1,6 +1,6 @@
 ---
 title: Learning Embedded Linux with the BeagleBone Black
-description: Learn PowerShell for modern cross-platform IT administration
+description: Explore the BeagleBone as a potential controller for IoT projects
 date: '2023-11-2'
 image: /images/beaglebone-black.jpg
 categories:
@@ -22,7 +22,7 @@ published: true
 -   [Introduction](#introduction)
 -   [OS installation](#os-installation)
 -   [Walk the dog](#walk-the-dog)
--   [Updates](#udpates)
+-   [Updates](#updates)
 -   [Users](#users)
 -   [Hello world](#hello-world)
 
