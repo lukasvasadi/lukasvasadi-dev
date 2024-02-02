@@ -36,8 +36,8 @@ The BBB is often compared to its most obvious counterpart, the Raspberry Pi. Whi
 
 The following resources contain excellent instructions on configuring the BeagleBone Black, as well as other boards from the BeagleBoard organization.
 
-- [BeagleBoard.org](https://beagleboard.org/)
-- [Exploring BeagleBone](https://www.amazon.com/gp/product/1119533163/ref=ox_sc_act_image_1?smid=AHNEEZ9CVAP3Q&psc=1)
+-   [BeagleBoard.org](https://beagleboard.org/)
+-   [Exploring BeagleBone](https://www.amazon.com/gp/product/1119533163/ref=ox_sc_act_image_1?smid=AHNEEZ9CVAP3Q&psc=1)
 
 <Heading str="OS installation" />
 

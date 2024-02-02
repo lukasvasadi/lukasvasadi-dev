@@ -359,11 +359,13 @@ make prepare
 CMake generators are the build systems used under the hood. For Unix systems, which include Linux (GCC) and macOS (Clang), the default generator is Makefiles, while for Windows (MSVC) the default is Microsoft Visual Studio Solution. The project generator can be configured with the `-G` parameter:
 
 Unix systems:
+
 ```zsh
 cmake -S .. -B . -G "Unix Makefiles"
 ```
 
 Windows:
+
 ```ps1
 cmake -S .. -B . -G "Visual Studio 16 2019" # specify MSVC version
 ```

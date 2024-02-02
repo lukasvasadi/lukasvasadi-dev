@@ -1,1 +1,20 @@
-p.svelte-5rv919{position:relative;margin-top:2rem;padding:1rem;border-radius:10px}span.svelte-5rv919{z-index:1;position:absolute;top:-1.2rem;left:.5rem}.info.svelte-5rv919{background:#5d3af7;color:var(--text-1-dark)}.warning.svelte-5rv919{background:#ceb301;color:var(--text-1-light)}
+p.svelte-5rv919 {
+	position: relative;
+	margin-top: 2rem;
+	padding: 1rem;
+	border-radius: 10px;
+}
+span.svelte-5rv919 {
+	z-index: 1;
+	position: absolute;
+	top: -1.2rem;
+	left: 0.5rem;
+}
+.info.svelte-5rv919 {
+	background: #5d3af7;
+	color: var(--text-1-dark);
+}
+.warning.svelte-5rv919 {
+	background: #ceb301;
+	color: var(--text-1-light);
+}

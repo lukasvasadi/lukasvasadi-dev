@@ -40,9 +40,9 @@ Many operating systems can be used for basic security analysis, such as determin
 
 The following web resources contain substantial information on network analysis, penetration testing, and other common topics.
 
-- [Linux for Ethical Hackers](https://www.youtube.com/watch?v=lZAoFs75_cs&list=PLWKjhJtqVAbnklGh3FNRLECx_2D_vK3mu&index=4)
-- [Linux Basics for Hackers](https://www.hackers-arise.com/linux-fundamentals)
-- [Network Chuck — Hack Your IT Career](https://networkchuck.com/)
+-   [Linux for Ethical Hackers](https://www.youtube.com/watch?v=lZAoFs75_cs&list=PLWKjhJtqVAbnklGh3FNRLECx_2D_vK3mu&index=4)
+-   [Linux Basics for Hackers](https://www.hackers-arise.com/linux-fundamentals)
+-   [Network Chuck — Hack Your IT Career](https://networkchuck.com/)
 
 <Heading str="Networks" />
 

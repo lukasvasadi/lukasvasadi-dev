@@ -101,18 +101,18 @@ Similar to other shell scripting tools, the PowerShell pipe (`|`) utility allows
 Get-Service | Export-csv -Path C:\\Users\\Username\\Desktop
 ```
 
-Besides executing commands on collections of objects crossing the pipeline, users can also evaluate individual objects with filters. These individual objects, or items, crossing the pipeline can be accessed with the `$PSItem` variable: 
+Besides executing commands on collections of objects crossing the pipeline, users can also evaluate individual objects with filters. These individual objects, or items, crossing the pipeline can be accessed with the `$PSItem` variable:
 
 ```ps1
 # filter individual process objects where the status is running
-Get-Service | Where-Object {$PSItem.Status -eq "Running"} 
+Get-Service | Where-Object {$PSItem.Status -eq "Running"}
 ```
 
-Of course, not all cmdlets will accept the objects being ferried across the pipeline. A good rule of thumb—though not always the case—is that cmdlets with the same noun, e.g., `Get-Service`, `Stop-Service`, will be compatible. Specifically, this means that the data leaving one cmdlet has the same property value, i.e., class type, as the input required by the adjacent cmdlet in the pipeline. 
+Of course, not all cmdlets will accept the objects being ferried across the pipeline. A good rule of thumb—though not always the case—is that cmdlets with the same noun, e.g., `Get-Service`, `Stop-Service`, will be compatible. Specifically, this means that the data leaving one cmdlet has the same property value, i.e., class type, as the input required by the adjacent cmdlet in the pipeline.
 
 <Heading str="Objects" />
 
-In contrast to Unix-like systems, where all shell interactions are based on text-based input/output, PowerShell was designed to work directly with objects. In many cases, this reduces the amount of work necessary to accomplish certain tasks, as there is no overhead management of filler text output. As an example, if you wanted to restrict `Get-Process` output to handles greater than 900: 
+In contrast to Unix-like systems, where all shell interactions are based on text-based input/output, PowerShell was designed to work directly with objects. In many cases, this reduces the amount of work necessary to accomplish certain tasks, as there is no overhead management of filler text output. As an example, if you wanted to restrict `Get-Process` output to handles greater than 900:
 
 ```ps1
 Get-Process | Where Handles -gt 900
@@ -120,14 +120,14 @@ Get-Process | Where Handles -gt 900
 
 This one line of code replaces several lines that would be needed to achieve the same result with Bash.
 
-Every object has associated properties and methods, which describe features of the object class as well as actionable functions, respectively. The `Get-Member` utility, with shorthand `gm`, prints all properties and methods of an object along with its class definition. 
+Every object has associated properties and methods, which describe features of the object class as well as actionable functions, respectively. The `Get-Member` utility, with shorthand `gm`, prints all properties and methods of an object along with its class definition.
 
 ```ps1
 # find the properties of the bits service object
 Get-Service -Name bits | Get-Member
 ```
 
-With this information, you can choose to customize output based on object class properties. 
+With this information, you can choose to customize output based on object class properties.
 
 ```ps1
 # print the name and status of every object returned from get-service
@@ -138,7 +138,7 @@ Get-ChildItem | Select-Object -Property Name, Length | Sort -Property Length
 
 <Heading str="Variables" />
 
-PowerShell variables are similar to Bash variables, except that these can hold object values. For example: 
+PowerShell variables are similar to Bash variables, except that these can hold object values. For example:
 
 ```ps1
 $bits = Get-Service bits
@@ -153,7 +153,7 @@ $bits.status
 $bits.stop()
 ```
 
-It is important to note that the properties of this variable are static, meaning they represent a snapshot of the object at the time of variable creation. After running a method, the object must be manually refreshed to update any properties that may have changed state. 
+It is important to note that the properties of this variable are static, meaning they represent a snapshot of the object at the time of variable creation. After running a method, the object must be manually refreshed to update any properties that may have changed state.
 
 ```ps1
 # check the variable status
@@ -163,7 +163,7 @@ $bits.refresh()
 $bits.status
 ```
 
-PowerShell variables, when defined inside brackets `{}`, may also contain spaces and special characters: 
+PowerShell variables, when defined inside brackets `{}`, may also contain spaces and special characters:
 
 ```ps1
 ${ var!@bl& } = "hello"
@@ -171,7 +171,7 @@ ${ var!@bl& } = "hello"
 
 <Heading str="Remoting" />
 
-Remote access has to be enabled on all machines. Starting with Windows Server 2012, which is a cloud operating system, remote access is enabled by default. 
+Remote access has to be enabled on all machines. Starting with Windows Server 2012, which is a cloud operating system, remote access is enabled by default.
 
 ```ps1
 Enable-PSRemoting
@@ -183,18 +183,18 @@ To establish a one-to-one connection:
 Enter-PSSession -ComputerName name
 ```
 
-Outside of a remote session, individual commands can be executed on remote machines with the `Invoke-Command` cmdlet: 
+Outside of a remote session, individual commands can be executed on remote machines with the `Invoke-Command` cmdlet:
 
 ```ps1
 # print out the system event log from a remote machine named "image-processing"
 Invoke-Command -ComputerName image-processing {Get-EventLog -LogName system}
 # beware of what will be executed
-Invoke-Command -ComputerName comp1,comp2,comp3 {Restart-Computer} 
+Invoke-Command -ComputerName comp1,comp2,comp3 {Restart-Computer}
 ```
 
 Note that every PowerShell command entered into the console uses `Invoke-Command` behind the scences, with the local computer accepted as the default machine. All data returned from the remote system(s) are deserialized object representations, meaning that the objects contain all relevant information for the administrator, but have no methods other than `ToString`.
 
-If not connected to the local network, PowerShell remoting may be facilitated in a browser over https web access. To set up this feature, first install `WindowsPowerShellWebAccess` on the remote machine and then configure user/group privileges. 
+If not connected to the local network, PowerShell remoting may be facilitated in a browser over https web access. To set up this feature, first install `WindowsPowerShellWebAccess` on the remote machine and then configure user/group privileges.
 
 ```ps1
 # connect to the desired machine
@@ -209,35 +209,35 @@ Add-PswaAuthorizationRule -ComputerGroupName group -UserName users -Configuratio
 
 After completing these steps, the administrator can open a browser and navigate to the web address—the default being https://pwa/pwsa—and access a PowerShell instance connected to the remote machine.
 
-Individual commands can be executed on a remote machine without starting a PowerShell session: 
+Individual commands can be executed on a remote machine without starting a PowerShell session:
 
 ```ps1
-Invoke-Command -ComputerName name {$proc = Get-Process} 
+Invoke-Command -ComputerName name {$proc = Get-Process}
 ```
 
 In this case, PowerShell is loaded and initialized on the remote machine, the command is executed, and then the console instance and connection are destroyed. Naturally, this means that any variables are deleted from memory and thus cannot be accessed with a subsequent `Invoke-Command`.
 
-However, as hinted above, persistent PowerShell sessions can be created and accessed at various points of time: 
+However, as hinted above, persistent PowerShell sessions can be created and accessed at various points of time:
 
 ```ps1
 $sess = New-PSSession -ComputerName name
 ```
 
-This creates a persistent remote session and stores the object inside the variable `$sess`. This session can now be used instead of `ComputerName` to pass commands to the remote machine. So long as the session remains open, variables will persist in system memory and can be accessed with subsequent commands. 
+This creates a persistent remote session and stores the object inside the variable `$sess`. This session can now be used instead of `ComputerName` to pass commands to the remote machine. So long as the session remains open, variables will persist in system memory and can be accessed with subsequent commands.
 
 ```ps1
 Invoke-Command -Session $sess {$x=2}
 Invoke-Command -Session $sess {$x}
 ```
 
-Sessions also offer the ability to share modules without installation on the local machine. For example, if a server computer had the `ActiveDirectory` module installed: 
+Sessions also offer the ability to share modules without installation on the local machine. For example, if a server computer had the `ActiveDirectory` module installed:
 
 ```ps1
-$sess = New-PSSession -ComputerName server 
-Import-PSSession -Session $sess -Module ActiveDirectory 
+$sess = New-PSSession -ComputerName server
+Import-PSSession -Session $sess -Module ActiveDirectory
 ```
 
-Now all cmdlets from `ActiveDirectory` are available locally while the session is active. Behind the scenes, the local machine builds data structures using `Get-Command` and, when these cmdlets are invoked, the relevant information, e.g., input parameters, is collected and passed to the remote computer for execution. This entire workflow is referred to as "implicit remoting." 
+Now all cmdlets from `ActiveDirectory` are available locally while the session is active. Behind the scenes, the local machine builds data structures using `Get-Command` and, when these cmdlets are invoked, the relevant information, e.g., input parameters, is collected and passed to the remote computer for execution. This entire workflow is referred to as "implicit remoting."
 
 <Heading str="Execution policy" />
 
@@ -264,7 +264,7 @@ To create a digital signature:
 New-SelfSignedCertificate
 ```
 
-To locate the digital signature and save it to an environment variable: 
+To locate the digital signature and save it to an environment variable:
 
 ```ps1
 # save all certificates to an environment variable
@@ -287,12 +287,12 @@ PowerShell is a powerful tool that can cause major system damage if mishandled. 
 
 ```ps1
 # the following command would kill all active services and likely damage the system
-Get-Service | Stop-Service -WhatIf 
+Get-Service | Stop-Service -WhatIf
 ```
 
 Administrators may also consider using the `Confirm` parameter to be prompted for confirmation before command execution.
 
 ```ps1
 # print out command execution results with confirmation prompt
-Get-Service | Stop-Service -Confirm 
+Get-Service | Stop-Service -Confirm
 ```

@@ -1,1 +1,2 @@
-const t="lukasvasadi";export{t};
+const t = 'lukasvasadi'
+export { t }

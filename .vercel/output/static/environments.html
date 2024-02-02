@@ -4,26 +4,32 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/vasadi-icon-square.png" />
-		
-		<link href="./_app/immutable/assets/0.40bb4301.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/3.e2f5fd52.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/iconlist.19ffcec2.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/tag.6154d69e.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/def.d0eb59fd.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.60671325.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ae1baad1.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d8d3b1ab.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.648b4cba.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/control.c2cf8273.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.b9dda5a1.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.0e1198e2.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.2ff4e9c1.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/config.f4ded0b2.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.c2880df6.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.23ac03db.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/utils.2fdf1f5e.js"><title>Building Python and Node environments</title><!-- HEAD_svelte-1vn9r42_START --><meta property="og:type" content="article"><meta property="og:title" content="Building Python and Node environments"><meta property="og:image" content="/images/npm-keyboard.jpg"><!-- HEAD_svelte-1vn9r42_END -->
+
+		<link href="./_app/immutable/assets/0.40bb4301.css" rel="stylesheet" />
+		<link href="./_app/immutable/assets/3.e2f5fd52.css" rel="stylesheet" />
+		<link href="./_app/immutable/assets/iconlist.19ffcec2.css" rel="stylesheet" />
+		<link href="./_app/immutable/assets/tag.6154d69e.css" rel="stylesheet" />
+		<link href="./_app/immutable/assets/def.d0eb59fd.css" rel="stylesheet" />
+		<link rel="modulepreload" href="./_app/immutable/entry/start.60671325.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ae1baad1.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d8d3b1ab.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.648b4cba.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/control.c2cf8273.js" />
+		<link rel="modulepreload" href="./_app/immutable/entry/app.b9dda5a1.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.0e1198e2.js" />
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.2ff4e9c1.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/config.f4ded0b2.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.c2880df6.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js" />
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.23ac03db.js" />
+		<link rel="modulepreload" href="./_app/immutable/chunks/utils.2fdf1f5e.js" />
+		<title>Building Python and Node environments</title>
+		<!-- HEAD_svelte-1vn9r42_START -->
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Building Python and Node environments" />
+		<meta property="og:image" content="/images/npm-keyboard.jpg" />
+		<!-- HEAD_svelte-1vn9r42_END -->
 		<script type="module">
 			const theme = localStorage.getItem('color-scheme')
 
@@ -33,55 +39,908 @@
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">  <div class="layout svelte-sdkn5t"> <nav class="svelte-bs11bt"> <a href="/" class="title svelte-bs11bt"><b>lukasvasadi</b></a>     <button aria-label="Toggle theme" class="svelte-114mtci"><div class="svelte-114mtci"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon "><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg> <span data-svelte-h="svelte-397x2m">Dark</span></div> </button> </nav> <main class="svelte-sdkn5t"> <div class="transition svelte-vcdv4c">  <article class="svelte-1apnuse"> <hgroup><h1 class="svelte-1apnuse">Building Python and Node environments</h1> <p class="svelte-1apnuse">Published at Jan 20, 2024</p></hgroup>  <div class="tags svelte-1apnuse"><span class="surface-4 svelte-1apnuse">#Python</span><span class="surface-4 svelte-1apnuse">#Node</span><span class="surface-4 svelte-1apnuse">#Chocolatey</span><span class="surface-4 svelte-1apnuse">#Homebrew</span></div>  <div class="prose"><p data-svelte-h="svelte-11oujff"><img src="/images/npm-keyboard.jpg" alt="MacBook with npm sticker and mechanical keyboard"></p> <h2 data-svelte-h="svelte-jpxk5s">Contents</h2> <ul data-svelte-h="svelte-f92pj0"><li><a href="#introduction">Introduction</a></li> <li><a href="#windows">Windows</a></li> <li><a href="#macos">macOS</a></li> <li><a href="#linux">Linux</a></li></ul> <h2><a id="introduction">Introduction</a></h2> <p data-svelte-h="svelte-1c8speb">This tutorial covers the installation process for Python and Node.js using system package managers, i.e., Chocolatey for Windows, Homebrew for macOS, and the Advanced Package Tool (APT) for Debian flavors of Linux. It also covers how to create and manage virtual environments for Python.</p> <h3 data-svelte-h="svelte-10v6m9t">What is Python?</h3> <p data-svelte-h="svelte-h9t4so"><a href="https://www.python.org/" rel="nofollow">Python</a> is an open-source, high-level, dynamically-typed, general-purpose programming language that is particularly suited for data science and machine learning. However, because of its human-readable syntax, Python has become one of the most popular programming languages in the world, frequently used in back-end web development, networking, automation, and even embedded systems. In September 2023, <a href="https://www.modular.com/mojo" rel="nofollow">Mojo</a> was released as a “superset” of Python that uses a “just-in-time” (JIT) compiler to optimize Python source code for parallelization in the CPU and GPU, giving Python more dominance in artificial intelligence.</p> <h3 data-svelte-h="svelte-l8ti2e">What is a Python virtual environment?</h3> <p data-svelte-h="svelte-o5v0dc">If not specified, the package installer for Python (<code>pip</code>) will place all external modules inside the <code>site-packages/</code> directory of the base Python installation. This can become problematic for the following reasons:</p> <ol data-svelte-h="svelte-1yrfno5"><li><p><strong>System pollution:</strong> Linux and macOS have preinstalled Python versions that each system uses for internal tasks. Changing the versions of any system-relevant packages may have unintended effects on OS behavior. Updating the OS could also overwrite some of the package installations.</p></li> <li><p><strong>Dependency conflicts:</strong> Different projects may require different versions of the same package. If all packages are centralized, then certain projects may break unexpectedly.</p></li></ol> <p data-svelte-h="svelte-1je9ejl">Virtual environments sidestep these issues by creating sandboxed directories that store all packages for individual projects. These directories also contain aliases (Unix) or shortcuts (Windows) to the relevant Python binaries so that the project can be run with a specific Python version. By activating a virtual environment, you tell the system to point to this directory whenever running the Python executable.</p> <h3 data-svelte-h="svelte-x06fvw">What is Node.js?</h3> <p data-svelte-h="svelte-1y1ouz0"><a href="https://nodejs.org/en" rel="nofollow">Node.js</a> is an open-source JavaScript runtime (server environment) that allows developers to create full stack web, desktop, and mobile apps with one language. (Prior to Node.js, JavaScript could only be run in the browser.) It uses the V8 JavaScript engine—developed by Google for its Chrome browser—to function as a scripting language similar to Python. One of its most popular use cases is as the back-end of the Electron framework, which packages web applications into standalone desktop apps, e.g., Visual Studio Code, Slack, WhatsApp.</p> <h2><a id="windows">Windows</a></h2> <p class="tag info svelte-5rv919"><span class="svelte-5rv919"><svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 24 24" fill="#5d3af7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-info "><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> </span><!-- HTML_TAG_START -->The following commands require PowerShell, which has more advanced functionality than the command prompt. Further, to run installation scripts in Windows, you must use a shell with administrator privileges. Search for "PowerShell" in the Windows search box, right-click the application, and select "Run as administrator."<!-- HTML_TAG_END --> </p> <h3 data-svelte-h="svelte-124bbup">Chocolatey</h3> <p data-svelte-h="svelte-1pqe07d"><a href="https://chocolatey.org/" rel="nofollow">Chocolatey</a> is a community-driven general package manager for Windows that eliminates the need for installation wizards. The developers of Chocolatey created a script to automate the installation process. As stated above, to run a script downloaded from the internet, we need to change the security permissions in PowerShell. (This will also be needed later to install the full developer toolchain. See the PowerShell tutorial for more information on security policies.) In an administrative shell, execute the following commands:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Set-ExecutionPolicy</span><span style="color: #ABB2BF"> RemoteSigned</span></span>
-<span class="line"><span style="color: #ABB2BF">[</span><span style="color: #C678DD">System.Net.ServicePointManager</span><span style="color: #ABB2BF">]::SecurityProtocol </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Net.ServicePointManager</span><span style="color: #ABB2BF">]::SecurityProtocol </span><span style="color: #56B6C2">-bor</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3072</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1k9ndoe">Download and run the installation script:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">iex ((</span><span style="color: #56B6C2">New-Object</span><span style="color: #ABB2BF"> System.Net.WebClient).DownloadString(</span><span style="color: #98C379">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span style="color: #ABB2BF">))</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1i22hwd">Refresh the shell environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1v3vrqd">Confirm <code>choco</code> installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">choco </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre><!-- HTML_TAG_END --> <h3 data-svelte-h="svelte-vvgzpq">Python</h3> <p data-svelte-h="svelte-1jr2497">Unlike macOS and Linux, Windows does not come prepackaged with Python. Users have the option to manually install a specific Python version or use <a href="https://github.com/pyenv-win/pyenv-win" rel="nofollow">pyenv-win</a> to manage multiple installations on the same machine.</p> <h4 data-svelte-h="svelte-1jgjki4">Pyenv</h4> <p data-svelte-h="svelte-wnftp4">In an administrative shell, install pyenv with <code>choco</code>:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">choco install pyenv</span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">win</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1i22hwd">Refresh the shell environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-18951iq">Confirm installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">pyenv </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre><!-- HTML_TAG_END --> <p class="tag info svelte-5rv919"><span class="svelte-5rv919"><svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 24 24" fill="#5d3af7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-info "><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> </span><!-- HTML_TAG_START -->Before proceeding, you must reorder the <code>$Path</code> environment variable to give higher precedence to the binaries stored under pyenv. Otherwise, by default, Windows will search for the Python binaries in its AppData directory. This can be accomplished from the command line, however, I recommend using the environment variable dialog, which can be found via the Windows search box.<!-- HTML_TAG_END --> </p> <p data-svelte-h="svelte-ui4e2p">After reordering the environment variables, refresh the shell environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-19d8ej3">At this point, you are ready to setup Python. To print a list of available Python installations:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">pyenv install </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">list</span></span>
+		<div style="display: contents">
+			<div class="layout svelte-sdkn5t">
+				<nav class="svelte-bs11bt">
+					<a href="/" class="title svelte-bs11bt"><b>lukasvasadi</b></a>
+					<button aria-label="Toggle theme" class="svelte-114mtci">
+						<div class="svelte-114mtci">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="lucide-icon lucide lucide-moon"
+							>
+								<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+							</svg>
+							<span data-svelte-h="svelte-397x2m">Dark</span>
+						</div>
+					</button>
+				</nav>
+				<main class="svelte-sdkn5t">
+					<div class="transition svelte-vcdv4c">
+						<article class="svelte-1apnuse">
+							<hgroup>
+								<h1 class="svelte-1apnuse">
+									Building Python and Node environments
+								</h1>
+								<p class="svelte-1apnuse">Published at Jan 20, 2024</p>
+							</hgroup>
+							<div class="tags svelte-1apnuse">
+								<span class="surface-4 svelte-1apnuse">#Python</span
+								><span class="surface-4 svelte-1apnuse">#Node</span
+								><span class="surface-4 svelte-1apnuse">#Chocolatey</span
+								><span class="surface-4 svelte-1apnuse">#Homebrew</span>
+							</div>
+							<div class="prose">
+								<p data-svelte-h="svelte-11oujff">
+									<img
+										src="/images/npm-keyboard.jpg"
+										alt="MacBook with npm sticker and mechanical keyboard"
+									/>
+								</p>
+								<h2 data-svelte-h="svelte-jpxk5s">Contents</h2>
+								<ul data-svelte-h="svelte-f92pj0">
+									<li><a href="#introduction">Introduction</a></li>
+									<li><a href="#windows">Windows</a></li>
+									<li><a href="#macos">macOS</a></li>
+									<li><a href="#linux">Linux</a></li>
+								</ul>
+								<h2><a id="introduction">Introduction</a></h2>
+								<p data-svelte-h="svelte-1c8speb">
+									This tutorial covers the installation process for Python and
+									Node.js using system package managers, i.e., Chocolatey for
+									Windows, Homebrew for macOS, and the Advanced Package Tool (APT)
+									for Debian flavors of Linux. It also covers how to create and
+									manage virtual environments for Python.
+								</p>
+								<h3 data-svelte-h="svelte-10v6m9t">What is Python?</h3>
+								<p data-svelte-h="svelte-h9t4so">
+									<a href="https://www.python.org/" rel="nofollow">Python</a> is
+									an open-source, high-level, dynamically-typed, general-purpose
+									programming language that is particularly suited for data
+									science and machine learning. However, because of its
+									human-readable syntax, Python has become one of the most popular
+									programming languages in the world, frequently used in back-end
+									web development, networking, automation, and even embedded
+									systems. In September 2023,
+									<a href="https://www.modular.com/mojo" rel="nofollow">Mojo</a>
+									was released as a “superset” of Python that uses a
+									“just-in-time” (JIT) compiler to optimize Python source code for
+									parallelization in the CPU and GPU, giving Python more dominance
+									in artificial intelligence.
+								</p>
+								<h3 data-svelte-h="svelte-l8ti2e">
+									What is a Python virtual environment?
+								</h3>
+								<p data-svelte-h="svelte-o5v0dc">
+									If not specified, the package installer for Python
+									(<code>pip</code>) will place all external modules inside the
+									<code>site-packages/</code> directory of the base Python
+									installation. This can become problematic for the following
+									reasons:
+								</p>
+								<ol data-svelte-h="svelte-1yrfno5">
+									<li>
+										<p>
+											<strong>System pollution:</strong> Linux and macOS have
+											preinstalled Python versions that each system uses for
+											internal tasks. Changing the versions of any
+											system-relevant packages may have unintended effects on
+											OS behavior. Updating the OS could also overwrite some
+											of the package installations.
+										</p>
+									</li>
+									<li>
+										<p>
+											<strong>Dependency conflicts:</strong> Different
+											projects may require different versions of the same
+											package. If all packages are centralized, then certain
+											projects may break unexpectedly.
+										</p>
+									</li>
+								</ol>
+								<p data-svelte-h="svelte-1je9ejl">
+									Virtual environments sidestep these issues by creating sandboxed
+									directories that store all packages for individual projects.
+									These directories also contain aliases (Unix) or shortcuts
+									(Windows) to the relevant Python binaries so that the project
+									can be run with a specific Python version. By activating a
+									virtual environment, you tell the system to point to this
+									directory whenever running the Python executable.
+								</p>
+								<h3 data-svelte-h="svelte-x06fvw">What is Node.js?</h3>
+								<p data-svelte-h="svelte-1y1ouz0">
+									<a href="https://nodejs.org/en" rel="nofollow">Node.js</a> is an
+									open-source JavaScript runtime (server environment) that allows
+									developers to create full stack web, desktop, and mobile apps
+									with one language. (Prior to Node.js, JavaScript could only be
+									run in the browser.) It uses the V8 JavaScript engine—developed
+									by Google for its Chrome browser—to function as a scripting
+									language similar to Python. One of its most popular use cases is
+									as the back-end of the Electron framework, which packages web
+									applications into standalone desktop apps, e.g., Visual Studio
+									Code, Slack, WhatsApp.
+								</p>
+								<h2><a id="windows">Windows</a></h2>
+								<p class="tag info svelte-5rv919">
+									<span class="svelte-5rv919"
+										><svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="34px"
+											height="34px"
+											viewBox="0 0 24 24"
+											fill="#5d3af7"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											class="lucide-icon lucide lucide-info"
+										>
+											<circle cx="12" cy="12" r="10"></circle>
+											<path d="M12 16v-4"></path>
+											<path d="M12 8h.01"></path>
+										</svg> </span
+									><!-- HTML_TAG_START -->The following commands require
+									PowerShell, which has more advanced functionality than the
+									command prompt. Further, to run installation scripts in Windows,
+									you must use a shell with administrator privileges. Search for
+									"PowerShell" in the Windows search box, right-click the
+									application, and select "Run as administrator."<!-- HTML_TAG_END -->
+								</p>
+								<h3 data-svelte-h="svelte-124bbup">Chocolatey</h3>
+								<p data-svelte-h="svelte-1pqe07d">
+									<a href="https://chocolatey.org/" rel="nofollow">Chocolatey</a>
+									is a community-driven general package manager for Windows that
+									eliminates the need for installation wizards. The developers of
+									Chocolatey created a script to automate the installation
+									process. As stated above, to run a script downloaded from the
+									internet, we need to change the security permissions in
+									PowerShell. (This will also be needed later to install the full
+									developer toolchain. See the PowerShell tutorial for more
+									information on security policies.) In an administrative shell,
+									execute the following commands:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">Set-ExecutionPolicy</span><span style="color: #ABB2BF"> RemoteSigned</span></span>
+<span class="line"><span style="color: #ABB2BF">[</span><span style="color: #C678DD">System.Net.ServicePointManager</span><span style="color: #ABB2BF">]::SecurityProtocol </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Net.ServicePointManager</span><span style="color: #ABB2BF">]::SecurityProtocol </span><span style="color: #56B6C2">-bor</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3072</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1k9ndoe">
+									Download and run the installation script:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">iex ((</span><span style="color: #56B6C2">New-Object</span><span style="color: #ABB2BF"> System.Net.WebClient).DownloadString(</span><span style="color: #98C379">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span style="color: #ABB2BF">))</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1i22hwd">Refresh the shell environment:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1v3vrqd">
+									Confirm <code>choco</code> installation:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">choco </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<h3 data-svelte-h="svelte-vvgzpq">Python</h3>
+								<p data-svelte-h="svelte-1jr2497">
+									Unlike macOS and Linux, Windows does not come prepackaged with
+									Python. Users have the option to manually install a specific
+									Python version or use
+									<a href="https://github.com/pyenv-win/pyenv-win" rel="nofollow"
+										>pyenv-win</a
+									>
+									to manage multiple installations on the same machine.
+								</p>
+								<h4 data-svelte-h="svelte-1jgjki4">Pyenv</h4>
+								<p data-svelte-h="svelte-wnftp4">
+									In an administrative shell, install pyenv with
+									<code>choco</code>:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">choco install pyenv</span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">win</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1i22hwd">Refresh the shell environment:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-18951iq">Confirm installation:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">pyenv </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p class="tag info svelte-5rv919">
+									<span class="svelte-5rv919"
+										><svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="34px"
+											height="34px"
+											viewBox="0 0 24 24"
+											fill="#5d3af7"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											class="lucide-icon lucide lucide-info"
+										>
+											<circle cx="12" cy="12" r="10"></circle>
+											<path d="M12 16v-4"></path>
+											<path d="M12 8h.01"></path>
+										</svg> </span
+									><!-- HTML_TAG_START -->Before proceeding, you must reorder the
+									<code>$Path</code> environment variable to give higher
+									precedence to the binaries stored under pyenv. Otherwise, by
+									default, Windows will search for the Python binaries in its
+									AppData directory. This can be accomplished from the command
+									line, however, I recommend using the environment variable
+									dialog, which can be found via the Windows search box.<!-- HTML_TAG_END -->
+								</p>
+								<p data-svelte-h="svelte-ui4e2p">
+									After reordering the environment variables, refresh the shell
+									environment:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-19d8ej3">
+									At this point, you are ready to setup Python. To print a list of
+									available Python installations:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">pyenv install </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">list</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># restrict output to a specific major Python version</span></span>
-<span class="line"><span style="color: #ABB2BF">pyenv install </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">list | </span><span style="color: #56B6C2">Select-String</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;3.11&quot;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-5hwhx1">Install a specific version of Python:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># 3.11.3 as an example</span></span>
-<span class="line"><span style="color: #ABB2BF">pyenv install </span><span style="color: #D19A66">3.11</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">3</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-owhkgq">Set the global Python version, which will be the Python distribution normally referenced by shell programs:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">pyenv global </span><span style="color: #D19A66">3.11</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">3</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1s3uzvq">Confirm that python and pip point to the correct executables:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">Get-Command</span><span style="color: #ABB2BF"> python).Source ; (</span><span style="color: #56B6C2">Get-Command</span><span style="color: #ABB2BF"> pip).Source</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1mx2mv4">You should see two paths returned that contain <code>\.pyenv\shims\python</code> and <code>\.pyenv\shims\pip</code>. If not, you may have to recheck your environment variables.</p> <p data-svelte-h="svelte-7v3ctw">Now, you can run Python:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">python </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre><!-- HTML_TAG_END --> <h4 data-svelte-h="svelte-k07ad9">Virtual Environments</h4> <p data-svelte-h="svelte-xh5xpl">Unfortunately, pyenv-win does not include the normal pyenv utility for managing virtual environments. Windows users need to follow the traditional approach to create a sandboxed environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># env can have any name</span></span>
-<span class="line"><span style="color: #ABB2BF">python </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">m venv C:\path&#92;to\env</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1aok0ru">This will reference the Python version set by pyenv <code>global</code> or <code>local</code> and create a new directory that contains the Python executable and any site packages installed via <code>pip</code>. Note that once created, the virtual environment directory cannot be moved to another location. Many developers choose to store their environments in a dedicated subdirectory of their project folder.</p> <p data-svelte-h="svelte-1lf05j2">To activate the environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">C:\path&#92;to\env\Scripts\Activate.ps1</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-2h0fz7">To deactivate:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">deactivate</span></span></code></pre><!-- HTML_TAG_END --> <h3 data-svelte-h="svelte-1nsdrcp">Node.js</h3> <p data-svelte-h="svelte-bket17">Node.js is a popular JavaScript runtime used for server-side programming or desktop app development.</p> <h4 data-svelte-h="svelte-1i42qyf">NVM</h4> <p data-svelte-h="svelte-8g1zsk">Similar to Python, Node.js has a version manager (nvm) that was created for macOS and Linux, and later cloned for Windows (nvm-windows). Using nvm allows developers to manage multiple versions of Node.js on one machine, eliminating conflicts between projects with different requirements.</p> <p data-svelte-h="svelte-1w6oz7g">To install nvm, first ensure that there are no pre-existing versions of Node.js installed on the machine, as this may cause conflicts. Then, in an administrative shell, run the automated install script:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">choco install nvm</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1i22hwd">Refresh the shell environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-6pjjep">Confirm nvm installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">nvm </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-6eduf3">Install the latest version of Node.js:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">nvm install latest</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1vq8gky">Check to see the Node.js available versions:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">nvm list</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-9ns3ud">Activate the desired Node.js version:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">nvm use </span><span style="color: #D19A66">18.4</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">0</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-ya06f">Confirm Node.js activation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">node </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="macos">macOS</a></h2> <h3 data-svelte-h="svelte-qz1l4b">Homebrew</h3> <p data-svelte-h="svelte-we6xtv">Similar to Chocolatey, Homebrew is the standard general package manager for macOS.</p> <p data-svelte-h="svelte-1nj8ajv">To install Homebrew (the system may prompt for your user password):</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">curl</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-fsSL</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">bash</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-tqrm8s">Update the <code>PATH</code> variable to locate the <code>brew</code> binaries by modifying the special environment file <code>~/.zshrc</code>:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">touch</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span>
-<span class="line"><span style="color: #61AFEF">open</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-e</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre><!-- HTML_TAG_END --> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># brew</span></span>
-<span class="line"><span style="color: #56B6C2">eval</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;$(</span><span style="color: #61AFEF">/opt/homebrew/bin/brew</span><span style="color: #98C379"> shellenv)&quot;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1oeyclw">Confirm successful installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">doctor</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-ob5y8u">If the command <code>brew</code> is unrecognized, then there may have been an issue with the installation, probably related to the Xcode command line tools. Unfortunately, this will need to be fixed before proceeding to the next steps.</p> <h3 data-svelte-h="svelte-vvgzpq">Python</h3> <p data-svelte-h="svelte-1kay347">Although macOS comes prepackaged with Python, it is recommended to reserve that installation for system usage. For this reason, pyenv provides an easy way to manage multiple versions of Python on one machine.</p> <h4 data-svelte-h="svelte-1jgjki4">Pyenv</h4> <p data-svelte-h="svelte-9g238u">To install pyenv, as well as its convenient virtual environment tool, run the following automated installation scripts:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pyenv</span></span>
-<span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pyenv-virtualenv</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-13nydga">After installation, we need to add the <code>.pyenv</code> root directory to the system <code>$PATH</code> and initialize the utility on startup. To do so, open the shell environment file (<code>.zshrc</code>) with the default text editor:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">open</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-e</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-12li7fv">Append the following lines:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># pyenv</span></span>
+<span class="line"><span style="color: #ABB2BF">pyenv install </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">list | </span><span style="color: #56B6C2">Select-String</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;3.11&quot;</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-5hwhx1">
+									Install a specific version of Python:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># 3.11.3 as an example</span></span>
+<span class="line"><span style="color: #ABB2BF">pyenv install </span><span style="color: #D19A66">3.11</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">3</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-owhkgq">
+									Set the global Python version, which will be the Python
+									distribution normally referenced by shell programs:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">pyenv global </span><span style="color: #D19A66">3.11</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">3</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1s3uzvq">
+									Confirm that python and pip point to the correct executables:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">(</span><span style="color: #56B6C2">Get-Command</span><span style="color: #ABB2BF"> python).Source ; (</span><span style="color: #56B6C2">Get-Command</span><span style="color: #ABB2BF"> pip).Source</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1mx2mv4">
+									You should see two paths returned that contain
+									<code>\.pyenv\shims\python</code> and
+									<code>\.pyenv\shims\pip</code>. If not, you may have to recheck
+									your environment variables.
+								</p>
+								<p data-svelte-h="svelte-7v3ctw">Now, you can run Python:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">python </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<h4 data-svelte-h="svelte-k07ad9">Virtual Environments</h4>
+								<p data-svelte-h="svelte-xh5xpl">
+									Unfortunately, pyenv-win does not include the normal pyenv
+									utility for managing virtual environments. Windows users need to
+									follow the traditional approach to create a sandboxed
+									environment:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># env can have any name</span></span>
+<span class="line"><span style="color: #ABB2BF">python </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">m venv C:\path&#92;to\env</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1aok0ru">
+									This will reference the Python version set by pyenv
+									<code>global</code> or <code>local</code> and create a new
+									directory that contains the Python executable and any site
+									packages installed via <code>pip</code>. Note that once created,
+									the virtual environment directory cannot be moved to another
+									location. Many developers choose to store their environments in
+									a dedicated subdirectory of their project folder.
+								</p>
+								<p data-svelte-h="svelte-1lf05j2">To activate the environment:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">C:\path&#92;to\env\Scripts\Activate.ps1</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-2h0fz7">To deactivate:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">deactivate</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<h3 data-svelte-h="svelte-1nsdrcp">Node.js</h3>
+								<p data-svelte-h="svelte-bket17">
+									Node.js is a popular JavaScript runtime used for server-side
+									programming or desktop app development.
+								</p>
+								<h4 data-svelte-h="svelte-1i42qyf">NVM</h4>
+								<p data-svelte-h="svelte-8g1zsk">
+									Similar to Python, Node.js has a version manager (nvm) that was
+									created for macOS and Linux, and later cloned for Windows
+									(nvm-windows). Using nvm allows developers to manage multiple
+									versions of Node.js on one machine, eliminating conflicts
+									between projects with different requirements.
+								</p>
+								<p data-svelte-h="svelte-1w6oz7g">
+									To install nvm, first ensure that there are no pre-existing
+									versions of Node.js installed on the machine, as this may cause
+									conflicts. Then, in an administrative shell, run the automated
+									install script:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">choco install nvm</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1i22hwd">Refresh the shell environment:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #E06C75">$env:Path</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;Machine&quot;</span><span style="color: #ABB2BF">) </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;;&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> [</span><span style="color: #C678DD">System.Environment</span><span style="color: #ABB2BF">]::GetEnvironmentVariable(</span><span style="color: #98C379">&quot;Path&quot;</span><span style="color: #ABB2BF">, </span><span style="color: #98C379">&quot;User&quot;</span><span style="color: #ABB2BF">)</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-6pjjep">Confirm nvm installation:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">nvm </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-6eduf3">
+									Install the latest version of Node.js:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">nvm install latest</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1vq8gky">
+									Check to see the Node.js available versions:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">nvm list</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-9ns3ud">
+									Activate the desired Node.js version:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">nvm use </span><span style="color: #D19A66">18.4</span><span style="color: #ABB2BF">.</span><span style="color: #D19A66">0</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-ya06f">Confirm Node.js activation:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #ABB2BF">node </span><span style="color: #56B6C2">--</span><span style="color: #ABB2BF">version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<h2><a id="macos">macOS</a></h2>
+								<h3 data-svelte-h="svelte-qz1l4b">Homebrew</h3>
+								<p data-svelte-h="svelte-we6xtv">
+									Similar to Chocolatey, Homebrew is the standard general package
+									manager for macOS.
+								</p>
+								<p data-svelte-h="svelte-1nj8ajv">
+									To install Homebrew (the system may prompt for your user
+									password):
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">curl</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-fsSL</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">bash</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-tqrm8s">
+									Update the <code>PATH</code> variable to locate the
+									<code>brew</code> binaries by modifying the special environment
+									file <code>~/.zshrc</code>:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">touch</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span>
+<span class="line"><span style="color: #61AFEF">open</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-e</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># brew</span></span>
+<span class="line"><span style="color: #56B6C2">eval</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;$(</span><span style="color: #61AFEF">/opt/homebrew/bin/brew</span><span style="color: #98C379"> shellenv)&quot;</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1oeyclw">
+									Confirm successful installation:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">doctor</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-ob5y8u">
+									If the command <code>brew</code> is unrecognized, then there may
+									have been an issue with the installation, probably related to
+									the Xcode command line tools. Unfortunately, this will need to
+									be fixed before proceeding to the next steps.
+								</p>
+								<h3 data-svelte-h="svelte-vvgzpq">Python</h3>
+								<p data-svelte-h="svelte-1kay347">
+									Although macOS comes prepackaged with Python, it is recommended
+									to reserve that installation for system usage. For this reason,
+									pyenv provides an easy way to manage multiple versions of Python
+									on one machine.
+								</p>
+								<h4 data-svelte-h="svelte-1jgjki4">Pyenv</h4>
+								<p data-svelte-h="svelte-9g238u">
+									To install pyenv, as well as its convenient virtual environment
+									tool, run the following automated installation scripts:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pyenv</span></span>
+<span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pyenv-virtualenv</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-13nydga">
+									After installation, we need to add the <code>.pyenv</code> root
+									directory to the system <code>$PATH</code> and initialize the
+									utility on startup. To do so, open the shell environment file
+									(<code>.zshrc</code>) with the default text editor:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">open</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-e</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-12li7fv">Append the following lines:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># pyenv</span></span>
 <span class="line"><span style="color: #C678DD">export</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">PYENV_ROOT</span><span style="color: #56B6C2">=</span><span style="color: #98C379">&quot;</span><span style="color: #E06C75">$HOME</span><span style="color: #98C379">/.pyenv&quot;</span></span>
 <span class="line"><span style="color: #56B6C2">command</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-v</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pyenv</span><span style="color: #ABB2BF"> &gt;</span><span style="color: #98C379">/dev/null</span><span style="color: #ABB2BF"> || </span><span style="color: #C678DD">export</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">PATH</span><span style="color: #56B6C2">=</span><span style="color: #98C379">&quot;</span><span style="color: #E06C75">$PYENV_ROOT</span><span style="color: #98C379">/bin:</span><span style="color: #E06C75">$PATH</span><span style="color: #98C379">&quot;</span></span>
-<span class="line"><span style="color: #56B6C2">eval</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;$(</span><span style="color: #61AFEF">pyenv</span><span style="color: #98C379"> init -)&quot;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-vce6iw">Save and close the text file, then refresh the environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1lnb1kg">Confirm pyenv installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1ro57o4">To see a list of available Python installations:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span></span>
+<span class="line"><span style="color: #56B6C2">eval</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;$(</span><span style="color: #61AFEF">pyenv</span><span style="color: #98C379"> init -)&quot;</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-vce6iw">
+									Save and close the text file, then refresh the environment:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1lnb1kg">Confirm pyenv installation:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1ro57o4">
+									To see a list of available Python installations:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># restrict output to a major Python version</span></span>
-<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">grep</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;3.11&quot;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-gahx6f">Install a version of Python:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># 3.11.3 as an example</span></span>
-<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-k3s19i">Set the global Python version, which will become the default Python for your shell:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">global</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-fg7zp5">Now you can run Python!</p> <h4 data-svelte-h="svelte-k07ad9">Virtual Environments</h4> <p data-svelte-h="svelte-hyl5kx">Pyenv also provides an easy way to create and manage virtual environments. To create a new environment named “env”:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># assuming you navigated inside the project directory</span></span>
-<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">local</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-h6vn8h">To deactivate the environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">deactivate</span></span></code></pre><!-- HTML_TAG_END --> <h3 data-svelte-h="svelte-1nsdrcp">Node.js</h3> <p data-svelte-h="svelte-16jur17">As mentioned above, Node.js is a popular JavaScript runtime that can be easily managed with nvm.</p> <h4 data-svelte-h="svelte-1i42qyf">NVM</h4> <p data-svelte-h="svelte-w90xkx">To install nvm:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">nvm</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-18951iq">Confirm installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">command</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-v</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">nvm</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1ifytjt">If nothing returns, you may need to add the following lines to <code>~/.zshrc</code>:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># nvm</span></span>
+<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">grep</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;3.11&quot;</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-gahx6f">Install a version of Python:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># 3.11.3 as an example</span></span>
+<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-k3s19i">
+									Set the global Python version, which will become the default
+									Python for your shell:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">global</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-fg7zp5">Now you can run Python!</p>
+								<h4 data-svelte-h="svelte-k07ad9">Virtual Environments</h4>
+								<p data-svelte-h="svelte-hyl5kx">
+									Pyenv also provides an easy way to create and manage virtual
+									environments. To create a new environment named “env”:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># assuming you navigated inside the project directory</span></span>
+<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">local</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">env</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-h6vn8h">To deactivate the environment:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">deactivate</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<h3 data-svelte-h="svelte-1nsdrcp">Node.js</h3>
+								<p data-svelte-h="svelte-16jur17">
+									As mentioned above, Node.js is a popular JavaScript runtime that
+									can be easily managed with nvm.
+								</p>
+								<h4 data-svelte-h="svelte-1i42qyf">NVM</h4>
+								<p data-svelte-h="svelte-w90xkx">To install nvm:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">brew</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">nvm</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-18951iq">Confirm installation:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">command</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-v</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">nvm</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1ifytjt">
+									If nothing returns, you may need to add the following lines to
+									<code>~/.zshrc</code>:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># nvm</span></span>
 <span class="line"><span style="color: #C678DD">export</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">NVM_DIR</span><span style="color: #56B6C2">=</span><span style="color: #98C379">&quot;</span><span style="color: #E06C75">$HOME</span><span style="color: #98C379">/.nvm&quot;</span></span>
 <span class="line"><span style="color: #ABB2BF">[ </span><span style="color: #56B6C2">-s</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;/opt/homebrew/opt/nvm/nvm.sh&quot;</span><span style="color: #ABB2BF"> ] &amp;&amp; </span><span style="color: #61AFEF">.</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;/opt/homebrew/opt/nvm/nvm.sh&quot;</span></span>
-<span class="line"><span style="color: #ABB2BF">[ </span><span style="color: #56B6C2">-s</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&quot;</span><span style="color: #ABB2BF"> ] &amp;&amp; </span><span style="color: #61AFEF">.</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&quot;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-9v0vej">Refresh the environment:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-166z2c3">Install the latest stable version of Node:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">nvm</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">stable</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-m2dez2">Confirm Node installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">node</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="linux">Linux</a></h2> <p class="tag info svelte-5rv919"><span class="svelte-5rv919"><svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 24 24" fill="#5d3af7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-info "><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> </span><!-- HTML_TAG_START -->This tutorial only covers Debian flavors of Linux, e.g., Ubuntu, Pop_OS!.<!-- HTML_TAG_END --> </p> <p data-svelte-h="svelte-1k1q5xy">Before installing any software, it is good practice to update, and possibly upgrade, the existing system packages:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">update</span><span style="color: #ABB2BF"> &amp;&amp; </span><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">upgrade</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-y</span></span></code></pre><!-- HTML_TAG_END --> <h3 data-svelte-h="svelte-vvgzpq">Python</h3> <h4 data-svelte-h="svelte-1jgjki4">Pyenv</h4> <p data-svelte-h="svelte-1a6vggp">To install <code>pyenv</code>, first install its dependencies:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-y</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">build-essential</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libssl-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">zlib1g-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libbz2-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libreadline-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libsqlite3-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">wget</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">curl</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">llvm</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libncurses5-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libncursesw5-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">xz-utils</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">tk-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libffi-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">liblzma-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">python-openssl</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-5msyg4">Then, execute the <code>pyenv</code> installer:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">curl</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://pyenv.run</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">bash</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-h63bdd">Before running Python, we need to add the <code>.pyenv</code> root directory to the system <code>$PATH</code> and initialize the utility on shell startup. To do so, open the shell environment files with the default text editor:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">open</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-e</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-12li7fv">Append the following lines:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># pyenv</span></span>
+<span class="line"><span style="color: #ABB2BF">[ </span><span style="color: #56B6C2">-s</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&quot;</span><span style="color: #ABB2BF"> ] &amp;&amp; </span><span style="color: #61AFEF">.</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&quot;</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-9v0vej">Refresh the environment:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-166z2c3">
+									Install the latest stable version of Node:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">nvm</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">stable</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-m2dez2">Confirm Node installation:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">node</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<h2><a id="linux">Linux</a></h2>
+								<p class="tag info svelte-5rv919">
+									<span class="svelte-5rv919"
+										><svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="34px"
+											height="34px"
+											viewBox="0 0 24 24"
+											fill="#5d3af7"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											class="lucide-icon lucide lucide-info"
+										>
+											<circle cx="12" cy="12" r="10"></circle>
+											<path d="M12 16v-4"></path>
+											<path d="M12 8h.01"></path>
+										</svg> </span
+									><!-- HTML_TAG_START -->This tutorial only covers Debian flavors
+									of Linux, e.g., Ubuntu, Pop_OS!.<!-- HTML_TAG_END -->
+								</p>
+								<p data-svelte-h="svelte-1k1q5xy">
+									Before installing any software, it is good practice to update,
+									and possibly upgrade, the existing system packages:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">update</span><span style="color: #ABB2BF"> &amp;&amp; </span><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">upgrade</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-y</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<h3 data-svelte-h="svelte-vvgzpq">Python</h3>
+								<h4 data-svelte-h="svelte-1jgjki4">Pyenv</h4>
+								<p data-svelte-h="svelte-1a6vggp">
+									To install <code>pyenv</code>, first install its dependencies:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-y</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">build-essential</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libssl-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">zlib1g-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libbz2-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libreadline-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libsqlite3-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">wget</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">curl</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">llvm</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libncurses5-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libncursesw5-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">xz-utils</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">tk-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">libffi-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">liblzma-dev</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">python-openssl</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-5msyg4">
+									Then, execute the <code>pyenv</code> installer:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">curl</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://pyenv.run</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">bash</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-h63bdd">
+									Before running Python, we need to add the
+									<code>.pyenv</code> root directory to the system
+									<code>$PATH</code> and initialize the utility on shell startup.
+									To do so, open the shell environment files with the default text
+									editor:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">open</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-e</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-12li7fv">Append the following lines:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># pyenv</span></span>
 <span class="line"><span style="color: #C678DD">export</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">PYENV_ROOT</span><span style="color: #56B6C2">=</span><span style="color: #98C379">&quot;</span><span style="color: #E06C75">$HOME</span><span style="color: #98C379">/.pyenv&quot;</span></span>
 <span class="line"><span style="color: #56B6C2">command</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-v</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pyenv</span><span style="color: #ABB2BF"> &gt;</span><span style="color: #98C379">/dev/null</span><span style="color: #ABB2BF"> || </span><span style="color: #C678DD">export</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">PATH</span><span style="color: #56B6C2">=</span><span style="color: #98C379">&quot;</span><span style="color: #E06C75">$PYENV_ROOT</span><span style="color: #98C379">/bin:</span><span style="color: #E06C75">$PATH</span><span style="color: #98C379">&quot;</span></span>
-<span class="line"><span style="color: #56B6C2">eval</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;$(</span><span style="color: #61AFEF">pyenv</span><span style="color: #98C379"> init -)&quot;</span></span></code></pre><!-- HTML_TAG_END --> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1t5qye5">Confirm <code>pyenv</code> installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1675k9y">To see a list of all Python versions available for installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span></span>
+<span class="line"><span style="color: #56B6C2">eval</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;$(</span><span style="color: #61AFEF">pyenv</span><span style="color: #98C379"> init -)&quot;</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1t5qye5">
+									Confirm <code>pyenv</code> installation:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1675k9y">
+									To see a list of all Python versions available for installation:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># restrict list output to a major Python version</span></span>
-<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">grep</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;3.11&quot;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-3bcyr3">Install Python:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># 3.11.3 as an example</span></span>
-<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1o1sst2">Set the global Python version:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">global</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-zoeywi">Confirm that <code>python</code> and <code>pip</code> point to the correct executables:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">which</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">python</span><span style="color: #ABB2BF"> &amp;&amp; </span><span style="color: #56B6C2">which</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pip</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-jv0dqp">Now, you can use Python!</p> <h3 data-svelte-h="svelte-1nsdrcp">Node.js</h3> <h4 data-svelte-h="svelte-1i42qyf">NVM</h4> <p data-svelte-h="svelte-n5i71o">To install nvm, run the automated script:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">curl</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-o-</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">bash</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-5lbgsy">Refresh the environment and confirm installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span>
-<span class="line"><span style="color: #61AFEF">nvm</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-n3twn5">Install the latest stable release of Node.js:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">nvm</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">stable</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-jio6a8">Confirm successful Node installation:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">node</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre><!-- HTML_TAG_END --></div> </article></div></main>   <footer class="svelte-k2ae0s"><p class="svelte-k2ae0s">lukasvasadi © 2024</p> </footer> </div> 
-			
+<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--list</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">grep</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;3.11&quot;</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-3bcyr3">Install Python:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #7F848E; font-style: italic"># 3.11.3 as an example</span></span>
+<span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-1o1sst2">Set the global Python version:</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">pyenv</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">global</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">3.11</span><span style="color: #98C379">.3</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-zoeywi">
+									Confirm that <code>python</code> and <code>pip</code> point to
+									the correct executables:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">which</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">python</span><span style="color: #ABB2BF"> &amp;&amp; </span><span style="color: #56B6C2">which</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pip</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-jv0dqp">Now, you can use Python!</p>
+								<h3 data-svelte-h="svelte-1nsdrcp">Node.js</h3>
+								<h4 data-svelte-h="svelte-1i42qyf">NVM</h4>
+								<p data-svelte-h="svelte-n5i71o">
+									To install nvm, run the automated script:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">curl</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-o-</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">bash</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-5lbgsy">
+									Refresh the environment and confirm installation:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #56B6C2">source</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">~/.zshrc</span></span>
+<span class="line"><span style="color: #61AFEF">nvm</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-n3twn5">
+									Install the latest stable release of Node.js:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">nvm</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">stable</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+								<p data-svelte-h="svelte-jio6a8">
+									Confirm successful Node installation:
+								</p>
+								<!-- HTML_TAG_START -->
+								<pre
+									class="shiki one-dark-pro"
+									style="background-color: #282c34"
+									tabindex="0"
+								><code><span class="line"><span style="color: #61AFEF">node</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--version</span></span></code></pre>
+								<!-- HTML_TAG_END -->
+							</div>
+						</article>
+					</div>
+				</main>
+				<footer class="svelte-k2ae0s">
+					<p class="svelte-k2ae0s">lukasvasadi © 2024</p>
+				</footer>
+			</div>
+
 			<script>
 				{
 					__sveltekit_18adyi9 = {
-						base: new URL(".", location).pathname.slice(0, -1),
+						base: new URL('.', location).pathname.slice(0, -1),
 						env: {}
-					};
+					}
 
-					const element = document.currentScript.parentElement;
+					const element = document.currentScript.parentElement
 
-					const data = [null,null];
+					const data = [null, null]
 
 					Promise.all([
-						import("./_app/immutable/entry/start.60671325.js"),
-						import("./_app/immutable/entry/app.b9dda5a1.js")
+						import('./_app/immutable/entry/start.60671325.js'),
+						import('./_app/immutable/entry/app.b9dda5a1.js')
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
 							data,
 							form: null,
 							error: null
-						});
-					});
+						})
+					})
 				}
 			</script>
 		</div>
