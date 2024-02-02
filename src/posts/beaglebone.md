@@ -15,7 +15,7 @@ published: true
     import Iconlist from "../components/iconlist.svelte"
 </script>
 
-![Windows surface laptop](/images/beaglebone-black.jpg)
+![BeagleBone Black board](/images/beaglebone-black.jpg)
 
 ## Contents
 
