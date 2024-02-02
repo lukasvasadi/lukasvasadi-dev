@@ -2,6 +2,17 @@
 	"version": 3,
 	"routes": [
 		{
+			"src": "/networking",
+			"dest": "/networking/"
+		},
+		{
+			"src": "/networking/",
+			"status": 308,
+			"headers": {
+				"Location": "/networking"
+			}
+		},
+		{
 			"src": "/environments",
 			"dest": "/environments/"
 		},
@@ -10,6 +21,17 @@
 			"status": 308,
 			"headers": {
 				"Location": "/environments"
+			}
+		},
+		{
+			"src": "/beaglebone",
+			"dest": "/beaglebone/"
+		},
+		{
+			"src": "/beaglebone/",
+			"status": 308,
+			"headers": {
+				"Location": "/beaglebone"
 			}
 		},
 		{
@@ -96,8 +118,14 @@
 		"index.html": {
 			"path": ""
 		},
+		"networking.html": {
+			"path": "networking"
+		},
 		"environments.html": {
 			"path": "environments"
+		},
+		"beaglebone.html": {
+			"path": "beaglebone"
 		},
 		"rp2040.html": {
 			"path": "rp2040"
