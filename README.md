@@ -1,22 +1,25 @@
 # Developer Site
 
-Tutorials and discussion posts on various engineering technologies.
+Tutorials and discussion posts on various developer technologies.
 
 ## Setup
 
 After cloning project, install dependencies:
 
-```bash
+```zsh
 npm i
 ```
 
 Start a development server:
 
-```bash
+```zsh
 npm run dev
+```
 
-# or start the server and open the app in a new browser tab
-npm run dev --open
+To run the codebase formatter:
+
+```zsh
+npm run format
 ```
 
 ## Building
