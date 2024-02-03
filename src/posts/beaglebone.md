@@ -86,7 +86,11 @@ When the transfer is complete, the BeagleBone will automatically power down. At 
 cat /etc/dogtag
 ```
 
-The output should resemble `BeagleBoard.org Debian Buster IoT Image 2020-04-06`.
+The output should resemble:
+
+```console
+BeagleBoard.org Debian Buster IoT Image 2020-04-06
+```
 
 <Heading str="Walk the dog" />
 
