@@ -1,2 +1,4 @@
-const title = 'lukasvasadi'
-export { title as t }
+const title = "lukasvasadi";
+export {
+  title as t
+};

@@ -1,686 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/vasadi-icon-square.png" />
 
-		<link href="./_app/immutable/assets/0.40bb4301.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/3.e2f5fd52.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/iconlist.19ffcec2.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/tag.6154d69e.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/def.d0eb59fd.css" rel="stylesheet" />
-		<link rel="modulepreload" href="./_app/immutable/entry/start.60671325.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ae1baad1.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d8d3b1ab.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.648b4cba.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/control.c2cf8273.js" />
-		<link rel="modulepreload" href="./_app/immutable/entry/app.b9dda5a1.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.0e1198e2.js" />
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.2ff4e9c1.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/config.f4ded0b2.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.c2880df6.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js" />
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.23ac03db.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/utils.2fdf1f5e.js" />
-		<title>Managing systems with PowerShell</title>
-		<!-- HEAD_svelte-1vn9r42_START -->
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Managing systems with PowerShell" />
-		<meta property="og:image" content="/images/windows-surface-laptop.jpg" />
-		<!-- HEAD_svelte-1vn9r42_END -->
-		<script type="module">
-			const theme = localStorage.getItem('color-scheme')
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/icons/vasadi-icon-square.png" />
+    
+		<link href="./_app/immutable/assets/0.be81d44b.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/3.e2f5fd52.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/iconlist.19ffcec2.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/tag.6154d69e.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/def.d0eb59fd.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.469c1fd8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ae1baad1.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.a7829f11.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.648b4cba.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/control.c2cf8273.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.ec6279a1.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.0e1198e2.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.b4e484d8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/config.f4ded0b2.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.c2880df6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.8a5f1183.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/utils.2fdf1f5e.js"><title>Managing systems with PowerShell</title><!-- HEAD_svelte-1vn9r42_START --><meta property="og:type" content="article"><meta property="og:title" content="Managing systems with PowerShell"><meta property="og:image" content="/images/windows-surface-laptop.jpg"><!-- HEAD_svelte-1vn9r42_END -->
+    <script type="module">
+        const theme = localStorage.getItem('color-scheme')
 
-			theme
-				? document.documentElement.setAttribute('color-scheme', theme)
-				: localStorage.setItem('color-scheme', 'dark')
-		</script>
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
-			<div class="layout svelte-sdkn5t">
-				<nav class="svelte-bs11bt">
-					<a href="/" class="title svelte-bs11bt"><b>lukasvasadi</b></a>
-					<button aria-label="Toggle theme" class="svelte-114mtci">
-						<div class="svelte-114mtci">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide-icon lucide lucide-moon"
-							>
-								<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-							</svg>
-							<span data-svelte-h="svelte-397x2m">Dark</span>
-						</div>
-					</button>
-				</nav>
-				<main class="svelte-sdkn5t">
-					<div class="transition svelte-vcdv4c">
-						<article class="svelte-1apnuse">
-							<hgroup>
-								<h1 class="svelte-1apnuse">Managing systems with PowerShell</h1>
-								<p class="svelte-1apnuse">Published at Jan 15, 2022</p>
-							</hgroup>
-							<div class="tags svelte-1apnuse">
-								<span class="surface-4 svelte-1apnuse">#PowerShell</span
-								><span class="surface-4 svelte-1apnuse">#Windows</span>
-							</div>
-							<div class="prose">
-								<p data-svelte-h="svelte-66dhs3">
-									<img
-										src="/images/windows-surface-laptop.jpg"
-										alt="Windows surface laptop"
-									/>
-								</p>
-								<h2 data-svelte-h="svelte-jpxk5s">Contents</h2>
-								<ul data-svelte-h="svelte-1vzcxdg">
-									<li><a href="#introduction">Introduction</a></li>
-									<li><a href="#basic-utilities">Basic utilities</a></li>
-									<li><a href="#help">Help</a></li>
-									<li><a href="#pipeline">Pipeline</a></li>
-									<li><a href="#objects">Objects</a></li>
-									<li><a href="#variables">Variables</a></li>
-									<li><a href="#remoting">Remoting</a></li>
-									<li><a href="#execution-policy">Execution policy</a></li>
-									<li><a href="#best-practices">Best practices</a></li>
-								</ul>
-								<h2><a id="introduction">Introduction</a></h2>
-								<p data-svelte-h="svelte-1n9t6j3">
-									The PowerShell command line interface was originally intended to
-									port Unix tools to Windows. However, the developers realized
-									that the fundamental architectural differences between Unix (and
-									Unix clones such as Linux) and Windows—namely, that Windows is
-									an API-based operating system whereas Unix manages its entire
-									framework through text files—were insurmountable.
-								</p>
-								<p data-svelte-h="svelte-1pagceg">
-									As a result, the developers created an entirely new command line
-									interface and scripting language that would become the basis of
-									future Windows releases. In 2016, the project was made
-									open-source and Microsoft announced officially-supported
-									versions for macOS and select Linux distributions.
-								</p>
-								<p data-svelte-h="svelte-1bl4j81">
-									PowerShell is case insensitive and operates with cmdlets that
-									follow a verb-noun syntax. Similar to batch files, cmdlets can
-									be used within scripts, which may be packaged into modules, to
-									automate more complicated administrative tasks.
-								</p>
-								<h3 data-svelte-h="svelte-f1mqfx">Resources</h3>
-								<ul data-svelte-h="svelte-v19ww7">
-									<li>
-										<a
-											href="https://www.youtube.com/watch?v=UVUd9_k9C6A&t=10s"
-											rel="nofollow"
-											>PowerShell Beginner Tutorial</a
-										>
-									</li>
-									<li>
-										<a
-											href="https://www.youtube.com/watch?v=K4YDHFalAK8&t=19008s"
-											rel="nofollow"
-											>PowerShell Advanced Tools and Scripting</a
-										>
-									</li>
-									<li>
-										<a
-											href="https://learn.microsoft.com/en-us/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package?view=powershell-7.2"
-											rel="nofollow"
-											>Creating and Publishing an Item</a
-										>
-									</li>
-									<li>
-										<a
-											href="https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal"
-											rel="nofollow"
-											>My Ultimate PowerShell Prompt</a
-										>
-									</li>
-								</ul>
-								<h2><a id="basic-utilities">Basic utilities</a></h2>
-								<dl class="svelte-1sq4o2n">
-									<dt class="svelte-1sq4o2n"><code>Get-History</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Print command history (alias:
-										<code>history</code>)<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>Where-Object</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Select object from collection based
-										on property values (alias:
-										<code>where</code>)<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>Get-Process</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Find all running processes (alias:
-										<code>gps</code>)<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>Get-Service</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Find all running services (alias:
-										<code>gsv</code>)
-										<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>Write-Warning</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Prints warning message string
-										argument to console with PowerShell formatting<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>Write-Error</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Prints error message string argument
-										to console with PowerShell formatting<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>Write-Output</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Print variable value to console while
-										preserving object properties<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>Write-Host</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Print to console without preserving
-										object properties<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>refreshenv</code></dt>
-									<dd>
-										<!-- HTML_TAG_START -->Refresh environment variables<!-- HTML_TAG_END -->
-									</dd>
-									<dt class="svelte-1sq4o2n"><code>cls</code></dt>
-									<dd><!-- HTML_TAG_START -->Clear shell<!-- HTML_TAG_END --></dd>
-								</dl>
-								<p data-svelte-h="svelte-ysse6u">
-									Sometimes it may be useful to write shell comments, e.g., during
-									webinars or broadcasts. Similar to Unix, comments in PowerShell
-									are preceded with <code>#</code>, however, block comments may be
-									written between the <code>&lt;#</code> and
-									<code>#&gt;</code> symbols.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># this is a comment</span></span>
+        theme
+            ? document.documentElement.setAttribute('color-scheme', theme)
+            : localStorage.setItem('color-scheme', 'dark')
+    </script>
+</head>
+
+<body data-sveltekit-preload-data="hover">
+    <div style="display: contents">  <div class="layout svelte-sdkn5t"> <nav class="svelte-bs11bt"> <a href="/" class="title svelte-bs11bt"><b>lukasvasadi</b></a>     <button aria-label="Toggle theme" class="svelte-114mtci"><div class="svelte-114mtci"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon "><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg> <span data-svelte-h="svelte-397x2m">Dark</span></div> </button> </nav> <main class="svelte-sdkn5t"> <div class="transition svelte-vcdv4c">  <article class="svelte-1apnuse"> <hgroup><h1 class="svelte-1apnuse">Managing systems with PowerShell</h1> <p class="svelte-1apnuse">Published at Jan 15, 2022</p></hgroup>  <div class="tags svelte-1apnuse"><span class="surface-4 svelte-1apnuse">#PowerShell</span><span class="surface-4 svelte-1apnuse">#Windows</span></div>  <div class="prose"><p data-svelte-h="svelte-66dhs3"><img src="/images/windows-surface-laptop.jpg" alt="Windows surface laptop"></p> <h2 data-svelte-h="svelte-jpxk5s">Contents</h2> <ul data-svelte-h="svelte-1vzcxdg"><li><a href="#introduction">Introduction</a></li> <li><a href="#basic-utilities">Basic utilities</a></li> <li><a href="#help">Help</a></li> <li><a href="#pipeline">Pipeline</a></li> <li><a href="#objects">Objects</a></li> <li><a href="#variables">Variables</a></li> <li><a href="#remoting">Remoting</a></li> <li><a href="#execution-policy">Execution policy</a></li> <li><a href="#best-practices">Best practices</a></li></ul> <h2><a id="introduction">Introduction</a></h2> <p data-svelte-h="svelte-1n9t6j3">The PowerShell command line interface was originally intended to port Unix tools to Windows. However, the developers realized that the fundamental architectural differences between Unix (and Unix clones such as Linux) and Windows—namely, that Windows is an API-based operating system whereas Unix manages its entire framework through text files—were insurmountable.</p> <p data-svelte-h="svelte-1pagceg">As a result, the developers created an entirely new command line interface and scripting language that would become the basis of future Windows releases. In 2016, the project was made open-source and Microsoft announced officially-supported versions for macOS and select Linux distributions.</p> <p data-svelte-h="svelte-1bl4j81">PowerShell is case insensitive and operates with cmdlets that follow a verb-noun syntax. Similar to batch files, cmdlets can be used within scripts, which may be packaged into modules, to automate more complicated administrative tasks.</p> <h3 data-svelte-h="svelte-f1mqfx">Resources</h3> <ul data-svelte-h="svelte-v19ww7"><li><a href="https://www.youtube.com/watch?v=UVUd9_k9C6A&t=10s" rel="nofollow">PowerShell Beginner Tutorial</a></li> <li><a href="https://www.youtube.com/watch?v=K4YDHFalAK8&t=19008s" rel="nofollow">PowerShell Advanced Tools and Scripting</a></li> <li><a href="https://learn.microsoft.com/en-us/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package?view=powershell-7.2" rel="nofollow">Creating and Publishing an Item</a></li> <li><a href="https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal" rel="nofollow">My Ultimate PowerShell Prompt</a></li></ul> <h2><a id="basic-utilities">Basic utilities</a></h2> <dl class="svelte-1sq4o2n"><dt class="svelte-1sq4o2n"><code>Get-History</code></dt> <dd><!-- HTML_TAG_START -->Print command history (alias: <code>history</code>)<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>Where-Object</code></dt> <dd><!-- HTML_TAG_START -->Select object from collection based on property values (alias: <code>where</code>)<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>Get-Process</code></dt> <dd><!-- HTML_TAG_START -->Find all running processes (alias: <code>gps</code>)<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>Get-Service</code></dt> <dd><!-- HTML_TAG_START -->Find all running services (alias: <code>gsv</code>) <!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>Write-Warning</code></dt> <dd><!-- HTML_TAG_START -->Prints warning message string argument to console with PowerShell formatting<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>Write-Error</code></dt> <dd><!-- HTML_TAG_START -->Prints error message string argument to console with PowerShell formatting<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>Write-Output</code></dt> <dd><!-- HTML_TAG_START -->Print variable value to console while preserving object properties<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>Write-Host</code></dt> <dd><!-- HTML_TAG_START -->Print to console without preserving object properties<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>refreshenv</code></dt> <dd><!-- HTML_TAG_START -->Refresh environment variables<!-- HTML_TAG_END --></dd><dt class="svelte-1sq4o2n"><code>cls</code></dt> <dd><!-- HTML_TAG_START -->Clear shell<!-- HTML_TAG_END --></dd></dl> <p data-svelte-h="svelte-ysse6u">Sometimes it may be useful to write shell comments, e.g., during webinars or broadcasts. Similar to Unix, comments in PowerShell are preceded with <code>#</code>, however, block comments may be written between the <code>&lt;#</code> and <code>#&gt;</code> symbols.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># this is a comment</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">&lt;#</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">    this is a block comment where you can include more</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic">    detailed information that may span multiple lines</span></span>
-<span class="line"><span style="color: #7F848E; font-style: italic">#&gt;</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-121oq1m">
-									To measure the time required to execute a command:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Measure-Command</span><span style="color: #ABB2BF"> &#123;</span><span style="color: #56B6C2">Get-Process</span><span style="color: #ABB2BF">&#125;</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<h2><a id="help">Help</a></h2>
-								<p data-svelte-h="svelte-1vrfeam">
-									The developers of PowerShell believed that no user should
-									memorize commands or syntax. As a result, they packaged
-									PowerShell with an updatable, structured help utility that
-									provides the latest information for cmdlets. With an internet
-									connection, update help with the cmdlets below:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Update-Help</span></span>
+<span class="line"><span style="color: #7F848E; font-style: italic">#&gt;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-121oq1m">To measure the time required to execute a command:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Measure-Command</span><span style="color: #ABB2BF"> &#123;</span><span style="color: #56B6C2">Get-Process</span><span style="color: #ABB2BF">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="help">Help</a></h2> <p data-svelte-h="svelte-1vrfeam">The developers of PowerShell believed that no user should memorize commands or syntax. As a result, they packaged PowerShell with an updatable, structured help utility that provides the latest information for cmdlets. With an internet connection, update help with the cmdlets below:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Update-Help</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># often recommended to force execution</span></span>
-<span class="line"><span style="color: #56B6C2">Update-Help</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Force</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1sw88xc">
-									To get help on a cmdlet, use the <code>Get-Help</code> utility
-									followed by the cmdlet under investigation. This will output a
-									shortlist of helpful information and automatically scroll to the
-									bottom.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Get-Help</span><span style="color: #ABB2BF"> cmdlet</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<h2><a id="pipeline">Pipeline</a></h2>
-								<p data-svelte-h="svelte-91nxwy">
-									Similar to other shell scripting tools, the PowerShell pipe
-									(<code>|</code>) utility allows users to pass data output from
-									one command to the input of another.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># export a list of current active services to a csv file</span></span>
-<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Export-csv</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Path C:\Users\Username\Desktop</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1eigd5t">
-									Besides executing commands on collections of objects crossing
-									the pipeline, users can also evaluate individual objects with
-									filters. These individual objects, or items, crossing the
-									pipeline can be accessed with the <code>$PSItem</code> variable:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># filter individual process objects where the status is running</span></span>
-<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Where-Object</span><span style="color: #ABB2BF"> &#123;$PSItem</span><span style="color: #E06C75">.Status</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-eq</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;Running&quot;</span><span style="color: #ABB2BF">&#125; </span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1kw7bhi">
-									Of course, not all cmdlets will accept the objects being ferried
-									across the pipeline. A good rule of thumb—though not always the
-									case—is that cmdlets with the same noun, e.g.,
-									<code>Get-Service</code>, <code>Stop-Service</code>, will be
-									compatible. Specifically, this means that the data leaving one
-									cmdlet has the same property value, i.e., class type, as the
-									input required by the adjacent cmdlet in the pipeline.
-								</p>
-								<h2><a id="objects">Objects</a></h2>
-								<p data-svelte-h="svelte-h0867b">
-									In contrast to Unix-like systems, where all shell interactions
-									are based on text-based input/output, PowerShell was designed to
-									work directly with objects. In many cases, this reduces the
-									amount of work necessary to accomplish certain tasks, as there
-									is no overhead management of filler text output. As an example,
-									if you wanted to restrict <code>Get-Process</code> output to
-									handles greater than 900:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Get-Process</span><span style="color: #ABB2BF"> | </span><span style="color: #C678DD">Where</span><span style="color: #ABB2BF"> Handles </span><span style="color: #56B6C2">-gt</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">900</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-kqu082">
-									This one line of code replaces several lines that would be
-									needed to achieve the same result with Bash.
-								</p>
-								<p data-svelte-h="svelte-17qlpwr">
-									Every object has associated properties and methods, which
-									describe features of the object class as well as actionable
-									functions, respectively. The <code>Get-Member</code> utility,
-									with shorthand <code>gm</code>, prints all properties and
-									methods of an object along with its class definition.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># find the properties of the bits service object</span></span>
-<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Name bits | </span><span style="color: #56B6C2">Get-Member</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-194aw7p">
-									With this information, you can choose to customize output based
-									on object class properties.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># print the name and status of every object returned from get-service</span></span>
+<span class="line"><span style="color: #56B6C2">Update-Help</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Force</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1sw88xc">To get help on a cmdlet, use the <code>Get-Help</code> utility followed by the cmdlet under investigation. This will output a shortlist of helpful information and automatically scroll to the bottom.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Get-Help</span><span style="color: #ABB2BF"> cmdlet</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="pipeline">Pipeline</a></h2> <p data-svelte-h="svelte-91nxwy">Similar to other shell scripting tools, the PowerShell pipe (<code>|</code>) utility allows users to pass data output from one command to the input of another.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># export a list of current active services to a csv file</span></span>
+<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Export-csv</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Path C:\Users\Username\Desktop</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-xvmoh1">Besides executing commands on collections of objects crossing the pipeline, users can also evaluate individual objects with filters. These individual objects, or items, crossing the pipeline can be accessed with the <code>$PSItem</code> variable:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># filter individual process objects where the status is running</span></span>
+<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Where-Object</span><span style="color: #ABB2BF"> &#123;$PSItem</span><span style="color: #E06C75">.Status</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-eq</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;Running&quot;</span><span style="color: #ABB2BF">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-12rqbsi">Of course, not all cmdlets will accept the objects being ferried across the pipeline. A good rule of thumb—though not always the case—is that cmdlets with the same noun, e.g., <code>Get-Service</code>, <code>Stop-Service</code>, will be compatible. Specifically, this means that the data leaving one cmdlet has the same property value, i.e., class type, as the input required by the adjacent cmdlet in the pipeline.</p> <h2><a id="objects">Objects</a></h2> <p data-svelte-h="svelte-g7wh8b">In contrast to Unix-like systems, where all shell interactions are based on text-based input/output, PowerShell was designed to work directly with objects. In many cases, this reduces the amount of work necessary to accomplish certain tasks, as there is no overhead management of filler text output. As an example, if you wanted to restrict <code>Get-Process</code> output to handles greater than 900:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Get-Process</span><span style="color: #ABB2BF"> | </span><span style="color: #C678DD">Where</span><span style="color: #ABB2BF"> Handles </span><span style="color: #56B6C2">-gt</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">900</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-kqu082">This one line of code replaces several lines that would be needed to achieve the same result with Bash.</p> <p data-svelte-h="svelte-12es6iv">Every object has associated properties and methods, which describe features of the object class as well as actionable functions, respectively. The <code>Get-Member</code> utility, with shorthand <code>gm</code>, prints all properties and methods of an object along with its class definition.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># find the properties of the bits service object</span></span>
+<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Name bits | </span><span style="color: #56B6C2">Get-Member</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-6uzhzt">With this information, you can choose to customize output based on object class properties.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># print the name and status of every object returned from get-service</span></span>
 <span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Select-Object</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Property Name, Status</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># print the name and length of each object and sort by length</span></span>
-<span class="line"><span style="color: #56B6C2">Get-ChildItem</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Select-Object</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Property Name, Length | Sort </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Property Length</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<h2><a id="variables">Variables</a></h2>
-								<p data-svelte-h="svelte-6tyvi9">
-									PowerShell variables are similar to Bash variables, except that
-									these can hold object values. For example:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #E06C75">$bits</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> bits</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1oyvfi">
-									The variable <code>$bits</code> now holds the
-									<code>bits</code> service object. As such, this variable is
-									subject to the object properties and methods:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># print the status of the bits service</span></span>
+<span class="line"><span style="color: #56B6C2">Get-ChildItem</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Select-Object</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Property Name, Length | Sort </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Property Length</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="variables">Variables</a></h2> <p data-svelte-h="svelte-1bke3zx">PowerShell variables are similar to Bash variables, except that these can hold object values. For example:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$bits</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> bits</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1oyvfi">The variable <code>$bits</code> now holds the <code>bits</code> service object. As such, this variable is subject to the object properties and methods:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># print the status of the bits service</span></span>
 <span class="line"><span style="color: #E06C75">$bits.status</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># stop the bits service</span></span>
-<span class="line"><span style="color: #E06C75">$bits.stop</span><span style="color: #ABB2BF">()</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1hh9yvw">
-									It is important to note that the properties of this variable are
-									static, meaning they represent a snapshot of the object at the
-									time of variable creation. After running a method, the object
-									must be manually refreshed to update any properties that may
-									have changed state.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># check the variable status</span></span>
+<span class="line"><span style="color: #E06C75">$bits.stop</span><span style="color: #ABB2BF">()</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1l90dk0">It is important to note that the properties of this variable are static, meaning they represent a snapshot of the object at the time of variable creation. After running a method, the object must be manually refreshed to update any properties that may have changed state.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># check the variable status</span></span>
 <span class="line"><span style="color: #E06C75">$bits.status</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># refresh object properties</span></span>
 <span class="line"><span style="color: #E06C75">$bits.refresh</span><span style="color: #ABB2BF">()</span></span>
-<span class="line"><span style="color: #E06C75">$bits.status</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1akqznu">
-									PowerShell variables, when defined inside brackets
-									<code>{}</code>, may also contain spaces and special characters:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #E06C75">$&#123; var!@bl&amp; &#125;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;hello&quot;</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<h2><a id="remoting">Remoting</a></h2>
-								<p data-svelte-h="svelte-19kv7fi">
-									Remote access has to be enabled on all machines. Starting with
-									Windows Server 2012, which is a cloud operating system, remote
-									access is enabled by default.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Enable-PSRemoting</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1loxjh2">
-									To establish a one-to-one connection:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Enter-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName name</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1c67f4a">
-									Outside of a remote session, individual commands can be executed
-									on remote machines with the <code>Invoke-Command</code> cmdlet:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># print out the system event log from a remote machine named &quot;image-processing&quot;</span></span>
+<span class="line"><span style="color: #E06C75">$bits.status</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1uur8vq">PowerShell variables, when defined inside brackets <code>{}</code>, may also contain spaces and special characters:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$&#123; var!@bl&amp; &#125;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;hello&quot;</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="remoting">Remoting</a></h2> <p data-svelte-h="svelte-1d4jeju">Remote access has to be enabled on all machines. Starting with Windows Server 2012, which is a cloud operating system, remote access is enabled by default.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Enable-PSRemoting</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1loxjh2">To establish a one-to-one connection:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Enter-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName name</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1uro65q">Outside of a remote session, individual commands can be executed on remote machines with the <code>Invoke-Command</code> cmdlet:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># print out the system event log from a remote machine named &quot;image-processing&quot;</span></span>
 <span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName image</span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">processing &#123;</span><span style="color: #56B6C2">Get-EventLog</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">LogName system&#125;</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># beware of what will be executed</span></span>
-<span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName comp1,comp2,comp3 &#123;</span><span style="color: #56B6C2">Restart-Computer</span><span style="color: #ABB2BF">&#125; </span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-7jkgiw">
-									Note that every PowerShell command entered into the console uses
-									<code>Invoke-Command</code> behind the scences, with the local
-									computer accepted as the default machine. All data returned from
-									the remote system(s) are deserialized object representations,
-									meaning that the objects contain all relevant information for
-									the administrator, but have no methods other than
-									<code>ToString</code>.
-								</p>
-								<p data-svelte-h="svelte-1kgd3gj">
-									If not connected to the local network, PowerShell remoting may
-									be facilitated in a browser over https web access. To set up
-									this feature, first install
-									<code>WindowsPowerShellWebAccess</code> on the remote machine
-									and then configure user/group privileges.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># connect to the desired machine</span></span>
+<span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName comp1,comp2,comp3 &#123;</span><span style="color: #56B6C2">Restart-Computer</span><span style="color: #ABB2BF">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-7jkgiw">Note that every PowerShell command entered into the console uses <code>Invoke-Command</code> behind the scences, with the local computer accepted as the default machine. All data returned from the remote system(s) are deserialized object representations, meaning that the objects contain all relevant information for the administrator, but have no methods other than <code>ToString</code>.</p> <p data-svelte-h="svelte-ncfq7">If not connected to the local network, PowerShell remoting may be facilitated in a browser over https web access. To set up this feature, first install <code>WindowsPowerShellWebAccess</code> on the remote machine and then configure user/group privileges.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># connect to the desired machine</span></span>
 <span class="line"><span style="color: #56B6C2">Enter-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName name</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># install the web access feature</span></span>
 <span class="line"><span style="color: #56B6C2">Install-WindowsFeature</span><span style="color: #ABB2BF"> WindowsPowerShellWebAccess</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># configure a web application for remote PowerShell access</span></span>
 <span class="line"><span style="color: #56B6C2">Install-PswaWebApplication</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">UseTestCertificate</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># add authorization rules for users and groups</span></span>
-<span class="line"><span style="color: #56B6C2">Add-PswaAuthorizationRule</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerGroupName group </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">UserName users </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ConfigurationName rights</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-11ncaip">
-									After completing these steps, the administrator can open a
-									browser and navigate to the web address—the default being
-									https://pwa/pwsa—and access a PowerShell instance connected to
-									the remote machine.
-								</p>
-								<p data-svelte-h="svelte-1bgc9go">
-									Individual commands can be executed on a remote machine without
-									starting a PowerShell session:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName name &#123;</span><span style="color: #E06C75">$proc</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">Get-Process</span><span style="color: #ABB2BF">&#125; </span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1x93ezg">
-									In this case, PowerShell is loaded and initialized on the remote
-									machine, the command is executed, and then the console instance
-									and connection are destroyed. Naturally, this means that any
-									variables are deleted from memory and thus cannot be accessed
-									with a subsequent <code>Invoke-Command</code>.
-								</p>
-								<p data-svelte-h="svelte-olym3q">
-									However, as hinted above, persistent PowerShell sessions can be
-									created and accessed at various points of time:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">New-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName name</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-14a440r">
-									This creates a persistent remote session and stores the object
-									inside the variable <code>$sess</code>. This session can now be
-									used instead of <code>ComputerName</code> to pass commands to
-									the remote machine. So long as the session remains open,
-									variables will persist in system memory and can be accessed with
-									subsequent commands.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Session </span><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> &#123;</span><span style="color: #E06C75">$x</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">&#125;</span></span>
-<span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Session </span><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> &#123;</span><span style="color: #E06C75">$x</span><span style="color: #ABB2BF">&#125;</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1ft79qn">
-									Sessions also offer the ability to share modules without
-									installation on the local machine. For example, if a server
-									computer had the <code>ActiveDirectory</code> module installed:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">New-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName server </span></span>
-<span class="line"><span style="color: #56B6C2">Import-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Session </span><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Module ActiveDirectory </span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1kmkbug">
-									Now all cmdlets from <code>ActiveDirectory</code> are available
-									locally while the session is active. Behind the scenes, the
-									local machine builds data structures using
-									<code>Get-Command</code> and, when these cmdlets are invoked,
-									the relevant information, e.g., input parameters, is collected
-									and passed to the remote computer for execution. This entire
-									workflow is referred to as “implicit remoting.”
-								</p>
-								<h2><a id="execution-policy">Execution policy</a></h2>
-								<p data-svelte-h="svelte-1mxankf">
-									PowerShell has safety features that prevent users from
-									accidentally running scripts that may contain harmful or
-									malicious code. Script execution permissions are controlled via
-									the execution policy, which can be set to
-									<code>Restricted</code> (default), <code>Unrestricted</code>,
-									<code>AllSigned</code>, <code>RemoteSigned</code>,
-									<code>Bypass</code>, and <code>Undefined</code>.
-									<code>AllSigned</code> requires that all scripts downloaded or
-									created locally have digital signatures, whereas
-									<code>RemoteSigned</code> only requires signatures for scripts
-									downloaded from the web.
-								</p>
-								<p data-svelte-h="svelte-iycspb">
-									It is recommended to avoid <code>Unrestricted</code> and
-									<code>Bypass</code>, as these options allow the machine to
-									execute any script without review. If a downloaded script is
-									missing a trusted digital signature but nevertheless has been
-									deemed safe, then it can be exempted from the execution policy
-									with the <code>Unblock-File</code> command. As suggested, the
-									correct way to run local scripts is to add a digital signature,
-									which provides explicit authorization to execute the code.
-								</p>
-								<p data-svelte-h="svelte-knnl2o">
-									To find the current execution policy:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Get-ExecutionPolicy</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-kj3716">To change the execution policy:</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># AllSigned or RemoteSigned are generally recommended</span></span>
-<span class="line"><span style="color: #56B6C2">Set-ExecutionPolicy</span><span style="color: #ABB2BF"> AllSigned</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-uwsqus">To create a digital signature:</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">New-SelfSignedCertificate</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-pfrxrc">
-									To locate the digital signature and save it to an environment
-									variable:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># save all certificates to an environment variable</span></span>
+<span class="line"><span style="color: #56B6C2">Add-PswaAuthorizationRule</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerGroupName group </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">UserName users </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ConfigurationName rights</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-11ncaip">After completing these steps, the administrator can open a browser and navigate to the web address—the default being https://pwa/pwsa—and access a PowerShell instance connected to the remote machine.</p> <p data-svelte-h="svelte-en9cos">Individual commands can be executed on a remote machine without starting a PowerShell session:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName name &#123;</span><span style="color: #E06C75">$proc</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">Get-Process</span><span style="color: #ABB2BF">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1x93ezg">In this case, PowerShell is loaded and initialized on the remote machine, the command is executed, and then the console instance and connection are destroyed. Naturally, this means that any variables are deleted from memory and thus cannot be accessed with a subsequent <code>Invoke-Command</code>.</p> <p data-svelte-h="svelte-12mzn5e">However, as hinted above, persistent PowerShell sessions can be created and accessed at various points of time:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">New-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName name</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1uz5ypb">This creates a persistent remote session and stores the object inside the variable <code>$sess</code>. This session can now be used instead of <code>ComputerName</code> to pass commands to the remote machine. So long as the session remains open, variables will persist in system memory and can be accessed with subsequent commands.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Session </span><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> &#123;</span><span style="color: #E06C75">$x</span><span style="color: #56B6C2">=</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">&#125;</span></span>
+<span class="line"><span style="color: #56B6C2">Invoke-Command</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Session </span><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> &#123;</span><span style="color: #E06C75">$x</span><span style="color: #ABB2BF">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-4keni3">Sessions also offer the ability to share modules without installation on the local machine. For example, if a server computer had the <code>ActiveDirectory</code> module installed:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">New-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">ComputerName server</span></span>
+<span class="line"><span style="color: #56B6C2">Import-PSSession</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Session </span><span style="color: #E06C75">$sess</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Module ActiveDirectory</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1rgiv1w">Now all cmdlets from <code>ActiveDirectory</code> are available locally while the session is active. Behind the scenes, the local machine builds data structures using <code>Get-Command</code> and, when these cmdlets are invoked, the relevant information, e.g., input parameters, is collected and passed to the remote computer for execution. This entire workflow is referred to as “implicit remoting.”</p> <h2><a id="execution-policy">Execution policy</a></h2> <p data-svelte-h="svelte-1mxankf">PowerShell has safety features that prevent users from accidentally running scripts that may contain harmful or malicious code. Script execution permissions are controlled via the execution policy, which can be set to <code>Restricted</code> (default), <code>Unrestricted</code>, <code>AllSigned</code>, <code>RemoteSigned</code>, <code>Bypass</code>, and <code>Undefined</code>. <code>AllSigned</code> requires that all scripts downloaded or created locally have digital signatures, whereas <code>RemoteSigned</code> only requires signatures for scripts downloaded from the web.</p> <p data-svelte-h="svelte-iycspb">It is recommended to avoid <code>Unrestricted</code> and <code>Bypass</code>, as these options allow the machine to execute any script without review. If a downloaded script is missing a trusted digital signature but nevertheless has been deemed safe, then it can be exempted from the execution policy with the <code>Unblock-File</code> command. As suggested, the correct way to run local scripts is to add a digital signature, which provides explicit authorization to execute the code.</p> <p data-svelte-h="svelte-knnl2o">To find the current execution policy:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Get-ExecutionPolicy</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-kj3716">To change the execution policy:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># AllSigned or RemoteSigned are generally recommended</span></span>
+<span class="line"><span style="color: #56B6C2">Set-ExecutionPolicy</span><span style="color: #ABB2BF"> AllSigned</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-uwsqus">To create a digital signature:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">New-SelfSignedCertificate</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-exgllg">To locate the digital signature and save it to an environment variable:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># save all certificates to an environment variable</span></span>
 <span class="line"><span style="color: #56B6C2">Get-ChildItem</span><span style="color: #ABB2BF"> Cert:\CurrentUser </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Recurse </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">CodeSigningCert </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">OutVariable a</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># save the first cert from list to separate variable</span></span>
-<span class="line"><span style="color: #E06C75">$cert</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">$a</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">]</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-71mh4w">
-									To add a digital signature to a script:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #56B6C2">Set-AuthenticodeSignature</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Certificate </span><span style="color: #E06C75">$cert</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">FilePath path</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-10uktbn">
-									It is critical that administrators only sign scripts that they
-									understand fully. When working in an industrial setting, adding
-									a digital signature is a way of assuming responsibility for the
-									consequences of script execution.
-								</p>
-								<h2><a id="best-practices">Best practices</a></h2>
-								<p data-svelte-h="svelte-hnzbh6">
-									PowerShell is a powerful tool that can cause major system damage
-									if mishandled. When unsure about the ramifications of a certain
-									command, administrators can use the
-									<code>WhatIf</code> parameter to print out the results of the
-									questionable command without execution.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># the following command would kill all active services and likely damage the system</span></span>
-<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Stop-Service</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">WhatIf </span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-1i8m1zr">
-									Administrators may also consider using the
-									<code>Confirm</code> parameter to be prompted for confirmation
-									before command execution.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># print out command execution results with confirmation prompt</span></span>
-<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Stop-Service</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Confirm </span></span></code></pre>
-								<!-- HTML_TAG_END -->
-							</div>
-						</article>
-					</div>
-				</main>
-				<footer class="svelte-k2ae0s">
-					<p class="svelte-k2ae0s">lukasvasadi © 2024</p>
-				</footer>
-			</div>
-
+<span class="line"><span style="color: #E06C75">$cert</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">$a</span><span style="color: #ABB2BF">[</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">]</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-71mh4w">To add a digital signature to a script:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">Set-AuthenticodeSignature</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Certificate </span><span style="color: #E06C75">$cert</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">FilePath path</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-10uktbn">It is critical that administrators only sign scripts that they understand fully. When working in an industrial setting, adding a digital signature is a way of assuming responsibility for the consequences of script execution.</p> <h2><a id="best-practices">Best practices</a></h2> <p data-svelte-h="svelte-hnzbh6">PowerShell is a powerful tool that can cause major system damage if mishandled. When unsure about the ramifications of a certain command, administrators can use the <code>WhatIf</code> parameter to print out the results of the questionable command without execution.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># the following command would kill all active services and likely damage the system</span></span>
+<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Stop-Service</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">WhatIf</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1i8m1zr">Administrators may also consider using the <code>Confirm</code> parameter to be prompted for confirmation before command execution.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># print out command execution results with confirmation prompt</span></span>
+<span class="line"><span style="color: #56B6C2">Get-Service</span><span style="color: #ABB2BF"> | </span><span style="color: #56B6C2">Stop-Service</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">-</span><span style="color: #ABB2BF">Confirm</span></span></code></pre><!-- HTML_TAG_END --></div> </article></div></main>   <footer class="svelte-k2ae0s"><p class="svelte-k2ae0s">lukasvasadi © 2024</p> </footer> </div> 
+			
 			<script>
 				{
-					__sveltekit_18adyi9 = {
-						base: new URL('.', location).pathname.slice(0, -1),
+					__sveltekit_crsx6g = {
+						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
-					}
+					};
 
-					const element = document.currentScript.parentElement
+					const element = document.currentScript.parentElement;
 
-					const data = [null, null]
+					const data = [null,null];
 
 					Promise.all([
-						import('./_app/immutable/entry/start.60671325.js'),
-						import('./_app/immutable/entry/app.b9dda5a1.js')
+						import("./_app/immutable/entry/start.469c1fd8.js"),
+						import("./_app/immutable/entry/app.ec6279a1.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
 							data,
 							form: null,
 							error: null
-						})
-					})
+						});
+					});
 				}
 			</script>
 		</div>
-	</body>
+</body>
+
 </html>

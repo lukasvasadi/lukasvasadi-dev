@@ -1,7 +1,10 @@
-const prerender = true
+const prerender = true;
 async function load({ url }) {
-	return {
-		url: url.pathname
-	}
+  return {
+    url: url.pathname
+  };
 }
-export { load, prerender }
+export {
+  load,
+  prerender
+};

@@ -1,364 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/vasadi-icon-square.png" />
 
-		<link href="./_app/immutable/assets/0.40bb4301.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/3.e2f5fd52.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/iconlist.19ffcec2.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/tag.6154d69e.css" rel="stylesheet" />
-		<link href="./_app/immutable/assets/def.d0eb59fd.css" rel="stylesheet" />
-		<link rel="modulepreload" href="./_app/immutable/entry/start.60671325.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ae1baad1.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.d8d3b1ab.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.648b4cba.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/control.c2cf8273.js" />
-		<link rel="modulepreload" href="./_app/immutable/entry/app.b9dda5a1.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.0e1198e2.js" />
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.2ff4e9c1.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/config.f4ded0b2.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.c2880df6.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js" />
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.23ac03db.js" />
-		<link rel="modulepreload" href="./_app/immutable/chunks/utils.2fdf1f5e.js" />
-		<title>Exploring networks with Kali Linux</title>
-		<!-- HEAD_svelte-1vn9r42_START -->
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Exploring networks with Kali Linux" />
-		<meta property="og:image" content="/images/ethical-hacking.jpg" />
-		<!-- HEAD_svelte-1vn9r42_END -->
-		<script type="module">
-			const theme = localStorage.getItem('color-scheme')
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/icons/vasadi-icon-square.png" />
+    
+		<link href="./_app/immutable/assets/0.be81d44b.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/3.e2f5fd52.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/iconlist.19ffcec2.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/tag.6154d69e.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/def.d0eb59fd.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.469c1fd8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ae1baad1.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.a7829f11.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.648b4cba.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/control.c2cf8273.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.ec6279a1.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.0e1198e2.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.b4e484d8.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/config.f4ded0b2.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.c2880df6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.8a5f1183.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/utils.2fdf1f5e.js"><title>Exploring networks with Kali Linux</title><!-- HEAD_svelte-1vn9r42_START --><meta property="og:type" content="article"><meta property="og:title" content="Exploring networks with Kali Linux"><meta property="og:image" content="/images/ethical-hacking.jpg"><!-- HEAD_svelte-1vn9r42_END -->
+    <script type="module">
+        const theme = localStorage.getItem('color-scheme')
 
-			theme
-				? document.documentElement.setAttribute('color-scheme', theme)
-				: localStorage.setItem('color-scheme', 'dark')
-		</script>
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
-			<div class="layout svelte-sdkn5t">
-				<nav class="svelte-bs11bt">
-					<a href="/" class="title svelte-bs11bt"><b>lukasvasadi</b></a>
-					<button aria-label="Toggle theme" class="svelte-114mtci">
-						<div class="svelte-114mtci">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								class="lucide-icon lucide lucide-moon"
-							>
-								<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-							</svg>
-							<span data-svelte-h="svelte-397x2m">Dark</span>
-						</div>
-					</button>
-				</nav>
-				<main class="svelte-sdkn5t">
-					<div class="transition svelte-vcdv4c">
-						<article class="svelte-1apnuse">
-							<hgroup>
-								<h1 class="svelte-1apnuse">Exploring networks with Kali Linux</h1>
-								<p class="svelte-1apnuse">Published at Feb 2, 2024</p>
-							</hgroup>
-							<div class="tags svelte-1apnuse">
-								<span class="surface-4 svelte-1apnuse">#Networking</span
-								><span class="surface-4 svelte-1apnuse">#Kali Linux</span>
-							</div>
-							<div class="prose">
-								<p data-svelte-h="svelte-14gatyk">
-									<img src="/images/kali-logo.png" alt="Kali Linux logo" />
-								</p>
-								<h2 data-svelte-h="svelte-jpxk5s">Contents</h2>
-								<ul data-svelte-h="svelte-dn4zt0">
-									<li><a href="#introduction">Introduction</a></li>
-									<li><a href="#networks">Networks</a></li>
-								</ul>
-								<h2><a id="introduction">Introduction</a></h2>
-								<p class="tag warning svelte-5rv919">
-									<span class="svelte-5rv919"
-										><svg
-											xmlns="http://www.w3.org/2000/svg"
-											width="34px"
-											height="34px"
-											viewBox="0 0 24 24"
-											fill="#ceb301"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											class="lucide-icon lucide lucide-alert-circle"
-										>
-											<circle cx="12" cy="12" r="10"></circle>
-											<line x1="12" x2="12" y1="8" y2="12"></line>
-											<line x1="12" x2="12.01" y1="16" y2="16"></line>
-										</svg> </span
-									><!-- HTML_TAG_START -->The following information is for
-									educational purposes only. It is intended to review general
-									concepts in networking. The author is not a qualified instructor
-									and assumes no responsibility for improper use of the material.
-									Never access another network without express permission from its
-									administrator.<!-- HTML_TAG_END -->
-								</p>
-								<p data-svelte-h="svelte-1ojqa69">
-									Cybersecurity is a burgeoning field that has grown alongside
-									modern technological innovations. Though the sophistication of
-									device security has improved dramatically since the introduction
-									of networks, offensive hacking methods have developed in
-									parallel and caused substantial disruption to industries and
-									governments. Having a basic understanding of networks and common
-									hacker tools can help reduce your vulnerability.
-								</p>
-								<h3 data-svelte-h="svelte-e5nxfv">Why the term “hacker?”</h3>
-								<p data-svelte-h="svelte-13neos5">
-									The term “hacker” was once—and still is—used to describe an
-									exceptional computer wizard. However, over time, its mainstream
-									colloquial use has become associated with an individual who
-									targets vulnerable networks, often with the intention of causing
-									harm. Within the cybersecurity space, these people are called
-									“black hat” hackers to differentiate from ethical hackers, or
-									“white hat” hackers. There are several other permutations of
-									hacker, including vigilante “red hat” hackers, who are often
-									tied to underground groups or organizations.
-								</p>
-								<h3 data-svelte-h="svelte-vv5d9m">Why Kali Linux?</h3>
-								<p data-svelte-h="svelte-15v56tt">
-									Many operating systems can be used for basic security analysis,
-									such as determining the number of live systems accessing a
-									network. However, most of the tools discussed in this tutorial
-									were created specifically for Linux. Linux is popular for
-									cybersecurity professionals because it can be customized to a
-									much greater extent than Windows and macOS. Kali Linux is a
-									lightweight distribution that comes preinstalled with many
-									standard offensive cybersecurity command line tools, such as
-									<code>nmap</code>. If you choose not to use Kali Linux, you may
-									have to perform manual installations of the tools discussed in
-									this tutorial. Also, Kali just makes you feel like a badass.
-								</p>
-								<h3 data-svelte-h="svelte-f1mqfx">Resources</h3>
-								<p data-svelte-h="svelte-1p7k8lj">
-									The following web resources contain substantial information on
-									network analysis, penetration testing, and other common topics.
-								</p>
-								<ul data-svelte-h="svelte-1akhd1b">
-									<li>
-										<a
-											href="https://www.youtube.com/watch?v=lZAoFs75_cs&list=PLWKjhJtqVAbnklGh3FNRLECx_2D_vK3mu&index=4"
-											rel="nofollow"
-											>Linux for Ethical Hackers</a
-										>
-									</li>
-									<li>
-										<a
-											href="https://www.hackers-arise.com/linux-fundamentals"
-											rel="nofollow"
-											>Linux Basics for Hackers</a
-										>
-									</li>
-									<li>
-										<a href="https://networkchuck.com/" rel="nofollow"
-											>Network Chuck — Hack Your IT Career</a
-										>
-									</li>
-								</ul>
-								<h2><a id="networks">Networks</a></h2>
-								<p data-svelte-h="svelte-mub126">
-									The vast majority of hacking activity occurs over a network
-									connection. As such, knowing how to interact with networks while
-									maintaining secrecy, e.g., hiding your Internet Protocol (IP)
-									address, is essential for aspiring hackers. What is an IP
-									address?
-								</p>
-								<p data-svelte-h="svelte-gyqi9x">
-									An
-									<a
-										href="https://www.youtube.com/watch?v=5WfiTHiU4x8&list=PLIhvC56v63IKrRHh3gvZZBAGvsvOhwrRF"
-										rel="nofollow"
-										>IP address</a
-									>
-									is a unique string of characters that identifies an individual
-									machine, or host, connected to a network. It appears as a
-									grouping of four octets separated by periods, e.g.,
-									192.168.1.204. As such, each of these numbers can be a value
-									ranging from 0 to 255 (2^8), inclusive. In addition to an
-									assortment of IP addresses, each network has a subnet mask (or
-									netmask) with a similar grouping of octets, e.g., 255.255.255.0.
-									Within the subnet mask, the value 255 means that the
-									corresponding octet in the IP address, e.g., 192, will remain
-									the same for all devices on that local network. Conversely, the
-									0 indicates that the corresponding octet can hold any value
-									within the acceptable range (0-255).
-								</p>
-								<p data-svelte-h="svelte-226z8a">
-									Any given private network can support up to 253 unique hosts.
-									Why 253 and not 256 (0-255)? This is because three addresses are
-									always reserved: the network address (192.168.1.0), the
-									broadcast address (192.168.1.255), and the address for the
-									“default gateway,” or router (192.168.1.1). As suggested by its
-									name, any information sent to the broadcast address will be
-									relayed to all hosts on the network. Whenever a device accesses
-									a wireless network, the router assigns it a unique IP address,
-									such as 192.168.1.5 or 192.168.1.111. To find the local IP
-									address for your machine, we can use the
-									<code>ifconfig</code> utility (or <code>ipconfig</code> for
-									Windows). This tool presents a detailed listing of active
-									network connections, often beginning with <code>eth0</code>,
-									which is an abbreviation for “Ethernet0.”
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #61AFEF">ifconfig</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<h3 data-svelte-h="svelte-1dxoqok">
-									What can my IP address reveal about me?
-								</h3>
-								<p data-svelte-h="svelte-1ukrzzn">
-									Up to now, we have focused the discussion on local network
-									addresses. The information returned from
-									<code>ifconfig</code> can only identify your machine on the
-									local area network, such as your home or business. All of the
-									hosts connected to a local network share one
-									<strong>public IP</strong> address, which can be found by
-									searching “What is my IP address?” in a browser. The result that
-									appears is a unique address associated with your private
-									network. While your local IP address contains little
-									information—these addresses are non-unique—your public IP
-									address reveals both your geolocation and Internet Service
-									Provider (ISP). Alone, this information cannot identify an
-									individual machine, but it does provide clues for hackers to
-									learn about a potential target. What is the purpose of the
-									subnet mask (or netmask)?
-								</p>
-								<p data-svelte-h="svelte-1xgzj1k">
-									<a
-										href="https://www.youtube.com/watch?v=tcae4TSSMo8&list=PLIhvC56v63IKrRHh3gvZZBAGvsvOhwrRF&index=2"
-										rel="nofollow"
-										>Subnet masks</a
-									>
-									are an organizational tool used to control IP address
-									distribution, since there are a limited number of total IP
-									addresses (2^32 or approximately 4B). By controlling the
-									variability in the network portion of the IP address, i.e., the
-									first three octets
-									(<strong>192</strong>.<strong>168</strong>.<strong>1</strong>.0),
-									businesses and individuals are restricted to the number of IP
-									addresses available for their individual use. As an example, if
-									a corporation was given exclusive rights to address 3.0.0.0 with
-									subnet 255.0.0.0, it would have nearly 17M (2^24) addresses
-									reserved. With the limited supply of IP addresses and the
-									growing demands of IoT, this can become a major issue. For this
-									reason, it is more common to see subnets of 255.255.0.0 or
-									255.255.255.0, which cut down the number of available addresses
-									to about 66K and 256, respectively. What is a loop-back address?
-								</p>
-								<p data-svelte-h="svelte-gf382x">
-									The IP address range 127.0.0.0 with subnet mask 255.0.0.0 is
-									reserved for local network testing, i.e., testing the
-									connectivity of your personal devices with “virtual addresses.”
-									For example, to confirm that your machine has a functional
-									networking configuration, you can ping any address starting with
-									127:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #61AFEF">ping</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">127.0</span><span style="color: #98C379">.0.1</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-nw1mka">
-									The terminal output may resemble:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #ABB2BF">PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.</span></span>
+        theme
+            ? document.documentElement.setAttribute('color-scheme', theme)
+            : localStorage.setItem('color-scheme', 'dark')
+    </script>
+</head>
+
+<body data-sveltekit-preload-data="hover">
+    <div style="display: contents">  <div class="layout svelte-sdkn5t"> <nav class="svelte-bs11bt"> <a href="/" class="title svelte-bs11bt"><b>lukasvasadi</b></a>     <button aria-label="Toggle theme" class="svelte-114mtci"><div class="svelte-114mtci"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-moon "><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg> <span data-svelte-h="svelte-397x2m">Dark</span></div> </button> </nav> <main class="svelte-sdkn5t"> <div class="transition svelte-vcdv4c">  <article class="svelte-1apnuse"> <hgroup><h1 class="svelte-1apnuse">Exploring networks with Kali Linux</h1> <p class="svelte-1apnuse">Published at Feb 2, 2024</p></hgroup>  <div class="tags svelte-1apnuse"><span class="surface-4 svelte-1apnuse">#Networking</span><span class="surface-4 svelte-1apnuse">#Kali Linux</span></div>  <div class="prose"><p data-svelte-h="svelte-14gatyk"><img src="/images/kali-logo.png" alt="Kali Linux logo"></p> <h2 data-svelte-h="svelte-jpxk5s">Contents</h2> <ul data-svelte-h="svelte-dn4zt0"><li><a href="#introduction">Introduction</a></li> <li><a href="#networks">Networks</a></li></ul> <h2><a id="introduction">Introduction</a></h2> <p class="tag warning svelte-5rv919"><span class="svelte-5rv919"><svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 24 24" fill="#ceb301" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-alert-circle "><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg> </span><!-- HTML_TAG_START -->The following information is for educational purposes only. It is intended to review general concepts in networking. The author is not a qualified instructor and assumes no responsibility for improper use of the material. Never access another network without express permission from its administrator.<!-- HTML_TAG_END --> </p> <p data-svelte-h="svelte-1ojqa69">Cybersecurity is a burgeoning field that has grown alongside modern technological innovations. Though the sophistication of device security has improved dramatically since the introduction of networks, offensive hacking methods have developed in parallel and caused substantial disruption to industries and governments. Having a basic understanding of networks and common hacker tools can help reduce your vulnerability.</p> <h3 data-svelte-h="svelte-e5nxfv">Why the term “hacker?”</h3> <p data-svelte-h="svelte-13neos5">The term “hacker” was once—and still is—used to describe an exceptional computer wizard. However, over time, its mainstream colloquial use has become associated with an individual who targets vulnerable networks, often with the intention of causing harm. Within the cybersecurity space, these people are called “black hat” hackers to differentiate from ethical hackers, or “white hat” hackers. There are several other permutations of hacker, including vigilante “red hat” hackers, who are often tied to underground groups or organizations.</p> <h3 data-svelte-h="svelte-vv5d9m">Why Kali Linux?</h3> <p data-svelte-h="svelte-15v56tt">Many operating systems can be used for basic security analysis, such as determining the number of live systems accessing a network. However, most of the tools discussed in this tutorial were created specifically for Linux. Linux is popular for cybersecurity professionals because it can be customized to a much greater extent than Windows and macOS. Kali Linux is a lightweight distribution that comes preinstalled with many standard offensive cybersecurity command line tools, such as <code>nmap</code>. If you choose not to use Kali Linux, you may have to perform manual installations of the tools discussed in this tutorial. Also, Kali just makes you feel like a badass.</p> <h3 data-svelte-h="svelte-f1mqfx">Resources</h3> <p data-svelte-h="svelte-1p7k8lj">The following web resources contain substantial information on network analysis, penetration testing, and other common topics.</p> <ul data-svelte-h="svelte-1akhd1b"><li><a href="https://www.youtube.com/watch?v=lZAoFs75_cs&list=PLWKjhJtqVAbnklGh3FNRLECx_2D_vK3mu&index=4" rel="nofollow">Linux for Ethical Hackers</a></li> <li><a href="https://www.hackers-arise.com/linux-fundamentals" rel="nofollow">Linux Basics for Hackers</a></li> <li><a href="https://networkchuck.com/" rel="nofollow">Network Chuck — Hack Your IT Career</a></li></ul> <h2><a id="networks">Networks</a></h2> <p data-svelte-h="svelte-mub126">The vast majority of hacking activity occurs over a network connection. As such, knowing how to interact with networks while maintaining secrecy, e.g., hiding your Internet Protocol (IP) address, is essential for aspiring hackers.
+What is an IP address?</p> <p data-svelte-h="svelte-gyqi9x">An <a href="https://www.youtube.com/watch?v=5WfiTHiU4x8&list=PLIhvC56v63IKrRHh3gvZZBAGvsvOhwrRF" rel="nofollow">IP address</a> is a unique string of characters that identifies an individual machine, or host, connected to a network. It appears as a grouping of four octets separated by periods, e.g., 192.168.1.204. As such, each of these numbers can be a value ranging from 0 to 255 (2^8), inclusive. In addition to an assortment of IP addresses, each network has a subnet mask (or netmask) with a similar grouping of octets, e.g., 255.255.255.0. Within the subnet mask, the value 255 means that the corresponding octet in the IP address, e.g., 192, will remain the same for all devices on that local network. Conversely, the 0 indicates that the corresponding octet can hold any value within the acceptable range (0-255).</p> <p data-svelte-h="svelte-226z8a">Any given private network can support up to 253 unique hosts. Why 253 and not 256 (0-255)? This is because three addresses are always reserved: the network address (192.168.1.0), the broadcast address (192.168.1.255), and the address for the “default gateway,” or router (192.168.1.1). As suggested by its name, any information sent to the broadcast address will be relayed to all hosts on the network. Whenever a device accesses a wireless network, the router assigns it a unique IP address, such as 192.168.1.5 or 192.168.1.111. To find the local IP address for your machine, we can use the <code>ifconfig</code> utility (or <code>ipconfig</code> for Windows). This tool presents a detailed listing of active network connections, often beginning with <code>eth0</code>, which is an abbreviation for “Ethernet0.”</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">ifconfig</span></span></code></pre><!-- HTML_TAG_END --> <h3 data-svelte-h="svelte-1dxoqok">What can my IP address reveal about me?</h3> <p data-svelte-h="svelte-1ukrzzn">Up to now, we have focused the discussion on local network addresses. The information returned from <code>ifconfig</code> can only identify your machine on the local area network, such as your home or business. All of the hosts connected to a local network share one <strong>public IP</strong> address, which can be found by searching “What is my IP address?” in a browser. The result that appears is a unique address associated with your private network. While your local IP address contains little information—these addresses are non-unique—your public IP address reveals both your geolocation and Internet Service Provider (ISP). Alone, this information cannot identify an individual machine, but it does provide clues for hackers to learn about a potential target.
+What is the purpose of the subnet mask (or netmask)?</p> <p data-svelte-h="svelte-1xgzj1k"><a href="https://www.youtube.com/watch?v=tcae4TSSMo8&list=PLIhvC56v63IKrRHh3gvZZBAGvsvOhwrRF&index=2" rel="nofollow">Subnet masks</a> are an organizational tool used to control IP address distribution, since there are a limited number of total IP addresses (2^32 or approximately 4B). By controlling the variability in the network portion of the IP address, i.e., the first three octets (<strong>192</strong>.<strong>168</strong>.<strong>1</strong>.0), businesses and individuals are restricted to the number of IP addresses available for their individual use. As an example, if a corporation was given exclusive rights to address 3.0.0.0 with subnet 255.0.0.0, it would have nearly 17M (2^24) addresses reserved. With the limited supply of IP addresses and the growing demands of IoT, this can become a major issue. For this reason, it is more common to see subnets of 255.255.0.0 or 255.255.255.0, which cut down the number of available addresses to about 66K and 256, respectively.
+What is a loop-back address?</p> <p data-svelte-h="svelte-gf382x">The IP address range 127.0.0.0 with subnet mask 255.0.0.0 is reserved for local network testing, i.e., testing the connectivity of your personal devices with “virtual addresses.” For example, to confirm that your machine has a functional networking configuration, you can ping any address starting with 127:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">ping</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">127.0</span><span style="color: #98C379">.0.1</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-nw1mka">The terminal output may resemble:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.</span></span>
 <span class="line"><span style="color: #ABB2BF">64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.016 ms</span></span>
 <span class="line"><span style="color: #ABB2BF">64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.026 ms</span></span>
 <span class="line"><span style="color: #ABB2BF">64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.025 ms</span></span>
 <span class="line"><span style="color: #ABB2BF">^C</span></span>
 <span class="line"><span style="color: #ABB2BF">--- 127.10.0.1 ping statistics ---</span></span>
 <span class="line"><span style="color: #ABB2BF">3 packets transmitted, 3 received, 0% packet loss, time 2039ms</span></span>
-<span class="line"><span style="color: #ABB2BF">rtt min/avg/max/mdev = 0.016/0.022/0.026/0.004 ms</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-16e9108">
-									Ping is a common troubleshooting tool that simply confirms
-									whether a target is alive on a network.
-								</p>
-								<h3 data-svelte-h="svelte-cezzvf">Updated utilities</h3>
-								<p data-svelte-h="svelte-hqiqa0">
-									Several networking utilities, including <code>ifconfig</code>,
-									are being deprecated and replaced with the
-									<code>ip</code> command line tool. To print your local IP
-									address and subnet mask, as well as your loop-back and broadcast
-									addresses:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">address</span></span>
+<span class="line"><span style="color: #ABB2BF">rtt min/avg/max/mdev = 0.016/0.022/0.026/0.004 ms</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-16e9108">Ping is a common troubleshooting tool that simply confirms whether a target is alive on a network.</p> <h3 data-svelte-h="svelte-cezzvf">Updated utilities</h3> <p data-svelte-h="svelte-hqiqa0">Several networking utilities, including <code>ifconfig</code>, are being deprecated and replaced with the <code>ip</code> command line tool. To print your local IP address and subnet mask, as well as your loop-back and broadcast addresses:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">address</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># alternatively, use shorthand expression</span></span>
-<span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">a</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-eyxpzd">
-									Similarly, to print the arp table, which shows a mapping between
-									decive MAC and IP addresses:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">neighbor</span></span>
+<span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">a</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-eyxpzd">Similarly, to print the arp table, which shows a mapping between decive MAC and IP addresses:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">neighbor</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># alternatively...</span></span>
-<span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">n</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-ge5n9v">
-									Lastly, to print the routing table, which shows the network
-									traffic endpoints:
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">route</span></span>
+<span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">n</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-ge5n9v">Lastly, to print the routing table, which shows the network traffic endpoints:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">route</span></span>
 <span class="line"><span style="color: #7F848E; font-style: italic"># alternatively...</span></span>
-<span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">r</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<h3 data-svelte-h="svelte-1lfonwl">
-									Example script to list active IP addresses
-								</h3>
-								<p data-svelte-h="svelte-agawng">
-									To see a list of active IP addresses, copy the below script into
-									a file called <code>ipsweep.sh</code>. This scripts accepts the
-									network address (first three octets of an IP address) as an
-									argument and pings each possible address allowed by the subnet
-									mask. If a response is received, the script will print that
-									address to the console.
-								</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic">#! bin/bash</span></span>
+<span class="line"><span style="color: #61AFEF">ip</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">r</span></span></code></pre><!-- HTML_TAG_END --> <h3 data-svelte-h="svelte-1lfonwl">Example script to list active IP addresses</h3> <p data-svelte-h="svelte-agawng">To see a list of active IP addresses, copy the below script into a file called <code>ipsweep.sh</code>. This scripts accepts the network address (first three octets of an IP address) as an argument and pings each possible address allowed by the subnet mask. If a response is received, the script will print that address to the console.</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic">#! bin/bash</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C678DD">if</span><span style="color: #ABB2BF"> [ </span><span style="color: #98C379">&quot;</span><span style="color: #E06C75; font-style: italic">$1</span><span style="color: #98C379">&quot;</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">==</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;&quot;</span><span style="color: #ABB2BF"> ]</span></span>
 <span class="line"><span style="color: #C678DD">then</span></span>
@@ -367,50 +60,34 @@
 <span class="line"><span style="color: #C678DD">for</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">ip</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">in</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&#96;</span><span style="color: #61AFEF">seq</span><span style="color: #98C379"> </span><span style="color: #D19A66">1</span><span style="color: #98C379"> </span><span style="color: #D19A66">254</span><span style="color: #98C379">&#96;</span><span style="color: #ABB2BF">; </span><span style="color: #C678DD">do</span></span>
 <span class="line"><span style="color: #61AFEF">ping</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-c</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75; font-style: italic">$1</span><span style="color: #98C379">.</span><span style="color: #E06C75">$ip</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">grep</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;64 bytes&quot;</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">cut</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-d</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot; &quot;</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-f</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">4</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">tr</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-d</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">&quot;:&quot;</span><span style="color: #ABB2BF"> &amp;</span></span>
 <span class="line"><span style="color: #C678DD">done</span></span>
-<span class="line"><span style="color: #C678DD">fi</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-								<p data-svelte-h="svelte-i5ikzy">To execute the script:</p>
-								<!-- HTML_TAG_START -->
-								<pre
-									class="shiki one-dark-pro"
-									style="background-color: #282c34"
-									tabindex="0"
-								><code><span class="line"><span style="color: #7F848E; font-style: italic"># 192.168.64 as an example network address</span></span>
-<span class="line"><span style="color: #61AFEF">./ipsweep</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">192.168</span><span style="color: #98C379">.64</span></span></code></pre>
-								<!-- HTML_TAG_END -->
-							</div>
-						</article>
-					</div>
-				</main>
-				<footer class="svelte-k2ae0s">
-					<p class="svelte-k2ae0s">lukasvasadi © 2024</p>
-				</footer>
-			</div>
-
+<span class="line"><span style="color: #C678DD">fi</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-i5ikzy">To execute the script:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># 192.168.64 as an example network address</span></span>
+<span class="line"><span style="color: #61AFEF">./ipsweep</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">192.168</span><span style="color: #98C379">.64</span></span></code></pre><!-- HTML_TAG_END --></div> </article></div></main>   <footer class="svelte-k2ae0s"><p class="svelte-k2ae0s">lukasvasadi © 2024</p> </footer> </div> 
+			
 			<script>
 				{
-					__sveltekit_18adyi9 = {
-						base: new URL('.', location).pathname.slice(0, -1),
+					__sveltekit_crsx6g = {
+						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
-					}
+					};
 
-					const element = document.currentScript.parentElement
+					const element = document.currentScript.parentElement;
 
-					const data = [null, null]
+					const data = [null,null];
 
 					Promise.all([
-						import('./_app/immutable/entry/start.60671325.js'),
-						import('./_app/immutable/entry/app.b9dda5a1.js')
+						import("./_app/immutable/entry/start.469c1fd8.js"),
+						import("./_app/immutable/entry/app.ec6279a1.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
 							data,
 							form: null,
 							error: null
-						})
-					})
+						});
+					});
 				}
 			</script>
 		</div>
-	</body>
+</body>
+
 </html>
