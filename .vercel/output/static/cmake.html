@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/icons/vasadi-icon-square.png" />
     
-		<link href="./_app/immutable/assets/0.be81d44b.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/0.131b80c2.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/3.e2f5fd52.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/iconlist.19ffcec2.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/tag.6154d69e.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/def.d0eb59fd.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.469c1fd8.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.9d529ad2.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.ae1baad1.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.a7829f11.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.07e8bfea.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.648b4cba.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/control.c2cf8273.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.ec6279a1.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.742e014b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.0e1198e2.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.b4e484d8.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.24ea4bf9.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/config.f4ded0b2.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/Icon.c2880df6.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/each.e59479a4.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.8a5f1183.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.021048f3.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/utils.2fdf1f5e.js"><title>Building C/C++ projects with CMake</title><!-- HEAD_svelte-1vn9r42_START --><meta property="og:type" content="article"><meta property="og:title" content="Building C/C++ projects with CMake"><meta property="og:image" content="/images/macbook-code.jpg"><!-- HEAD_svelte-1vn9r42_END -->
     <script type="module">
         const theme = localStorage.getItem('color-scheme')
@@ -117,7 +117,7 @@
 <span class="line"><span style="color: #ABB2BF">&#125;</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1u06f0n">To test this project configuration, execute the following commands, assuming that the build process has been completed at least once:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">cd</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">build</span></span>
 <span class="line"><span style="color: #61AFEF">cmake</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--build</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">.</span></span>
 <span class="line"><span style="color: #61AFEF">make</span></span>
-<span class="line"><span style="color: #61AFEF">./adder</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1v8gj8f">Optionally, you can choose to only target the library during the build routine, which may help you pinpoint build errors:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">cmake</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--build</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">.</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--target</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">basicmath</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="variables">Variables</a></h2> <p data-svelte-h="svelte-hyalg4">In CMake, variables can be defined in the top-level <code>CMakeLists.txt</code> file and accessed in all subdirectories. By convention, variable names are written in all caps. To create a variable, use the <code>set</code> function to define its name and value, separated by a space:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #C678DD">set</span><span style="color: #ABB2BF">(LIBRARY_NAME BasicMath)</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-yvgqgu">If we add this line to the top-level CMake file, then we can reference the variable name for our library in <code>adder/lib/basicmath/src/CMakeLists.txt</code>:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># adder/CMakeLists.txt</span></span>
+<span class="line"><span style="color: #61AFEF">./adder</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-1v8gj8f">Optionally, you can choose to only target the library during the build routine, which may help you pinpoint build errors:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">cmake</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--build</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">.</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--target</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">basicmath</span></span></code></pre><!-- HTML_TAG_END --> <h2><a id="variables">Variables</a></h2> <p data-svelte-h="svelte-hyalg4">In CMake, variables can be defined in the top-level <code>CMakeLists.txt</code> file and accessed in all subdirectories. By convention, variable names are written in all caps. To create a variable, use the <code>set</code> function to define its name and value, separated by a space:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #C678DD">set</span><span style="color: #ABB2BF">(LIBRARY_NAME BasicMath)</span></span></code></pre><!-- HTML_TAG_END --> <p data-svelte-h="svelte-hkmdoi">If we add this line to the top-level CMake file, then we can reference the variable name for our library in the low-level CMake files:</p> <!-- HTML_TAG_START --><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># adder/CMakeLists.txt</span></span>
 <span class="line"><span style="color: #C678DD">cmake_minimum_required</span><span style="color: #ABB2BF">(VERSION 3.27.4)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C678DD">project</span><span style="color: #ABB2BF">(adder VERSION 1.0.0 LANGUAGES C CXX)</span></span>
@@ -165,7 +165,7 @@
 			
 			<script>
 				{
-					__sveltekit_crsx6g = {
+					__sveltekit_hnfwyd = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -175,8 +175,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.469c1fd8.js"),
-						import("./_app/immutable/entry/app.ec6279a1.js")
+						import("./_app/immutable/entry/start.9d529ad2.js"),
+						import("./_app/immutable/entry/app.742e014b.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
